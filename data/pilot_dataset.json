@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "dataset_version": "pilot-1",
+  "citations": [
+    {
+      "citation_id": "arxiv-1706.03762",
+      "title": "Attention Is All You Need",
+      "authors": [
+        {
+          "given": "Ashish",
+          "family": "Vaswani"
+        },
+        {
+          "given": "Noam",
+          "family": "Shazeer"
+        },
+        {
+          "given": "Niki",
+          "family": "Parmar"
+        },
+        {
+          "given": "Jakob",
+          "family": "Uszkoreit"
+        },
+        {
+          "given": "Llion",
+          "family": "Jones"
+        },
+        {
+          "given": "Aidan N.",
+          "family": "Gomez"
+        },
+        {
+          "given": "Lukasz",
+          "family": "Kaiser"
+        },
+        {
+          "given": "Illia",
+          "family": "Polosukhin"
+        }
+      ],
+      "year": 2017,
+      "arxiv_id": "1706.03762",
+      "provenance": {
+        "source_url": "https://arxiv.org/abs/1706.03762",
+        "record_identifier": "1706.03762",
+        "verification_status": "verified",
+        "verified_at": "2026-11-08T18:30:29Z"
+      }
+    },
+    {
+      "citation_id": "arxiv-1810.04805",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "authors": [
+        {
+          "given": "Jacob",
+          "family": "Devlin"
+        },
+        {
+          "given": "Ming-Wei",
+          "family": "Chang"
+        },
+        {
+          "given": "Kenton",
+          "family": "Lee"
+        },
+        {
+          "given": "Kristina",
+          "family": "Toutanova"
+        }
+      ],
+      "year": 2018,
+      "arxiv_id": "1810.04805",
+      "provenance": {
+        "source_url": "https://arxiv.org/abs/1810.04805",
+        "record_identifier": "1810.04805",
+        "verification_status": "verified",
+        "verified_at": "2026-11-08T18:30:29Z"
+      }
+    },
+    {
+      "citation_id": "arxiv-1406.2661",
+      "title": "Generative Adversarial Networks",
+      "authors": [
+        {
+          "given": "Ian J.",
+          "family": "Goodfellow"
+        },
+        {
+          "given": "Jean",
+          "family": "Pouget-Abadie"
+        },
+        {
+          "given": "Mehdi",
+          "family": "Mirza"
+        },
+        {
+          "given": "Bing",
+          "family": "Xu"
+        },
+        {
+          "given": "David",
+          "family": "Warde-Farley"
+        },
+        {
+          "given": "Sherjil",
+          "family": "Ozair"
+        },
+        {
+          "given": "Aaron",
+          "family": "Courville"
+        },
+        {
+          "given": "Yoshua",
+          "family": "Bengio"
+        }
+      ],
+      "year": 2014,
+      "arxiv_id": "1406.2661",
+      "provenance": {
+        "source_url": "https://arxiv.org/abs/1406.2661",
+        "record_identifier": "1406.2661",
+        "verification_status": "verified",
+        "verified_at": "2026-11-08T18:30:29Z"
+      }
+    },
+    {
+      "citation_id": "arxiv-1512.03385",
+      "title": "Deep Residual Learning for Image Recognition",
+      "authors": [
+        {
+          "given": "Kaiming",
+          "family": "He"
+        },
+        {
+          "given": "Xiangyu",
+          "family": "Zhang"
+        },
+        {
+          "given": "Shaoqing",
+          "family": "Ren"
+        },
+        {
+          "given": "Jian",
+          "family": "Sun"
+        }
+      ],
+      "year": 2015,
+      "arxiv_id": "1512.03385",
+      "provenance": {
+        "source_url": "https://arxiv.org/abs/1512.03385",
+        "record_identifier": "1512.03385",
+        "verification_status": "verified",
+        "verified_at": "2026-11-08T18:30:29Z"
+      }
+    },
+    {
+      "citation_id": "arxiv-1312.6114",
+      "title": "Auto-Encoding Variational Bayes",
+      "authors": [
+        {
+          "given": "Diederik P",
+          "family": "Kingma"
+        },
+        {
+          "given": "Max",
+          "family": "Welling"
+        }
+      ],
+      "year": 2013,
+      "arxiv_id": "1312.6114",
+      "provenance": {
+        "source_url": "https://arxiv.org/abs/1312.6114",
+        "record_identifier": "1312.6114",
+        "verification_status": "verified",
+        "verified_at": "2026-11-08T18:30:29Z"
+      }
+    }
+  ]
+}
