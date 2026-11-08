@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "dataset_version": "synthetic-test-only-1",
+  "mappings": [
+    {
+      "citation_id": "fixture-1",
+      "relation": "different_work",
+      "identifiers": [
+        {
+          "namespace": "doi",
+          "value": "10.1234/negative-a"
+        },
+        {
+          "namespace": "doi",
+          "value": "10.1234/negative-b"
+        }
+      ],
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-1",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-2",
+      "relation": "different_work",
+      "identifiers": [
+        {
+          "namespace": "doi",
+          "value": "10.1234/negative-c"
+        }
+      ],
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-2",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    }
+  ]
+}

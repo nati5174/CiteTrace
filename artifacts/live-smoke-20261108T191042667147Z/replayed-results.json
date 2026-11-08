@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "engine_version": "1",
+  "dataset_version": "pilot-1",
+  "dataset_fingerprint": "73c5ca73079087300e201bd9e9ff5728ccfb91a7909af6effbfedb754d838447",
+  "input_fingerprint": "73c5ca73079087300e201bd9e9ff5728ccfb91a7909af6effbfedb754d838447",
+  "config_fingerprint": "2dd2a16cf39a51c08cd27fff4d3f0c27906f95097189c611b01ad5434e7b3f31",
+  "config": {
+    "concurrency": 1,
+    "provider_concurrency": 1,
+    "openalex_rps": 1.0,
+    "crossref_rps": 1.0,
+    "timeout_seconds": 20.0,
+    "max_attempts": 1,
+    "backoff_seconds": 0.5,
+    "max_retry_wait": 30.0,
+    "jitter_seed": 0
+  },
+  "providers": [
+    "openalex",
+    "crossref"
+  ],
+  "selected_source_ids": [
+    "arxiv-1706.03762"
+  ],
+  "generated_at": "2026-11-08T19:10:42.667147Z",
+  "results": [
+    {
+      "lookup_id": "8eeb55747ae2ce81334b7a8d42a86476c0b04f454aa676e4257d990723adc32d",
+      "source_id": "arxiv-1706.03762",
+      "source_kind": "canonical",
+      "original_citation_id": "arxiv-1706.03762",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Attention Is All You Need Ashish Vaswani Noam Shazeer Niki Parmar Jakob Uszkoreit Llion Jones Aidan N. Gomez Lukasz Kaiser Illia Polosukhin 2017"
+        },
+        "submitted_metadata": {
+          "title": "Attention Is All You Need",
+          "authors": [
+            {
+              "given": "Ashish",
+              "family": "Vaswani"
+            },
+            {
+              "given": "Noam",
+              "family": "Shazeer"
+            },
+            {
+              "given": "Niki",
+              "family": "Parmar"
+            },
+            {
+              "given": "Jakob",
+              "family": "Uszkoreit"
+            },
+            {
+              "given": "Llion",
+              "family": "Jones"
+            },
+            {
+              "given": "Aidan N.",
+              "family": "Gomez"
+            },
+            {
+              "given": "Lukasz",
+              "family": "Kaiser"
+            },
+            {
+              "given": "Illia",
+              "family": "Polosukhin"
+            }
+          ],
+          "year": 2017,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T19:10:42.490308Z",
+      "finished_at": "2026-11-08T19:10:42.623456Z",
+      "latency_ms": 125.0,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T19:10:42.490308Z",
+          "finished_at": "2026-11-08T19:10:42.623456Z",
+          "latency_ms": 125.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.6814891044592717,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "cec8cc51b2cb4423add2dbccd9a5e879ca33ea4896cd99de106053c7fc44496f",
+      "source_id": "arxiv-1706.03762",
+      "source_kind": "canonical",
+      "original_citation_id": "arxiv-1706.03762",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Attention Is All You Need Ashish Vaswani Noam Shazeer Niki Parmar Jakob Uszkoreit Llion Jones Aidan N. Gomez Lukasz Kaiser Illia Polosukhin 2017",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Attention Is All You Need",
+          "authors": [
+            {
+              "given": "Ashish",
+              "family": "Vaswani"
+            },
+            {
+              "given": "Noam",
+              "family": "Shazeer"
+            },
+            {
+              "given": "Niki",
+              "family": "Parmar"
+            },
+            {
+              "given": "Jakob",
+              "family": "Uszkoreit"
+            },
+            {
+              "given": "Llion",
+              "family": "Jones"
+            },
+            {
+              "given": "Aidan N.",
+              "family": "Gomez"
+            },
+            {
+              "given": "Lukasz",
+              "family": "Kaiser"
+            },
+            {
+              "given": "Illia",
+              "family": "Polosukhin"
+            }
+          ],
+          "year": 2017,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T19:10:42.623456Z",
+      "finished_at": "2026-11-08T19:10:42.667147Z",
+      "latency_ms": 47.000000000025466,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T19:10:42.623456Z",
+          "finished_at": "2026-11-08T19:10:42.667147Z",
+          "latency_ms": 47.000000000025466,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.6889885285902295,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    }
+  ]
+}

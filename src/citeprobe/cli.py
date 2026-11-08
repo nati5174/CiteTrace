@@ -6,7 +6,10 @@ import sys
 from pathlib import Path
 
 from citeprobe.dataset import benchmark_citations, load_dataset
+from citeprobe.evaluation_cli import add_evaluation_command, run_evaluation
 from citeprobe.mutations import generate_mutations
+from citeprobe.report_cli import add_report_command, run_report
+from citeprobe.resolution_cli import add_commands, run
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -18,8 +21,17 @@ def main(argv: list[str] | None = None) -> int:
     mutate.add_argument("dataset", type=Path)
     mutate.add_argument("--seed", type=int, default=0)
     mutate.add_argument("--output", type=Path, required=True)
+    add_commands(commands)
+    add_evaluation_command(commands)
+    add_report_command(commands)
     args = parser.parse_args(argv)
     try:
+        if args.command == "report":
+            return run_report(args)
+        if args.command == "evaluate":
+            return run_evaluation(args)
+        if args.command in ("resolve", "resolve-mutations", "replay"):
+            return run(args)
         dataset = load_dataset(args.dataset)
         if args.command == "validate":
             print(

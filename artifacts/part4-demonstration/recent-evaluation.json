@@ -1,0 +1,1311 @@
+{
+  "code_fingerprint": "5955c916ab7afc1de72f208bb0e2ad9490bea535be1965982cec2cc2702204ea",
+  "config": {
+    "cohorts": {},
+    "default_data_label": "simulated",
+    "groupings": [
+      [
+        "source_kind",
+        "mutation_type"
+      ],
+      [
+        "original_citation_id"
+      ],
+      [
+        "cohort"
+      ]
+    ],
+    "input_labels": {},
+    "schema_version": "1.0"
+  },
+  "dataset_fingerprint": "ea6378f139a8371b4ef7a8cb313cf12b69b868da64d6db7123033a04e1a1c427",
+  "dataset_version": "synthetic-test-only-1",
+  "evaluation_id": "779fd2aca149f89f5b50f8d1a1ac0bc144bd6c5605f82f3eabf2db7786f25df9",
+  "evaluator_version": "1",
+  "groups": [
+    {
+      "dimensions": {
+        "cohort": null,
+        "data_label": "simulated",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 6,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 6,
+          "lower_bound": 0.16666666666666666,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.16666666666666666,
+          "value": 0.16666666666666666
+        },
+        "identity_undetermined_rate": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.2,
+          "value": 0.2
+        },
+        "incorrect_match_rate": {
+          "denominator": 5,
+          "lower_bound": 0.4,
+          "numerator": 2,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.6,
+          "value": null
+        },
+        "provider_error_rate": {
+          "denominator": 6,
+          "lower_bound": 0.16666666666666666,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.16666666666666666,
+          "value": 0.16666666666666666
+        },
+        "rate_limited_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.4,
+          "value": null
+        },
+        "recall_at_5": {
+          "denominator": 5,
+          "lower_bound": 0.4,
+          "numerator": 2,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.6,
+          "value": null
+        },
+        "timeout_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.2,
+          "value": 0.2
+        }
+      },
+      "original_citation_count": 6,
+      "retrieval_lookup_count": 5,
+      "retrieval_original_citation_count": 5
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "mutation_type": null,
+        "provider": "openalex",
+        "source_kind": "canonical",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 6,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 6,
+          "lower_bound": 0.16666666666666666,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.16666666666666666,
+          "value": 0.16666666666666666
+        },
+        "identity_undetermined_rate": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.2,
+          "value": 0.2
+        },
+        "incorrect_match_rate": {
+          "denominator": 5,
+          "lower_bound": 0.4,
+          "numerator": 2,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.6,
+          "value": null
+        },
+        "provider_error_rate": {
+          "denominator": 6,
+          "lower_bound": 0.16666666666666666,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.16666666666666666,
+          "value": 0.16666666666666666
+        },
+        "rate_limited_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.4,
+          "value": null
+        },
+        "recall_at_5": {
+          "denominator": 5,
+          "lower_bound": 0.4,
+          "numerator": 2,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.6,
+          "value": null
+        },
+        "timeout_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.2,
+          "value": 0.2
+        }
+      },
+      "original_citation_count": 6,
+      "retrieval_lookup_count": 5,
+      "retrieval_original_citation_count": 5
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "original_citation_id": "fixture-0",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 1,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "identity_undetermined_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "incorrect_match_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "provider_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "rate_limited_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "recall_at_5": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "timeout_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        }
+      },
+      "original_citation_count": 1,
+      "retrieval_lookup_count": 1,
+      "retrieval_original_citation_count": 1
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "original_citation_id": "fixture-1",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 1,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "identity_undetermined_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "incorrect_match_rate": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "provider_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "rate_limited_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_5": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "timeout_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        }
+      },
+      "original_citation_count": 1,
+      "retrieval_lookup_count": 1,
+      "retrieval_original_citation_count": 1
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "original_citation_id": "fixture-2",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 1,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "identity_undetermined_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "incorrect_match_rate": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "provider_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "rate_limited_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_5": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "timeout_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        }
+      },
+      "original_citation_count": 1,
+      "retrieval_lookup_count": 1,
+      "retrieval_original_citation_count": 1
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "original_citation_id": "fixture-3",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 1,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "identity_undetermined_rate": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "incorrect_match_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 1.0,
+          "value": null
+        },
+        "provider_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "rate_limited_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 1.0,
+          "value": null
+        },
+        "recall_at_5": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 1.0,
+          "value": null
+        },
+        "timeout_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        }
+      },
+      "original_citation_count": 1,
+      "retrieval_lookup_count": 1,
+      "retrieval_original_citation_count": 1
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "original_citation_id": "fixture-4",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 1,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "identity_undetermined_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "incorrect_match_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "provider_error_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "rate_limited_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_5": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "timeout_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        }
+      },
+      "original_citation_count": 1,
+      "retrieval_lookup_count": 1,
+      "retrieval_original_citation_count": 1
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "original_citation_id": "fixture-5",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 1,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "identity_undetermined_rate": {
+          "denominator": 0,
+          "lower_bound": null,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": "zero_denominator",
+          "upper_bound": null,
+          "value": null
+        },
+        "incorrect_match_rate": {
+          "denominator": 0,
+          "lower_bound": null,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": "zero_denominator",
+          "upper_bound": null,
+          "value": null
+        },
+        "provider_error_rate": {
+          "denominator": 1,
+          "lower_bound": 1.0,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 1.0,
+          "value": 1.0
+        },
+        "rate_limited_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 0,
+          "lower_bound": null,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": "zero_denominator",
+          "upper_bound": null,
+          "value": null
+        },
+        "recall_at_5": {
+          "denominator": 0,
+          "lower_bound": null,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": "zero_denominator",
+          "upper_bound": null,
+          "value": null
+        },
+        "timeout_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 1,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 0,
+          "lower_bound": null,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": "zero_denominator",
+          "upper_bound": null,
+          "value": null
+        }
+      },
+      "original_citation_count": 1,
+      "retrieval_lookup_count": 0,
+      "retrieval_original_citation_count": 0
+    },
+    {
+      "dimensions": {
+        "data_label": "simulated",
+        "provider": "openalex",
+        "strategy": "metadata"
+      },
+      "empirical_data_eligible": false,
+      "lookup_count": 6,
+      "metrics": {
+        "api_error_rate": {
+          "denominator": 6,
+          "lower_bound": 0.16666666666666666,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.16666666666666666,
+          "value": 0.16666666666666666
+        },
+        "identity_undetermined_rate": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.2,
+          "value": 0.2
+        },
+        "incorrect_match_rate": {
+          "denominator": 5,
+          "lower_bound": 0.4,
+          "numerator": 2,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.6,
+          "value": null
+        },
+        "provider_error_rate": {
+          "denominator": 6,
+          "lower_bound": 0.16666666666666666,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.16666666666666666,
+          "value": 0.16666666666666666
+        },
+        "rate_limited_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "recall_at_1": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.4,
+          "value": null
+        },
+        "recall_at_5": {
+          "denominator": 5,
+          "lower_bound": 0.4,
+          "numerator": 2,
+          "uncertain_count": 1,
+          "undefined_reason": "identity_uncertainty",
+          "upper_bound": 0.6,
+          "value": null
+        },
+        "timeout_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unknown_outcome_rate": {
+          "denominator": 6,
+          "lower_bound": 0.0,
+          "numerator": 0,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.0,
+          "value": 0.0
+        },
+        "unresolved_rate": {
+          "denominator": 5,
+          "lower_bound": 0.2,
+          "numerator": 1,
+          "uncertain_count": 0,
+          "undefined_reason": null,
+          "upper_bound": 0.2,
+          "value": 0.2
+        }
+      },
+      "original_citation_count": 6,
+      "retrieval_lookup_count": 5,
+      "retrieval_original_citation_count": 5
+    }
+  ],
+  "identity_mappings": {
+    "dataset_version": "synthetic-test-only-1",
+    "mappings": [
+      {
+        "citation_id": "fixture-1",
+        "identifiers": [
+          {
+            "namespace": "doi",
+            "value": "10.1234/negative-a"
+          },
+          {
+            "namespace": "doi",
+            "value": "10.1234/negative-b"
+          }
+        ],
+        "provenance": {
+          "record_identifier": "fixture-1",
+          "source_url": "https://example.org/test-fixtures",
+          "verification_status": "verified",
+          "verified_at": "2020-01-01T00:00:00Z"
+        },
+        "relation": "different_work"
+      },
+      {
+        "citation_id": "fixture-2",
+        "identifiers": [
+          {
+            "namespace": "doi",
+            "value": "10.1234/negative-c"
+          }
+        ],
+        "provenance": {
+          "record_identifier": "fixture-2",
+          "source_url": "https://example.org/test-fixtures",
+          "verification_status": "verified",
+          "verified_at": "2020-01-01T00:00:00Z"
+        },
+        "relation": "different_work"
+      }
+    ],
+    "schema_version": "1.0"
+  },
+  "identity_mappings_fingerprint": "0091c1a806a0baa62183c8dc7231521906455e64b973028d102321eb17fc7b38",
+  "inputs": [
+    {
+      "bundle_id": "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8",
+      "config_fingerprint": "1cf1aeb4f7a571974db16637bf2ce40896650e55c2baaa2f1d8ebd26eff2aae7",
+      "data_label": "simulated",
+      "engine_version": "1",
+      "file_sha256": "aa0e205d2b2a20361dd736d22ef93eaa89ade5b9362a62160596a3cf8fddf455",
+      "input_fingerprint": "ea6378f139a8371b4ef7a8cb313cf12b69b868da64d6db7123033a04e1a1c427"
+    }
+  ],
+  "lookups": [
+    {
+      "candidates": [
+        {
+          "candidate": {
+            "arxiv_id": null,
+            "authors": [],
+            "doi": "10.1234/negative-c",
+            "provider_rank": 1,
+            "provider_record_id": "https://openalex.org/W301",
+            "ranking": {
+              "relevance_score": 1.25
+            },
+            "title": "Synthetic response title",
+            "year": 2020
+          },
+          "distinct_evidence": [
+            "doi:10.1234/negative-c"
+          ],
+          "judgment": "INCORRECT",
+          "matching_evidence": [],
+          "normalized_identifiers": [
+            "doi:10.1234/negative-c",
+            "openalex:W301"
+          ],
+          "reason": "Explicit verified different-work mapping"
+        }
+      ],
+      "cohort": null,
+      "data_label": "simulated",
+      "input_bundle_id": "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8",
+      "lookup_id": "1681fb066c41b06debb8a27a7b52c044dccf5b3436186089284895ad073a5af5",
+      "mutation_type": null,
+      "original_citation_id": "fixture-2",
+      "outcome": "FOUND",
+      "parsing_warnings": [],
+      "provider": "openalex",
+      "rank_one_judgment": "INCORRECT",
+      "recall_at_1": "MISS",
+      "recall_at_5": "MISS",
+      "retrieval_eligible": true,
+      "source_id": "fixture-2",
+      "source_kind": "canonical",
+      "strategy": "metadata",
+      "unavailable_provider_ranks": []
+    },
+    {
+      "candidates": [
+        {
+          "candidate": {
+            "arxiv_id": null,
+            "authors": [],
+            "doi": null,
+            "provider_rank": 1,
+            "provider_record_id": "https://openalex.org/W401",
+            "ranking": {
+              "relevance_score": 1.25
+            },
+            "title": "Synthetic response title",
+            "year": 2020
+          },
+          "distinct_evidence": [],
+          "judgment": "UNDETERMINED",
+          "matching_evidence": [],
+          "normalized_identifiers": [
+            "openalex:W401"
+          ],
+          "reason": "No verified evidence of identity or distinctness"
+        }
+      ],
+      "cohort": null,
+      "data_label": "simulated",
+      "input_bundle_id": "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8",
+      "lookup_id": "40959d3caaec3576e81ffd22ada3548c5855afe6929ea8331393de0c9768cab1",
+      "mutation_type": null,
+      "original_citation_id": "fixture-3",
+      "outcome": "FOUND",
+      "parsing_warnings": [],
+      "provider": "openalex",
+      "rank_one_judgment": "UNDETERMINED",
+      "recall_at_1": "UNDETERMINED",
+      "recall_at_5": "UNDETERMINED",
+      "retrieval_eligible": true,
+      "source_id": "fixture-3",
+      "source_kind": "canonical",
+      "strategy": "metadata",
+      "unavailable_provider_ranks": []
+    },
+    {
+      "candidates": [],
+      "cohort": null,
+      "data_label": "simulated",
+      "input_bundle_id": "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8",
+      "lookup_id": "711fee4ee88dd816475faac2bc4f6ee3d6aeb77f515708ab1a5453f4e241fe73",
+      "mutation_type": null,
+      "original_citation_id": "fixture-4",
+      "outcome": "NOT_FOUND",
+      "parsing_warnings": [],
+      "provider": "openalex",
+      "rank_one_judgment": null,
+      "recall_at_1": "MISS",
+      "recall_at_5": "MISS",
+      "retrieval_eligible": true,
+      "source_id": "fixture-4",
+      "source_kind": "canonical",
+      "strategy": "metadata",
+      "unavailable_provider_ranks": []
+    },
+    {
+      "candidates": [
+        {
+          "candidate": {
+            "arxiv_id": null,
+            "authors": [],
+            "doi": "10.1234/fixture-0",
+            "provider_rank": 1,
+            "provider_record_id": "https://openalex.org/W101",
+            "ranking": {
+              "relevance_score": 1.25
+            },
+            "title": "Synthetic response title",
+            "year": 2020
+          },
+          "distinct_evidence": [],
+          "judgment": "CORRECT",
+          "matching_evidence": [
+            "doi:10.1234/fixture-0"
+          ],
+          "normalized_identifiers": [
+            "doi:10.1234/fixture-0",
+            "openalex:W101"
+          ],
+          "reason": "Verified identifier or same-work mapping match"
+        }
+      ],
+      "cohort": null,
+      "data_label": "simulated",
+      "input_bundle_id": "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8",
+      "lookup_id": "7d5631e4d7222f3af1dbb0c62d66900d15757e3e047ec28ca4daef9aa99b1d06",
+      "mutation_type": null,
+      "original_citation_id": "fixture-0",
+      "outcome": "FOUND",
+      "parsing_warnings": [],
+      "provider": "openalex",
+      "rank_one_judgment": "CORRECT",
+      "recall_at_1": "HIT",
+      "recall_at_5": "HIT",
+      "retrieval_eligible": true,
+      "source_id": "fixture-0",
+      "source_kind": "canonical",
+      "strategy": "metadata",
+      "unavailable_provider_ranks": []
+    },
+    {
+      "candidates": [],
+      "cohort": null,
+      "data_label": "simulated",
+      "input_bundle_id": "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8",
+      "lookup_id": "9d37c172f26ad3774159222b2d050ad2601ff806d72d5337f10edc5f84bc47b6",
+      "mutation_type": null,
+      "original_citation_id": "fixture-5",
+      "outcome": "API_ERROR",
+      "parsing_warnings": [],
+      "provider": "openalex",
+      "rank_one_judgment": null,
+      "recall_at_1": "EXCLUDED",
+      "recall_at_5": "EXCLUDED",
+      "retrieval_eligible": false,
+      "source_id": "fixture-5",
+      "source_kind": "canonical",
+      "strategy": "metadata",
+      "unavailable_provider_ranks": []
+    },
+    {
+      "candidates": [
+        {
+          "candidate": {
+            "arxiv_id": null,
+            "authors": [],
+            "doi": "10.1234/negative-a",
+            "provider_rank": 1,
+            "provider_record_id": "https://openalex.org/W201",
+            "ranking": {
+              "relevance_score": 1.0
+            },
+            "title": "Synthetic response title",
+            "year": 2020
+          },
+          "distinct_evidence": [
+            "doi:10.1234/negative-a"
+          ],
+          "judgment": "INCORRECT",
+          "matching_evidence": [],
+          "normalized_identifiers": [
+            "doi:10.1234/negative-a",
+            "openalex:W201"
+          ],
+          "reason": "Explicit verified different-work mapping"
+        },
+        {
+          "candidate": {
+            "arxiv_id": null,
+            "authors": [],
+            "doi": "10.1234/negative-b",
+            "provider_rank": 2,
+            "provider_record_id": "https://openalex.org/W202",
+            "ranking": {
+              "relevance_score": 99.0
+            },
+            "title": "Synthetic response title",
+            "year": 2020
+          },
+          "distinct_evidence": [
+            "doi:10.1234/negative-b"
+          ],
+          "judgment": "INCORRECT",
+          "matching_evidence": [],
+          "normalized_identifiers": [
+            "doi:10.1234/negative-b",
+            "openalex:W202"
+          ],
+          "reason": "Explicit verified different-work mapping"
+        },
+        {
+          "candidate": {
+            "arxiv_id": null,
+            "authors": [],
+            "doi": "10.1234/fixture-1",
+            "provider_rank": 3,
+            "provider_record_id": "https://openalex.org/W203",
+            "ranking": {
+              "relevance_score": 7.0
+            },
+            "title": "Synthetic response title",
+            "year": 2020
+          },
+          "distinct_evidence": [],
+          "judgment": "CORRECT",
+          "matching_evidence": [
+            "doi:10.1234/fixture-1"
+          ],
+          "normalized_identifiers": [
+            "doi:10.1234/fixture-1",
+            "openalex:W203"
+          ],
+          "reason": "Verified identifier or same-work mapping match"
+        }
+      ],
+      "cohort": null,
+      "data_label": "simulated",
+      "input_bundle_id": "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8",
+      "lookup_id": "db766a901ddee914699559533595f84b06448ef6d460f471873fd81f437f2763",
+      "mutation_type": null,
+      "original_citation_id": "fixture-1",
+      "outcome": "FOUND",
+      "parsing_warnings": [],
+      "provider": "openalex",
+      "rank_one_judgment": "INCORRECT",
+      "recall_at_1": "MISS",
+      "recall_at_5": "HIT",
+      "retrieval_eligible": true,
+      "source_id": "fixture-1",
+      "source_kind": "canonical",
+      "strategy": "metadata",
+      "unavailable_provider_ranks": []
+    }
+  ],
+  "metric_definitions": {
+    "api_error_rate": "Number of API_ERROR lookups / T.",
+    "data_labels": "Observed, simulated and unknown origins are never pooled. Only explicitly observed inputs may supply future empirical reporting; labels are user assertions.",
+    "denominators": "T=validated verified-source lookups; N=FOUND or NOT_FOUND lookups only.",
+    "identity_undetermined_rate": "FOUND lookups with undetermined original rank-one identity / N.",
+    "incorrect_match_rate": "I1/N; exact only when U1=0. Bounds I1/N to (I1+U1)/N.",
+    "provider_error_rate": "Number of TIMEOUT, RATE_LIMITED or API_ERROR lookups / T.",
+    "rate_limited_rate": "Number of RATE_LIMITED lookups / T.",
+    "recall_at_1": "H1/N; exact only when U1=0. Bounds H1/N to (H1+U1)/N.",
+    "recall_at_5": "H5/N; exact only when U5=0. Bounds H5/N to (H5+U5)/N.",
+    "recall_states": "HK=confirmed hit within original ranks <=K; UK=unresolved identity/parse gap without a confirmed hit; MK=confirmed miss. HK+UK+MK=N.",
+    "timeout_rate": "Number of TIMEOUT lookups / T.",
+    "uncertainty": "Evidence bounds are not confidence intervals. Zero denominator yields null. Different identifiers alone never prove INCORRECT; distinctness needs provenance.",
+    "unknown_outcome_rate": "Number of UNKNOWN lookups / T; excluded from retrieval metrics.",
+    "unresolved_rate": "Number of valid NOT_FOUND lookups / N.",
+    "weighting": "Each lookup has equal weight. Mutations share original_citation_id; no independence, uncertainty-estimation or statistical-significance claim is made."
+  },
+  "package_version": "0.1.0",
+  "schema_version": "1.0"
+}

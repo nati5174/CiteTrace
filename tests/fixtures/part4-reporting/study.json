@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "dataset_fingerprint": "ea6378f139a8371b4ef7a8cb313cf12b69b868da64d6db7123033a04e1a1c427",
+  "citation_ids": [
+    "fixture-0",
+    "fixture-1",
+    "fixture-2",
+    "fixture-3",
+    "fixture-4",
+    "fixture-5"
+  ],
+  "sampling_method": "SIMULATED convenience sample; not observed research",
+  "verification_method": "SIMULATED verification events and publication dates for software tests",
+  "collection_started_at": "2019-12-31T23:00:05Z",
+  "collection_finished_at": "2020-01-01T00:00:05Z",
+  "reference_date": "2020-01-01",
+  "preprint_dates": [
+    {
+      "citation_id": "fixture-0",
+      "publication_date": "2019-12-29",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-0",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-1",
+      "publication_date": "2019-12-22",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-1",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-2",
+      "publication_date": "2019-12-07",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-2",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-3",
+      "publication_date": "2019-11-17",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-3",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-4",
+      "publication_date": "2020-01-01",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-4",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-5",
+      "publication_date": "2019-11-01",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-5",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    }
+  ],
+  "lookup_bundle_ids": [
+    "e7e9329e2c772207225d6cb10360a2b75cabd867ebc505256abe8185e666fdf8"
+  ]
+}

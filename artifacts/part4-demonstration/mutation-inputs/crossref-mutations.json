@@ -1,0 +1,1313 @@
+{
+  "schema_version": "1.0",
+  "engine_version": "1",
+  "dataset_version": "synthetic-test-only-1",
+  "dataset_fingerprint": "1bb15318fad454194d65a7cc4493bc627975b797cb32e2dc7e2e424c86c47f3e",
+  "input_fingerprint": "2bc8b085d2c2c8a6be6498dd8cf9e715368b5ab14972ddcc706221cdab21bcf8",
+  "config_fingerprint": "08a9b29b3e7562b77c8681f4ef2eb1a79cbc114ec27e3cf0eba005d00979ad43",
+  "config": {
+    "concurrency": 4,
+    "provider_concurrency": 1,
+    "openalex_rps": 1.0,
+    "crossref_rps": 1.0,
+    "timeout_seconds": 20.0,
+    "max_attempts": 1,
+    "backoff_seconds": 0.5,
+    "max_retry_wait": 30.0,
+    "jitter_seed": 0
+  },
+  "providers": [
+    "crossref"
+  ],
+  "selected_source_ids": [
+    "d9f284b88032eb521650732188d80617a1769ce88225f10ed4000d218afa9be0",
+    "7afe5660f4e4628060139228d08ed7d432b9598b15ffa77e118133773fa963fb",
+    "2e7b41e8c309d67a474446ea92fde02fb705c1ccd4a56145450238147556c0f2",
+    "02acdc4726ab73ef2782949e368ab5310201116e5814954542d52f1e4b938c68",
+    "43358c6add58133973e5180238ea02259ef7422c65d438af3c5b14d678c0d40f",
+    "c5bfb6636b489378a5fccb64e1b9e64d8ce8c161cd1b69c450f797e54ea2c58d",
+    "33544d2f2612b2825b591f79c4f3992fc1e986b28eb1224bd56bb2c41cc2d973",
+    "81cf920ad5946b7ce8e1d12847cd6b2172a5ecf27f2ff0ebc09ea4494f7ff178",
+    "7ac21d008f07005c59a7e3a1f469f73646c958e65037b8cedba310dbd2da71f6",
+    "047f43858aa4ce2783100bbfe9f2f5be988ffc9fad8d60ba0b778d9958577de2",
+    "19c764651c6e2b8c3a2c5c866a96ff28eca0b5d1c9fecf5b4175d2efbe96f467",
+    "626a885a0dc829cebef106f13143f3b6c92058ed0c0e488b95596144d9a04612",
+    "f0881b616c9a7134ec809fe37ec92f1b96f3587fd8d66ce7196e3f0247186ddb",
+    "23662a29f602681d16c46a7c00554a7b74403a8818a65c5d00673e7f10b898f4",
+    "bf2d25d9dbe7f67bc450ef8925bc744466a6c3844ff9daf84ac5839e65003c12",
+    "d91dfb14623f880551e0b21ad64519df766094ccc933c6e639da11a02d070a01",
+    "f3d7a1d291bdc7698136d2306352855d23e9a0fc9f45222518da42d32ccec0ca",
+    "43c741de6b049a05e8cf6a7e1d0e3f98080451444b382b0f96250396caae7d63"
+  ],
+  "generated_at": "2020-01-01T00:00:17Z",
+  "results": [
+    {
+      "lookup_id": "b064af3960d672c9c39e3ec1c4e97a2d5471ef54cc9a75061a8e09651c454788",
+      "source_id": "d9f284b88032eb521650732188d80617a1769ce88225f10ed4000d218afa9be0",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper nvmber 0 Test Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:00Z",
+      "finished_at": "2020-01-01T00:00:00Z",
+      "latency_ms": 0.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:00Z",
+          "finished_at": "2020-01-01T00:00:00Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "e47a09315025f55d69e9631a284ab2cc6f5b3dbf4ee967b3ed134ec1b3c828f7",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "7ce9663a385f22f7a5774ce21674c02e03603ef57ca1c58cda28e7b431055212",
+      "source_id": "7afe5660f4e4628060139228d08ed7d432b9598b15ffa77e118133773fa963fb",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 0 T. Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:00Z",
+      "finished_at": "2020-01-01T00:00:01Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:01Z",
+          "finished_at": "2020-01-01T00:00:01Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "e47a09315025f55d69e9631a284ab2cc6f5b3dbf4ee967b3ed134ec1b3c828f7",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "bf44c828e4963baac115788b40e3635c865b41de93011b458c5810e7ef0b7c4d",
+      "source_id": "2e7b41e8c309d67a474446ea92fde02fb705c1ccd4a56145450238147556c0f2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 0 Test Author 2019 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:01Z",
+      "finished_at": "2020-01-01T00:00:02Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:02Z",
+          "finished_at": "2020-01-01T00:00:02Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "e47a09315025f55d69e9631a284ab2cc6f5b3dbf4ee967b3ed134ec1b3c828f7",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "00d5d5c357734893f3ba2f9887ff75374ad766595c751eb55a8e7ee11c3499ac",
+      "source_id": "02acdc4726ab73ef2782949e368ab5310201116e5814954542d52f1e4b938c68",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 0 Test Author 2021 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:02Z",
+      "finished_at": "2020-01-01T00:00:03Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:03Z",
+          "finished_at": "2020-01-01T00:00:03Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "e47a09315025f55d69e9631a284ab2cc6f5b3dbf4ee967b3ed134ec1b3c828f7",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "f1e8352f7f2ddae0f106172fc0b9227f6096fa744f019aa50c84d72c5c081b92",
+      "source_id": "43358c6add58133973e5180238ea02259ef7422c65d438af3c5b14d678c0d40f",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "paper number 0 Test Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:03Z",
+      "finished_at": "2020-01-01T00:00:04Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:04Z",
+          "finished_at": "2020-01-01T00:00:04Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "e47a09315025f55d69e9631a284ab2cc6f5b3dbf4ee967b3ed134ec1b3c828f7",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "ae733989671dd33af3b4ac5a5e44de943e8f0cc7e05d4efea9f8634ecea6f8f2",
+      "source_id": "c5bfb6636b489378a5fccb64e1b9e64d8ce8c161cd1b69c450f797e54ea2c58d",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 0 Test Author 2020 21 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "21",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:04Z",
+      "finished_at": "2020-01-01T00:00:05Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:05Z",
+          "finished_at": "2020-01-01T00:00:05Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "e47a09315025f55d69e9631a284ab2cc6f5b3dbf4ee967b3ed134ec1b3c828f7",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "3dfc5ef76c98d526bc91855c150504d30b8391b93c85d935973a186108a80605",
+      "source_id": "33544d2f2612b2825b591f79c4f3992fc1e986b28eb1224bd56bb2c41cc2d973",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paqer number 1 Test Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paqer number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:05Z",
+      "finished_at": "2020-01-01T00:00:06Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:06Z",
+          "finished_at": "2020-01-01T00:00:06Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "e6e4eeb8c08f10415c0132824b92c837e3eb6069a2b20b15dc718eb57dca0aed",
+      "source_id": "81cf920ad5946b7ce8e1d12847cd6b2172a5ecf27f2ff0ebc09ea4494f7ff178",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 1 T. Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-1",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-1",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:06Z",
+      "finished_at": "2020-01-01T00:00:07Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:07Z",
+          "finished_at": "2020-01-01T00:00:07Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-1",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "afd42abd84faa4889e320c6a38cf96659b81f65596b4c7d6a8c2322e3d0d675d",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "d2a3358ad068fbc288dbc2ba89c49499d5ae3dd5ce8e0176f044427f8053bf82",
+      "source_id": "7ac21d008f07005c59a7e3a1f469f73646c958e65037b8cedba310dbd2da71f6",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 1 Test Author 2019 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:07Z",
+      "finished_at": "2020-01-01T00:00:08Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:08Z",
+          "finished_at": "2020-01-01T00:00:08Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "e111eccdfc496896279003e6b7fcdb28633a863c6631a61953d307d607a5d195",
+      "source_id": "047f43858aa4ce2783100bbfe9f2f5be988ffc9fad8d60ba0b778d9958577de2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 1 Test Author 2021 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:08Z",
+      "finished_at": "2020-01-01T00:00:09Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:09Z",
+          "finished_at": "2020-01-01T00:00:09Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "e5c9cfac78c3ace56cddbf189feeaa98fe5221682507372a53588afc463a4eb7",
+      "source_id": "19c764651c6e2b8c3a2c5c866a96ff28eca0b5d1c9fecf5b4175d2efbe96f467",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic  number 1 Test Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-1",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-1",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:09Z",
+      "finished_at": "2020-01-01T00:00:10Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:10Z",
+          "finished_at": "2020-01-01T00:00:10Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-1",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "afd42abd84faa4889e320c6a38cf96659b81f65596b4c7d6a8c2322e3d0d675d",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "a8dff3e2c90b5c766dcf1ced8331e619f9726c546ca4f65f59e0215fc1d0fd88",
+      "source_id": "626a885a0dc829cebef106f13143f3b6c92058ed0c0e488b95596144d9a04612",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 1 Test Author 2020 12 43",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "43"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:10Z",
+      "finished_at": "2020-01-01T00:00:11Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:11Z",
+          "finished_at": "2020-01-01T00:00:11Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "6865b77cbebba8577cecedbb5f18f34cfd3ce25e2a193632bf80e32dc7f3296c",
+      "source_id": "f0881b616c9a7134ec809fe37ec92f1b96f3587fd8d66ce7196e3f0247186ddb",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper nvmber 2 Test Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:11Z",
+      "finished_at": "2020-01-01T00:00:12Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:12Z",
+          "finished_at": "2020-01-01T00:00:12Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.3070280643326905,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "fd6bff1df88a31ae79ed177a1d8f0ba69263d6f055647717e1b15b4b84765666",
+      "source_id": "23662a29f602681d16c46a7c00554a7b74403a8818a65c5d00673e7f10b898f4",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 2 T. Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-2",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-2",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:12Z",
+      "finished_at": "2020-01-01T00:00:13Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:13Z",
+          "finished_at": "2020-01-01T00:00:13Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-2",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "af23fd310712d1547254a0232154a38982f2913211a9eb83f7c28c9ecbb7af33",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "65d8d844f62190bb8ced98c6c2387cee4982bdcb9325868cd657c4829feb06f6",
+      "source_id": "bf2d25d9dbe7f67bc450ef8925bc744466a6c3844ff9daf84ac5839e65003c12",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 2 Test Author 2019 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/simulated-unmapped",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/simulated-unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:13Z",
+      "finished_at": "2020-01-01T00:00:14Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:14Z",
+          "finished_at": "2020-01-01T00:00:14Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/simulated-unmapped",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "4295a64f362b74455f28b1d8e3404733ed16d3465bda12ac52c5543267ddc905",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "6508f41703829c5d9339591cfbd1b0a2a66d518c1a4068582922a87363ea1203",
+      "source_id": "d91dfb14623f880551e0b21ad64519df766094ccc933c6e639da11a02d070a01",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 2 Test Author 2021 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:14Z",
+      "finished_at": "2020-01-01T00:00:15Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:15Z",
+          "finished_at": "2020-01-01T00:00:15Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.5229218028734093,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "372a030f2d99dc33b42e6ded462d794b591229f7d0dcd86e990d42ba57ff91c4",
+      "source_id": "f3d7a1d291bdc7698136d2306352855d23e9a0fc9f45222518da42d32ccec0ca",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic  number 2 Test Author 2020 12 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-2",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-2",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:15Z",
+      "finished_at": "2020-01-01T00:00:16Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:16Z",
+          "finished_at": "2020-01-01T00:00:16Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-2",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "af23fd310712d1547254a0232154a38982f2913211a9eb83f7c28c9ecbb7af33",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "f7dcb85a40aeec6a1823381bcd91ea2252025b8f5fb74e0e994e79d51a65bb7b",
+      "source_id": "43c741de6b049a05e8cf6a7e1d0e3f98080451444b382b0f96250396caae7d63",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 2 Test Author 2020 21 34",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "21",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/simulated-unmapped",
+          "title": "SIMULATED response",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/simulated-unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 5.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:16Z",
+      "finished_at": "2020-01-01T00:00:17Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:17Z",
+          "finished_at": "2020-01-01T00:00:17Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/simulated-unmapped",
+                  "title": [
+                    "SIMULATED response"
+                  ],
+                  "score": 5.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "4295a64f362b74455f28b1d8e3404733ed16d3465bda12ac52c5543267ddc905",
+          "diagnostic": null
+        }
+      ]
+    }
+  ]
+}

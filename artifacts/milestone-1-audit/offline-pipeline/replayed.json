@@ -1,0 +1,4221 @@
+{
+  "schema_version": "1.0",
+  "engine_version": "1",
+  "dataset_version": "synthetic-test-only-1",
+  "dataset_fingerprint": "ea6378f139a8371b4ef7a8cb313cf12b69b868da64d6db7123033a04e1a1c427",
+  "input_fingerprint": "f5d3b794efd6221c0ea41b1fac88be39bc5afda32a3ce7882fa6e4ea70d17624",
+  "config_fingerprint": "023033035f15a55a8b7f9fcb913a28f3c59bd82b7c61daf1202fc919c9569ab8",
+  "config": {
+    "concurrency": 4,
+    "provider_concurrency": 1,
+    "openalex_rps": 100.0,
+    "crossref_rps": 100.0,
+    "timeout_seconds": 20.0,
+    "max_attempts": 1,
+    "backoff_seconds": 0.5,
+    "max_retry_wait": 30.0,
+    "jitter_seed": 0
+  },
+  "providers": [
+    "openalex",
+    "crossref"
+  ],
+  "selected_source_ids": [
+    "2c6895e39154aafb153e26b76f1fb0965c52c8ffb50f94d8248da99b50a0649c",
+    "dd9292620b4f432d963abce01ab2878e787e7d551d045ade4014508d6f9fa30c",
+    "f38f029d75425f38c972c33a41c974e4f61a2fd2bcf165689d67fac3117d130b",
+    "3523832720537e5cea670f13b1f10b10570218574f0b6c0e2d194dd4e10c5464",
+    "f915457ecae64821817198155282240b4dbe75e0d3c49dc0e6138ca6c637d220",
+    "f3a036dbeb2d4da1f103e29643b634d036bcd9a053de9c81425e2ffd16ae54f9",
+    "cf885e82c55f8b728a773185df3d339c19a382f0f2af0c2c27d1193040a0bd07",
+    "75c726f659d77dbba781031f1d956601e153f69c98d86c049a52b88e2e15a9fe",
+    "78319717d819d04b651bda976e0313dcc1fa0025898ca00b67e47a240fd04de1",
+    "65eefac02358bbcec8960fdd15d641121f1785c032e6594cc6f2ed24721cbda2",
+    "c2162b1343d2a4736e6574e634f454a58a0f706bcac9b638574580f1a4ddbc87",
+    "332445c6b2a8e20e168253bb3b9561841d2e8abb67f68eb951757fee2da64949",
+    "8009185ee8003b850a3a02a48bf9d4dace49ea4b59bba5108d9d39767dcc929c",
+    "7854c258b699f579060173e8f9dfa08826f24e6e908b08b75898015e446d9703",
+    "0d38e56023d223e2a0b019470cde6b9e81a5da294c50088a943a10e1233cea80",
+    "071302bbb69f0af68860cbca710a9099b7d9581884feb3379f97e3f802658495",
+    "b325bb1ad93f8ef9acec8fa7d63839109e8423272ff357e62bab41e63f92e7f1",
+    "3a632c2c6b060eba77879ef7b96f3ce0242db688155ac716afc2660ab80214df",
+    "909fe48f313e0cfd838db6b095eec75f5297a680bed5eb339d4dec0f05da9ff2",
+    "3c80d54bab43f316aa402ed1c558ea3148bb168fab7a5dfb7a7b3053c93eba19",
+    "fa75994a63201a77cf89ef8d8cc0c42955f5b9f79a16f9c0785cd43b47194645",
+    "5c20d4c3da44cf3a0275b43448ab63cc3e091e683174965cb66689638c6520cf",
+    "8683412a8965b3ce5c7d5d7df4c1ac05ce887e1eb724a5f2c5bcb0077df51724",
+    "838b300b909464e493761bb02b45a0505a7fdeb2fd9a51d739892d10efa75396",
+    "42779264b7aace89ad3f13970217c435fda0d040dfb90b970e5daf9809516e12",
+    "d228c51ca921e2ecbca26a9a35dc1ce067418988852e0395a5f5202affc45e38",
+    "8f0d8117025b639253118b74b8c9251b72dcc253ef67995f7c7d78fee80e94e4",
+    "a1db8f47b63d4801cee607d3d37504020d85df189ee45f4e7e913a54527eeb35",
+    "3bf32f2488c300c388e7eeeaa6a8d775e680f99a141ade95c96806dfa2fe4432",
+    "5ea3636e10bc60a550e514378c270146efb09461501ed3497789535a8b5bb5e8"
+  ],
+  "generated_at": "2026-11-08T20:44:47.955639Z",
+  "results": [
+    {
+      "lookup_id": "93574048decc657cb5637b1dbadc71752cc5d16dec012ad43340852b14a64851",
+      "source_id": "2c6895e39154aafb153e26b76f1fb0965c52c8ffb50f94d8248da99b50a0649c",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper nvmber 0 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W100",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.324757Z",
+      "finished_at": "2026-11-08T20:44:45.324757Z",
+      "latency_ms": 0.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.324757Z",
+          "finished_at": "2026-11-08T20:44:45.324757Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W100",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-0",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "ec59a61da2b2c60c974d54d92dec34df73077a70508f4d231ccef6104d189dad",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "7ed5264b0e417e33af75f9e15ea31064d99405a5ef9d43b026a76c83e1597b38",
+      "source_id": "2c6895e39154aafb153e26b76f1fb0965c52c8ffb50f94d8248da99b50a0649c",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper nvmber 0 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.324757Z",
+      "finished_at": "2026-11-08T20:44:45.324757Z",
+      "latency_ms": 0.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.324757Z",
+          "finished_at": "2026-11-08T20:44:45.324757Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bcc21f090d6d1377f990d5b7024615902441863c77d182501cd9eb7a6281059c",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "5e5b7ce2f28298f7174ea15a108b7f513d638b4e9379811ab2ec61cc66d9cfc5",
+      "source_id": "dd9292620b4f432d963abce01ab2878e787e7d551d045ade4014508d6f9fa30c",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 0 T. Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W100",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.324757Z",
+      "finished_at": "2026-11-08T20:44:45.328176Z",
+      "latency_ms": 14.999999999417923,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.328024Z",
+          "finished_at": "2026-11-08T20:44:45.328176Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W100",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-0",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "ec59a61da2b2c60c974d54d92dec34df73077a70508f4d231ccef6104d189dad",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "ea3f4dc60a786298fbd2adacad287cd037a65c03ad145a5d634c947d81010799",
+      "source_id": "dd9292620b4f432d963abce01ab2878e787e7d551d045ade4014508d6f9fa30c",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 0 T. Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.324757Z",
+      "finished_at": "2026-11-08T20:44:45.328176Z",
+      "latency_ms": 14.999999999417923,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.328176Z",
+          "finished_at": "2026-11-08T20:44:45.328176Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bcc21f090d6d1377f990d5b7024615902441863c77d182501cd9eb7a6281059c",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "9063ff6ee3b443d0df31c615ff05fae4b7e6d249dc57bda94fbc20e7b3a3ef5e",
+      "source_id": "f38f029d75425f38c972c33a41c974e4f61a2fd2bcf165689d67fac3117d130b",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 0 Test Author 2019"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W100",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.327805Z",
+      "finished_at": "2026-11-08T20:44:45.344751Z",
+      "latency_ms": 15.99999999962165,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.344751Z",
+          "finished_at": "2026-11-08T20:44:45.344751Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W100",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-0",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "ec59a61da2b2c60c974d54d92dec34df73077a70508f4d231ccef6104d189dad",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "e5f5bda4e9f759e4e123b7573f86f8ae6ad83a431a9dd7b29ec9a1cd77b64975",
+      "source_id": "f38f029d75425f38c972c33a41c974e4f61a2fd2bcf165689d67fac3117d130b",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 0 Test Author 2019",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.328024Z",
+      "finished_at": "2026-11-08T20:44:45.344751Z",
+      "latency_ms": 15.99999999962165,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.344751Z",
+          "finished_at": "2026-11-08T20:44:45.344751Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bcc21f090d6d1377f990d5b7024615902441863c77d182501cd9eb7a6281059c",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "3d8436583b7defbd4505ae0eef422dc0e504bd94e7cc18ee5ca7f4c0576812a1",
+      "source_id": "3523832720537e5cea670f13b1f10b10570218574f0b6c0e2d194dd4e10c5464",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 0 Test Author 2021"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W100",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.328176Z",
+      "finished_at": "2026-11-08T20:44:45.361708Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.361708Z",
+          "finished_at": "2026-11-08T20:44:45.361708Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W100",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-0",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "ec59a61da2b2c60c974d54d92dec34df73077a70508f4d231ccef6104d189dad",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "c576e81344c7c432f118387915667e2538d89aa1f1a1a52e7c28f6a2b88498ef",
+      "source_id": "3523832720537e5cea670f13b1f10b10570218574f0b6c0e2d194dd4e10c5464",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 0 Test Author 2021",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.328176Z",
+      "finished_at": "2026-11-08T20:44:45.361708Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.361708Z",
+          "finished_at": "2026-11-08T20:44:45.361708Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bcc21f090d6d1377f990d5b7024615902441863c77d182501cd9eb7a6281059c",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "99db17cd77112a0acc20c936976f497ea7b8862f54cfb05fe183b127bf7671c3",
+      "source_id": "f915457ecae64821817198155282240b4dbe75e0d3c49dc0e6138ca6c637d220",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "paper number 0 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W100",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.344751Z",
+      "finished_at": "2026-11-08T20:44:45.379812Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.378157Z",
+          "finished_at": "2026-11-08T20:44:45.379812Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W100",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-0",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "ec59a61da2b2c60c974d54d92dec34df73077a70508f4d231ccef6104d189dad",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "845e6cffdedbef1204d241cd31448f778eaedfdf42c9d60800166e0115e70be0",
+      "source_id": "f915457ecae64821817198155282240b4dbe75e0d3c49dc0e6138ca6c637d220",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "paper number 0 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.344751Z",
+      "finished_at": "2026-11-08T20:44:45.379812Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.379812Z",
+          "finished_at": "2026-11-08T20:44:45.379812Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bcc21f090d6d1377f990d5b7024615902441863c77d182501cd9eb7a6281059c",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "fe417be6c6015a7b451b3291d30de186127f229600e38a92d8c78213a9eec330",
+      "source_id": "f3a036dbeb2d4da1f103e29643b634d036bcd9a053de9c81425e2ffd16ae54f9",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paqer number 1 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paqer number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.361708Z",
+      "finished_at": "2026-11-08T20:44:45.403699Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.403699Z",
+          "finished_at": "2026-11-08T20:44:45.403699Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "b9a128ec9247f6ef1b960f8566b636912f329b2bb9dde90d97f1d2a1a046b153",
+      "source_id": "f3a036dbeb2d4da1f103e29643b634d036bcd9a053de9c81425e2ffd16ae54f9",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paqer number 1 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paqer number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.361708Z",
+      "finished_at": "2026-11-08T20:44:45.403699Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.403699Z",
+          "finished_at": "2026-11-08T20:44:45.403699Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "5b20e16a1f973c529c2c25761d7bcb2cea44c506d3a32d324e2bcb6ac5c08003",
+      "source_id": "cf885e82c55f8b728a773185df3d339c19a382f0f2af0c2c27d1193040a0bd07",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 1 T. Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.379812Z",
+      "finished_at": "2026-11-08T20:44:45.428095Z",
+      "latency_ms": 46.999999998661224,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.428095Z",
+          "finished_at": "2026-11-08T20:44:45.428095Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "87a71122c3c46a0728e9880016da1d635ac23629d1c71966be8f9c98432f202b",
+      "source_id": "cf885e82c55f8b728a773185df3d339c19a382f0f2af0c2c27d1193040a0bd07",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 1 T. Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.379812Z",
+      "finished_at": "2026-11-08T20:44:45.429644Z",
+      "latency_ms": 46.999999998661224,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.428095Z",
+          "finished_at": "2026-11-08T20:44:45.429644Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "cfad05c13209be9bd04376f5268df8f3d4e512f4255ffd4a5e3c8979e23d7001",
+      "source_id": "75c726f659d77dbba781031f1d956601e153f69c98d86c049a52b88e2e15a9fe",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 1 Test Author 2019"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.403699Z",
+      "finished_at": "2026-11-08T20:44:45.445099Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.444633Z",
+          "finished_at": "2026-11-08T20:44:45.445099Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "26c6f069ac7d4e423b8db7b2275360828b8493b13e038b9ef9d44c01ff494950",
+      "source_id": "75c726f659d77dbba781031f1d956601e153f69c98d86c049a52b88e2e15a9fe",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 1 Test Author 2019",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.403699Z",
+      "finished_at": "2026-11-08T20:44:45.445099Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.445099Z",
+          "finished_at": "2026-11-08T20:44:45.445099Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "ee2532fffba994fefe43eb9cb7466d42e0e4dd23578dd8fe46fe293bb7d3d677",
+      "source_id": "78319717d819d04b651bda976e0313dcc1fa0025898ca00b67e47a240fd04de1",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 1 Test Author 2021"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.428095Z",
+      "finished_at": "2026-11-08T20:44:45.461088Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.459982Z",
+          "finished_at": "2026-11-08T20:44:45.461088Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "53ca0c52ece50399ab8ac0af151440ac2e3d09d9251314852bd807eb9e799912",
+      "source_id": "78319717d819d04b651bda976e0313dcc1fa0025898ca00b67e47a240fd04de1",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 1 Test Author 2021",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.429644Z",
+      "finished_at": "2026-11-08T20:44:45.461088Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.461088Z",
+          "finished_at": "2026-11-08T20:44:45.461088Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "2dd0b43e67f353ed3cf0064bb0e44c4b9a889bf3e9c283e916b4c69f91cff90d",
+      "source_id": "65eefac02358bbcec8960fdd15d641121f1785c032e6594cc6f2ed24721cbda2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic  number 1 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.445099Z",
+      "finished_at": "2026-11-08T20:44:45.479972Z",
+      "latency_ms": 30.999999999039574,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.479972Z",
+          "finished_at": "2026-11-08T20:44:45.479972Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "0a365c42bb69cb1ead967709f881fcf74a0ad9dda965aa37abf5cbeba04aacf1",
+      "source_id": "65eefac02358bbcec8960fdd15d641121f1785c032e6594cc6f2ed24721cbda2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic  number 1 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.445099Z",
+      "finished_at": "2026-11-08T20:44:45.479972Z",
+      "latency_ms": 30.999999999039574,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.479972Z",
+          "finished_at": "2026-11-08T20:44:45.479972Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": []
+            }
+          },
+          "response_body_sha256": "88753c2a2b86f188fe5d9b1e771e3951218d3b4c1c78f78efd0c0670ee60ecab",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "c8e0f48508267a2b56d2f78d1af1161733dbc90f9e9936a64a70fcc396084262",
+      "source_id": "c2162b1343d2a4736e6574e634f454a58a0f706bcac9b638574580f1a4ddbc87",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper nvmber 2 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W102",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.461088Z",
+      "finished_at": "2026-11-08T20:44:45.493917Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.493917Z",
+          "finished_at": "2026-11-08T20:44:45.493917Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W102",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/unmapped",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "4c9d410352cd1fac3c1dbf696243744e338472d680f2c596e1f7917a51ac71f6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "34633bc4b82cc60c20feecb56c6ec07a3ec6e5de040cac2c1fc829ecbc1c3300",
+      "source_id": "c2162b1343d2a4736e6574e634f454a58a0f706bcac9b638574580f1a4ddbc87",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper nvmber 2 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/unmapped",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.461088Z",
+      "finished_at": "2026-11-08T20:44:45.493917Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.493917Z",
+          "finished_at": "2026-11-08T20:44:45.493917Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/unmapped",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "2830125baa9504833ea5771003f416b1853227f49e40c9b9a4f369a1762e9dd6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "f68fe5800f787375a884179f108a41a1ed138c4e52d27933cee5a3042838efb4",
+      "source_id": "332445c6b2a8e20e168253bb3b9561841d2e8abb67f68eb951757fee2da64949",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 2 T. Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W102",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.479972Z",
+      "finished_at": "2026-11-08T20:44:45.518508Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.518508Z",
+          "finished_at": "2026-11-08T20:44:45.518508Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W102",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/unmapped",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "4c9d410352cd1fac3c1dbf696243744e338472d680f2c596e1f7917a51ac71f6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "9dd7ef9bc20037fa3694405e05400aa0e077f35df8b11b7668308fdd734d4917",
+      "source_id": "332445c6b2a8e20e168253bb3b9561841d2e8abb67f68eb951757fee2da64949",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 2 T. Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/unmapped",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.479972Z",
+      "finished_at": "2026-11-08T20:44:45.520110Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.518508Z",
+          "finished_at": "2026-11-08T20:44:45.520110Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/unmapped",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "2830125baa9504833ea5771003f416b1853227f49e40c9b9a4f369a1762e9dd6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "9f93a350148ec29cccaa9da168c63eaa27bb2f07b814d505c21a03108749cf8e",
+      "source_id": "8009185ee8003b850a3a02a48bf9d4dace49ea4b59bba5108d9d39767dcc929c",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 2 Test Author 2019"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W102",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.493917Z",
+      "finished_at": "2026-11-08T20:44:45.534739Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.534739Z",
+          "finished_at": "2026-11-08T20:44:45.534739Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W102",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/unmapped",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "4c9d410352cd1fac3c1dbf696243744e338472d680f2c596e1f7917a51ac71f6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "28c856997882b5ea8897c18ea53f1596be94d447603b85728b96290c28623dfe",
+      "source_id": "8009185ee8003b850a3a02a48bf9d4dace49ea4b59bba5108d9d39767dcc929c",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 2 Test Author 2019",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/unmapped",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.493917Z",
+      "finished_at": "2026-11-08T20:44:45.534739Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.534739Z",
+          "finished_at": "2026-11-08T20:44:45.534739Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/unmapped",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "2830125baa9504833ea5771003f416b1853227f49e40c9b9a4f369a1762e9dd6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "3cb6cdc122180f34d098ac95861d11313a183354d7132c97dda6e4a26e712dbe",
+      "source_id": "7854c258b699f579060173e8f9dfa08826f24e6e908b08b75898015e446d9703",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 2 Test Author 2021"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W102",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.518508Z",
+      "finished_at": "2026-11-08T20:44:45.560086Z",
+      "latency_ms": 30.999999999039574,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.560086Z",
+          "finished_at": "2026-11-08T20:44:45.560086Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W102",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/unmapped",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "4c9d410352cd1fac3c1dbf696243744e338472d680f2c596e1f7917a51ac71f6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "510de516a99525e3b86ea912a9d3ed9a97c56082d2ca09fc33499687c2ffb975",
+      "source_id": "7854c258b699f579060173e8f9dfa08826f24e6e908b08b75898015e446d9703",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 2 Test Author 2021",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/unmapped",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.520110Z",
+      "finished_at": "2026-11-08T20:44:45.560086Z",
+      "latency_ms": 30.999999999039574,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.560086Z",
+          "finished_at": "2026-11-08T20:44:45.560086Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/unmapped",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "2830125baa9504833ea5771003f416b1853227f49e40c9b9a4f369a1762e9dd6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "fbfe2c7ca61893baedbcad030b7d5f7c80ecd3efa191241541172ad231488ec2",
+      "source_id": "0d38e56023d223e2a0b019470cde6b9e81a5da294c50088a943a10e1233cea80",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic  number 2 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W102",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.534739Z",
+      "finished_at": "2026-11-08T20:44:45.576710Z",
+      "latency_ms": 46.000000000276486,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.576710Z",
+          "finished_at": "2026-11-08T20:44:45.576710Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W102",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/unmapped",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "4c9d410352cd1fac3c1dbf696243744e338472d680f2c596e1f7917a51ac71f6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "b271333ad06bad3527a6df20a3097fec6dc97ee7b08cdb12c524b586ba096ecb",
+      "source_id": "0d38e56023d223e2a0b019470cde6b9e81a5da294c50088a943a10e1233cea80",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic  number 2 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/unmapped",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.534739Z",
+      "finished_at": "2026-11-08T20:44:45.576710Z",
+      "latency_ms": 46.000000000276486,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.576710Z",
+          "finished_at": "2026-11-08T20:44:45.576710Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/unmapped",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "2830125baa9504833ea5771003f416b1853227f49e40c9b9a4f369a1762e9dd6",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "a276bd01f3f2c89e830a9ac2edb1adf6aa8e25da9375daf8870f3ccb1f55572a",
+      "source_id": "071302bbb69f0af68860cbca710a9099b7d9581884feb3379f97e3f802658495",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synuhetic paper number 3 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synuhetic paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W103",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.560086Z",
+      "finished_at": "2026-11-08T20:44:45.593618Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.593618Z",
+          "finished_at": "2026-11-08T20:44:45.593618Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W103",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-3",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "89dfe6daf302bd8321f9650bc6a92302ad8c29c6ba76ed870b296654c81671ec",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "b99077aa64cf28e2a248aa77ce5738555391aeefc96c820c4c6f6539575ecf43",
+      "source_id": "071302bbb69f0af68860cbca710a9099b7d9581884feb3379f97e3f802658495",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synuhetic paper number 3 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synuhetic paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-3",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.560086Z",
+      "finished_at": "2026-11-08T20:44:45.593618Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.593618Z",
+          "finished_at": "2026-11-08T20:44:45.593618Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-3",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bb73e4410150cde4c8d814be2f81e0f2162329155758d28cb676502d532e9347",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "37df938ea2de9258b4043e080ef278bc99b13c41b6e212c5dc259841414033ae",
+      "source_id": "b325bb1ad93f8ef9acec8fa7d63839109e8423272ff357e62bab41e63f92e7f1",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 3 T. Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 3",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W103",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.576710Z",
+      "finished_at": "2026-11-08T20:44:45.619726Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.619726Z",
+          "finished_at": "2026-11-08T20:44:45.619726Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W103",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-3",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "89dfe6daf302bd8321f9650bc6a92302ad8c29c6ba76ed870b296654c81671ec",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "61b2945b135d5ad624146e25e97b1c885ec3179794b3ee47ecec0bc55f646b36",
+      "source_id": "b325bb1ad93f8ef9acec8fa7d63839109e8423272ff357e62bab41e63f92e7f1",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 3 T. Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 3",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-3",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.576710Z",
+      "finished_at": "2026-11-08T20:44:45.619726Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.619726Z",
+          "finished_at": "2026-11-08T20:44:45.619726Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-3",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bb73e4410150cde4c8d814be2f81e0f2162329155758d28cb676502d532e9347",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "2c0c755551b554484e5ba2f11744c9c30168ead81b483582a440b8e9a4378b2b",
+      "source_id": "3a632c2c6b060eba77879ef7b96f3ce0242db688155ac716afc2660ab80214df",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 3 Test Author 2019"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W103",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.593618Z",
+      "finished_at": "2026-11-08T20:44:45.636733Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.636733Z",
+          "finished_at": "2026-11-08T20:44:45.636733Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W103",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-3",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "89dfe6daf302bd8321f9650bc6a92302ad8c29c6ba76ed870b296654c81671ec",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "542304c946d827eea49100cb861ef141b89b7f86f80afc762268856a40eb821c",
+      "source_id": "3a632c2c6b060eba77879ef7b96f3ce0242db688155ac716afc2660ab80214df",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 3 Test Author 2019",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-3",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.593618Z",
+      "finished_at": "2026-11-08T20:44:45.636733Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.636733Z",
+          "finished_at": "2026-11-08T20:44:45.636733Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-3",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bb73e4410150cde4c8d814be2f81e0f2162329155758d28cb676502d532e9347",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "9951ba70344e502c062d39a750e735ac85bac30b47066223806254a199a38902",
+      "source_id": "909fe48f313e0cfd838db6b095eec75f5297a680bed5eb339d4dec0f05da9ff2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 3 Test Author 2021"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W103",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.619726Z",
+      "finished_at": "2026-11-08T20:44:45.639740Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.639740Z",
+          "finished_at": "2026-11-08T20:44:45.639740Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W103",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-3",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "89dfe6daf302bd8321f9650bc6a92302ad8c29c6ba76ed870b296654c81671ec",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "19567f8fcecfe95a6f4a4d47121f45637998a6a31a9fd6e2f07f7237bf65cea1",
+      "source_id": "909fe48f313e0cfd838db6b095eec75f5297a680bed5eb339d4dec0f05da9ff2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 3 Test Author 2021",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-3",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.619726Z",
+      "finished_at": "2026-11-08T20:44:45.639740Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.639740Z",
+          "finished_at": "2026-11-08T20:44:45.639740Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-3",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bb73e4410150cde4c8d814be2f81e0f2162329155758d28cb676502d532e9347",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "3ae35ff1a55b0b1ff09b2eddcf2388e2ceea98fa3b8ccffbcca2212d6ed76f47",
+      "source_id": "3c80d54bab43f316aa402ed1c558ea3148bb168fab7a5dfb7a7b3053c93eba19",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "paper number 3 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W103",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.636733Z",
+      "finished_at": "2026-11-08T20:44:45.670068Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.668556Z",
+          "finished_at": "2026-11-08T20:44:45.670068Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W103",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-3",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "89dfe6daf302bd8321f9650bc6a92302ad8c29c6ba76ed870b296654c81671ec",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "a62c7667d46ef04c061021660500a886f21858fcc80d2b93030fda070e4b6aaa",
+      "source_id": "3c80d54bab43f316aa402ed1c558ea3148bb168fab7a5dfb7a7b3053c93eba19",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-3",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "paper number 3 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "paper number 3",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-3",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-3",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.639740Z",
+      "finished_at": "2026-11-08T20:44:45.670068Z",
+      "latency_ms": 15.99999999962165,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.670068Z",
+          "finished_at": "2026-11-08T20:44:45.670068Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-3",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bb73e4410150cde4c8d814be2f81e0f2162329155758d28cb676502d532e9347",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "a2e17fe7002f347147e84885fe5fc87603c38b9fcd72c745e76eb30ff0639a71",
+      "source_id": "fa75994a63201a77cf89ef8d8cc0c42955f5b9f79a16f9c0785cd43b47194645",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic papfr number 4 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic papfr number 4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W104",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.639740Z",
+      "finished_at": "2026-11-08T20:44:45.693709Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.693709Z",
+          "finished_at": "2026-11-08T20:44:45.693709Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W104",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-4",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "85f541fbd5d0c546a93efd21e661c2f8a889d5085291f262d7e73b88270d7ae8",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "9cf1c4068e0a01b140f50fd20ad8db16534804ef20bd7a67914d4709b528dbfc",
+      "source_id": "fa75994a63201a77cf89ef8d8cc0c42955f5b9f79a16f9c0785cd43b47194645",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic papfr number 4 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic papfr number 4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-4",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.639740Z",
+      "finished_at": "2026-11-08T20:44:45.693709Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.693709Z",
+          "finished_at": "2026-11-08T20:44:45.693709Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-4",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "c30127828f1ff887434fbf3e16d436599a58ae40eb97d0c82a2dae60f74aea97",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "d8a8733b21fa802db8f24fbac2c2c8310cf909e749e8088c48b1fc9635040d60",
+      "source_id": "5c20d4c3da44cf3a0275b43448ab63cc3e091e683174965cb66689638c6520cf",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 4 T. Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 4",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W104",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.670068Z",
+      "finished_at": "2026-11-08T20:44:45.710415Z",
+      "latency_ms": 46.000000000276486,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.710415Z",
+          "finished_at": "2026-11-08T20:44:45.710415Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W104",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-4",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "85f541fbd5d0c546a93efd21e661c2f8a889d5085291f262d7e73b88270d7ae8",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "f94bd77076cb197933ab54fc9a33666cca93539e042a70e18fc38a23a8aa50d2",
+      "source_id": "5c20d4c3da44cf3a0275b43448ab63cc3e091e683174965cb66689638c6520cf",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 4 T. Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 4",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-4",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.670068Z",
+      "finished_at": "2026-11-08T20:44:45.710415Z",
+      "latency_ms": 46.000000000276486,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.710415Z",
+          "finished_at": "2026-11-08T20:44:45.710415Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-4",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "c30127828f1ff887434fbf3e16d436599a58ae40eb97d0c82a2dae60f74aea97",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "434181c347af6d494cb3bd6fef409093a2e691977dd50dd8279622ec25b72de3",
+      "source_id": "8683412a8965b3ce5c7d5d7df4c1ac05ce887e1eb724a5f2c5bcb0077df51724",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 4 Test Author 2019"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W104",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.693709Z",
+      "finished_at": "2026-11-08T20:44:45.736087Z",
+      "latency_ms": 46.999999998661224,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.736087Z",
+          "finished_at": "2026-11-08T20:44:45.736087Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W104",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-4",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "85f541fbd5d0c546a93efd21e661c2f8a889d5085291f262d7e73b88270d7ae8",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "c37ccfc60ae7d6ef862af22e68806315e23e1815a832ab9b3a305bf456f01d2b",
+      "source_id": "8683412a8965b3ce5c7d5d7df4c1ac05ce887e1eb724a5f2c5bcb0077df51724",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 4 Test Author 2019",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-4",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.693709Z",
+      "finished_at": "2026-11-08T20:44:45.736087Z",
+      "latency_ms": 46.999999998661224,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.736087Z",
+          "finished_at": "2026-11-08T20:44:45.736087Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-4",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "c30127828f1ff887434fbf3e16d436599a58ae40eb97d0c82a2dae60f74aea97",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "97b56f96ebe7b18d89e4a92db7496ad457ec8400a1c1c655522ad99c50575bbf",
+      "source_id": "838b300b909464e493761bb02b45a0505a7fdeb2fd9a51d739892d10efa75396",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 4 Test Author 2021"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W104",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.710415Z",
+      "finished_at": "2026-11-08T20:44:45.754328Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.752816Z",
+          "finished_at": "2026-11-08T20:44:45.754328Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W104",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-4",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "85f541fbd5d0c546a93efd21e661c2f8a889d5085291f262d7e73b88270d7ae8",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "77ae721199b3b0b99e1b46b2ca70858d6a567b6f646b46034af3331c0f6b94d4",
+      "source_id": "838b300b909464e493761bb02b45a0505a7fdeb2fd9a51d739892d10efa75396",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 4 Test Author 2021",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-4",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.710415Z",
+      "finished_at": "2026-11-08T20:44:45.756861Z",
+      "latency_ms": 47.00000000048021,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.754328Z",
+          "finished_at": "2026-11-08T20:44:45.756861Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-4",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "c30127828f1ff887434fbf3e16d436599a58ae40eb97d0c82a2dae60f74aea97",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "32d30be18524cb0e3bdccf1ce24db3313b586a26666231a9c74f49c2fcba16c7",
+      "source_id": "42779264b7aace89ad3f13970217c435fda0d040dfb90b970e5daf9809516e12",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper  4 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper  4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W104",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.736087Z",
+      "finished_at": "2026-11-08T20:44:45.770066Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.768965Z",
+          "finished_at": "2026-11-08T20:44:45.770066Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W104",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-4",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "85f541fbd5d0c546a93efd21e661c2f8a889d5085291f262d7e73b88270d7ae8",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "e875e7f96c62ebaf1711b2f8c1389302887282899440342b6334e82e2f4c49d4",
+      "source_id": "42779264b7aace89ad3f13970217c435fda0d040dfb90b970e5daf9809516e12",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-4",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper  4 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper  4",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-4",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-4",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.736087Z",
+      "finished_at": "2026-11-08T20:44:45.770066Z",
+      "latency_ms": 31.000000000858563,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.770066Z",
+          "finished_at": "2026-11-08T20:44:45.770066Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-4",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "c30127828f1ff887434fbf3e16d436599a58ae40eb97d0c82a2dae60f74aea97",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "f826d9ae51e97e4ac4e0348a4c8f962ce7bb5673ed56973fd3879562475984c1",
+      "source_id": "d228c51ca921e2ecbca26a9a35dc1ce067418988852e0395a5f5202affc45e38",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Syntheuic paper number 5 Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Syntheuic paper number 5",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.754328Z",
+      "finished_at": "2026-11-08T20:44:45.785272Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.785272Z",
+          "finished_at": "2026-11-08T20:44:45.785272Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.4548672967757619,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "a9e20be6396d9987879cb7cd97d00b7266064a6c868dff6b186cf634d88dcbe3",
+      "source_id": "d228c51ca921e2ecbca26a9a35dc1ce067418988852e0395a5f5202affc45e38",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Syntheuic paper number 5 Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Syntheuic paper number 5",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.756861Z",
+      "finished_at": "2026-11-08T20:44:45.785272Z",
+      "latency_ms": 31.9999999992433,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:45.785272Z",
+          "finished_at": "2026-11-08T20:44:45.785272Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.3497555239411065,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "1230ae734b6fde41efd1195e2de2a167c7ab42a161e1388004701ac9fe0d5741",
+      "source_id": "8f0d8117025b639253118b74b8c9251b72dcc253ef67995f7c7d78fee80e94e4",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 5 T. Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 5",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.770066Z",
+      "finished_at": "2026-11-08T20:44:46.263631Z",
+      "latency_ms": 484.00000000037835,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:46.263631Z",
+          "finished_at": "2026-11-08T20:44:46.263631Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.5347463808614892,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "bb527552ce10bf70bcb2c89596c6af3a36ca41e18072d00c59a2eb3d18699cfd",
+      "source_id": "8f0d8117025b639253118b74b8c9251b72dcc253ef67995f7c7d78fee80e94e4",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 5 T. Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 5",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.770066Z",
+      "finished_at": "2026-11-08T20:44:46.149846Z",
+      "latency_ms": 375.0,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:46.148835Z",
+          "finished_at": "2026-11-08T20:44:46.149846Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.27567810679438043,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "bdaf1bfc242b6f881786cd81de023b79087751fb54af1b933d1a3c4581273438",
+      "source_id": "a1db8f47b63d4801cee607d3d37504020d85df189ee45f4e7e913a54527eeb35",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 5 Test Author 2019"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 5",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.785272Z",
+      "finished_at": "2026-11-08T20:44:46.803983Z",
+      "latency_ms": 1014.9999999994179,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:46.803983Z",
+          "finished_at": "2026-11-08T20:44:46.803983Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.6273410392071876,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "17a14a1b21c83ab8bce39c7dd0105870fe067b949b729ec0ca0b871f1534b6dc",
+      "source_id": "a1db8f47b63d4801cee607d3d37504020d85df189ee45f4e7e913a54527eeb35",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 5 Test Author 2019",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 5",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:45.785272Z",
+      "finished_at": "2026-11-08T20:44:46.446423Z",
+      "latency_ms": 656.0000000008586,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:46.446423Z",
+          "finished_at": "2026-11-08T20:44:46.446423Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.6365392518124249,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "18fffe21aa10468870a648e69d8ffae47f18c1941f9404d83fd4cabf93258d52",
+      "source_id": "3bf32f2488c300c388e7eeeaa6a8d775e680f99a141ade95c96806dfa2fe4432",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 5 Test Author 2021"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 5",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:46.149846Z",
+      "finished_at": "2026-11-08T20:44:47.449755Z",
+      "latency_ms": 1297.0000000004802,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:47.449755Z",
+          "finished_at": "2026-11-08T20:44:47.449755Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.4954787083896701,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "ce2371833c50448cdb8069b3bfe380882fad726c7a4a4189ac3b4e04bbc81e65",
+      "source_id": "3bf32f2488c300c388e7eeeaa6a8d775e680f99a141ade95c96806dfa2fe4432",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number 5 Test Author 2021",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 5",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:46.263631Z",
+      "finished_at": "2026-11-08T20:44:47.089868Z",
+      "latency_ms": 827.9999999995198,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:47.088857Z",
+          "finished_at": "2026-11-08T20:44:47.089868Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.2542592739310051,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "2d35f48f72c845373a37e4376c4b1a0dbeb815713c6e39bfd27ee8d64cd53bb6",
+      "source_id": "5ea3636e10bc60a550e514378c270146efb09461501ed3497789535a8b5bb5e8",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number Test Author 2020"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W100",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:46.446423Z",
+      "finished_at": "2026-11-08T20:44:47.954628Z",
+      "latency_ms": 1514.999999999418,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:47.953539Z",
+          "finished_at": "2026-11-08T20:44:47.954628Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W100",
+                "title": "SIMULATED candidate",
+                "doi": "10.1234/fixture-0",
+                "relevance_score": 4.0
+              }
+            ]
+          },
+          "response_body_sha256": "ec59a61da2b2c60c974d54d92dec34df73077a70508f4d231ccef6104d189dad",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "aa874e5229d2628f337bf8e12c7cf37539cecd82456e1fffcd9d8f8a7c305fca",
+      "source_id": "5ea3636e10bc60a550e514378c270146efb09461501ed3497789535a8b5bb5e8",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-5",
+      "provider": "crossref",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Synthetic paper number Test Author 2020",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "10.1234/fixture-0",
+          "title": "SIMULATED candidate",
+          "authors": [],
+          "year": null,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "score": 4.0
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2026-11-08T20:44:46.803983Z",
+      "finished_at": "2026-11-08T20:44:47.347454Z",
+      "latency_ms": 547.0000000004802,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2026-11-08T20:44:47.347295Z",
+          "finished_at": "2026-11-08T20:44:47.347454Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "status": "ok",
+            "message": {
+              "items": [
+                {
+                  "DOI": "10.1234/fixture-0",
+                  "title": [
+                    "SIMULATED candidate"
+                  ],
+                  "score": 4.0
+                }
+              ]
+            }
+          },
+          "response_body_sha256": "bcc21f090d6d1377f990d5b7024615902441863c77d182501cd9eb7a6281059c",
+          "diagnostic": null
+        }
+      ]
+    }
+  ]
+}

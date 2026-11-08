@@ -1,0 +1,133 @@
+{
+  "data_label": "simulated",
+  "total_lookups": 6,
+  "retrieval_lookups": 5,
+  "metrics": {
+    "recall_at_1": {
+      "numerator": 1,
+      "uncertain_count": 1,
+      "denominator": 5,
+      "value": null,
+      "lower_bound": 0.2,
+      "upper_bound": 0.4
+    },
+    "recall_at_5": {
+      "numerator": 2,
+      "uncertain_count": 1,
+      "denominator": 5,
+      "value": null,
+      "lower_bound": 0.4,
+      "upper_bound": 0.6
+    },
+    "incorrect_match_rate": {
+      "numerator": 2,
+      "uncertain_count": 1,
+      "denominator": 5,
+      "value": null,
+      "lower_bound": 0.4,
+      "upper_bound": 0.6
+    },
+    "unresolved_rate": {
+      "numerator": 1,
+      "uncertain_count": 0,
+      "denominator": 5,
+      "value": 0.2,
+      "lower_bound": 0.2,
+      "upper_bound": 0.2
+    },
+    "identity_undetermined_rate": {
+      "numerator": 1,
+      "uncertain_count": 0,
+      "denominator": 5,
+      "value": 0.2,
+      "lower_bound": 0.2,
+      "upper_bound": 0.2
+    },
+    "api_error_rate": {
+      "numerator": 1,
+      "uncertain_count": 0,
+      "denominator": 6,
+      "value": 0.16666666666666666,
+      "lower_bound": 0.16666666666666666,
+      "upper_bound": 0.16666666666666666
+    },
+    "provider_error_rate": {
+      "numerator": 1,
+      "uncertain_count": 0,
+      "denominator": 6,
+      "value": 0.16666666666666666,
+      "lower_bound": 0.16666666666666666,
+      "upper_bound": 0.16666666666666666
+    }
+  },
+  "cases": {
+    "fixture-0": {
+      "description": "Correct at rank one",
+      "outcome": "FOUND",
+      "recall_at_1": "HIT",
+      "recall_at_5": "HIT",
+      "judgments": [
+        "CORRECT"
+      ],
+      "ranks": [
+        1
+      ]
+    },
+    "fixture-1": {
+      "description": "Correct at rank three, confirmed incorrect at ranks one/two",
+      "outcome": "FOUND",
+      "recall_at_1": "MISS",
+      "recall_at_5": "HIT",
+      "judgments": [
+        "INCORRECT",
+        "INCORRECT",
+        "CORRECT"
+      ],
+      "ranks": [
+        1,
+        2,
+        3
+      ]
+    },
+    "fixture-2": {
+      "description": "Confirmed incorrect at rank one",
+      "outcome": "FOUND",
+      "recall_at_1": "MISS",
+      "recall_at_5": "MISS",
+      "judgments": [
+        "INCORRECT"
+      ],
+      "ranks": [
+        1
+      ]
+    },
+    "fixture-3": {
+      "description": "Undetermined identity",
+      "outcome": "FOUND",
+      "recall_at_1": "UNDETERMINED",
+      "recall_at_5": "UNDETERMINED",
+      "judgments": [
+        "UNDETERMINED"
+      ],
+      "ranks": [
+        1
+      ]
+    },
+    "fixture-4": {
+      "description": "Valid empty retrieval",
+      "outcome": "NOT_FOUND",
+      "recall_at_1": "MISS",
+      "recall_at_5": "MISS",
+      "judgments": [],
+      "ranks": []
+    },
+    "fixture-5": {
+      "description": "Simulated connection failure",
+      "outcome": "API_ERROR",
+      "recall_at_1": "EXCLUDED",
+      "recall_at_5": "EXCLUDED",
+      "judgments": [],
+      "ranks": []
+    }
+  }
+}

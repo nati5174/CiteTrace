@@ -1,0 +1,32 @@
+[
+  {
+    "command": "python -m pytest -q --basetemp=.pytest-tmp -W error",
+    "exit_code": 0,
+    "stdout": "........................................................................ [ 26%]\n........................................................................ [ 53%]\n........................................................................ [ 79%]\n.......................................................                  [100%]\n271 passed in 20.64s\n",
+    "stderr": ""
+  },
+  {
+    "command": "python -m ruff check .",
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "command": "python -m ruff format --check .",
+    "exit_code": 0,
+    "stdout": "53 files already formatted\n",
+    "stderr": ""
+  },
+  {
+    "command": "python -m mypy",
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 37 source files\n",
+    "stderr": ""
+  },
+  {
+    "command": "python -m mypy src tests scripts",
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 40 source files\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "bootstrap": false,
+  "experiment": "recent-preprints",
+  "figure_formats": [
+    "svg"
+  ]
+}

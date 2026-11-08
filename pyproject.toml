@@ -7,10 +7,11 @@ name = "citeprobe"
 version = "0.1.0"
 description = "Reproducible citation retrieval benchmark foundations"
 requires-python = ">=3.12"
-dependencies = ["pydantic>=2.10,<3"]
+dependencies = ["pydantic>=2.10,<3", "httpx>=0.28,<1"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.9,<1", "mypy>=1.14,<2"]
+report = ["matplotlib>=3.9,<4"]
 
 [project.scripts]
 citeprobe = "citeprobe.cli:main"

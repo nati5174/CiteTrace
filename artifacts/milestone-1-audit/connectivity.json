@@ -1,0 +1,201 @@
+{
+  "purpose": "Milestone 1 connectivity diagnostic, not a paper retrieval pilot",
+  "timestamp": "2026-11-08T20:43:16.180996+00:00",
+  "environment": {
+    "environment_presence_only": {
+      "HTTP_PROXY": false,
+      "HTTPS_PROXY": false,
+      "ALL_PROXY": false,
+      "NO_PROXY": false,
+      "SSL_CERT_FILE": false,
+      "SSL_CERT_DIR": false,
+      "REQUESTS_CA_BUNDLE": false,
+      "CURL_CA_BUNDLE": false,
+      "OPENALEX_API_KEY": false,
+      "CROSSREF_API_KEY": false,
+      "CROSSREF_MAILTO": false
+    },
+    "proxy_schemes_discovered": [],
+    "httpx_version": "0.28.1",
+    "openssl_version": "OpenSSL 3.0.15 3 Sep 2024",
+    "dns": {
+      "api.openalex.org": {
+        "resolved": true,
+        "address_count": 4,
+        "families": [
+          "AF_INET",
+          "AF_INET6"
+        ]
+      },
+      "api.crossref.org": {
+        "resolved": true,
+        "address_count": 4,
+        "families": [
+          "AF_INET"
+        ]
+      }
+    },
+    "tls_contexts": {
+      "system": {
+        "loaded": true,
+        "hostname_check": true,
+        "verify_required": true,
+        "store_counts": {
+          "x509": 49,
+          "crl": 0,
+          "x509_ca": 47
+        }
+      },
+      "httpx_certifi": {
+        "loaded": true,
+        "hostname_check": true,
+        "verify_required": true,
+        "store_counts": {
+          "x509": 118,
+          "crl": 0,
+          "x509_ca": 118
+        }
+      }
+    }
+  },
+  "retry_count": 0,
+  "redirects_followed": false,
+  "trust_env": false,
+  "maximum_http_requests": 2,
+  "requests": [
+    {
+      "provider": "openalex",
+      "endpoint": "https://api.openalex.org/works",
+      "parameter_names": [
+        "per_page",
+        "search",
+        "select"
+      ],
+      "maximum_records_requested": 1,
+      "credential_configured": false,
+      "http_status": null,
+      "exception_type": "ConnectError",
+      "request_attempts": 1,
+      "causes": [
+        {
+          "exception_type": "ConnectError",
+          "module": "httpx",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "ConnectError",
+          "module": "httpcore",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "OSError",
+          "module": "builtins",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "ExceptionGroup",
+          "module": "builtins",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        }
+      ],
+      "socket_permission_denied_detected": true,
+      "certificate_verification_failure_detected": false,
+      "latency_ms": 86.285
+    },
+    {
+      "provider": "crossref",
+      "endpoint": "https://api.crossref.org/works",
+      "parameter_names": [
+        "query.bibliographic",
+        "rows",
+        "select"
+      ],
+      "maximum_records_requested": 1,
+      "credential_configured": false,
+      "http_status": null,
+      "exception_type": "ConnectError",
+      "request_attempts": 1,
+      "causes": [
+        {
+          "exception_type": "ConnectError",
+          "module": "httpx",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "ConnectError",
+          "module": "httpcore",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "OSError",
+          "module": "builtins",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "ExceptionGroup",
+          "module": "builtins",
+          "errno": null,
+          "winerror": null
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "exception_type": "PermissionError",
+          "module": "builtins",
+          "errno": 13,
+          "winerror": 5
+        }
+      ],
+      "socket_permission_denied_detected": true,
+      "certificate_verification_failure_detected": false,
+      "latency_ms": 6.053
+    }
+  ]
+}

@@ -1,0 +1,1265 @@
+{
+  "schema_version": "1.0",
+  "engine_version": "1",
+  "dataset_version": "synthetic-test-only-1",
+  "dataset_fingerprint": "1bb15318fad454194d65a7cc4493bc627975b797cb32e2dc7e2e424c86c47f3e",
+  "input_fingerprint": "2bc8b085d2c2c8a6be6498dd8cf9e715368b5ab14972ddcc706221cdab21bcf8",
+  "config_fingerprint": "7237a0911a023f0f5c7f87ea64191d38f50b31925c8a03aedad4f250addf9513",
+  "config": {
+    "concurrency": 4,
+    "provider_concurrency": 1,
+    "openalex_rps": 1.0,
+    "crossref_rps": 1.0,
+    "timeout_seconds": 20.0,
+    "max_attempts": 1,
+    "backoff_seconds": 0.5,
+    "max_retry_wait": 30.0,
+    "jitter_seed": 0
+  },
+  "providers": [
+    "openalex"
+  ],
+  "selected_source_ids": [
+    "d9f284b88032eb521650732188d80617a1769ce88225f10ed4000d218afa9be0",
+    "7afe5660f4e4628060139228d08ed7d432b9598b15ffa77e118133773fa963fb",
+    "2e7b41e8c309d67a474446ea92fde02fb705c1ccd4a56145450238147556c0f2",
+    "02acdc4726ab73ef2782949e368ab5310201116e5814954542d52f1e4b938c68",
+    "43358c6add58133973e5180238ea02259ef7422c65d438af3c5b14d678c0d40f",
+    "c5bfb6636b489378a5fccb64e1b9e64d8ce8c161cd1b69c450f797e54ea2c58d",
+    "33544d2f2612b2825b591f79c4f3992fc1e986b28eb1224bd56bb2c41cc2d973",
+    "81cf920ad5946b7ce8e1d12847cd6b2172a5ecf27f2ff0ebc09ea4494f7ff178",
+    "7ac21d008f07005c59a7e3a1f469f73646c958e65037b8cedba310dbd2da71f6",
+    "047f43858aa4ce2783100bbfe9f2f5be988ffc9fad8d60ba0b778d9958577de2",
+    "19c764651c6e2b8c3a2c5c866a96ff28eca0b5d1c9fecf5b4175d2efbe96f467",
+    "626a885a0dc829cebef106f13143f3b6c92058ed0c0e488b95596144d9a04612",
+    "f0881b616c9a7134ec809fe37ec92f1b96f3587fd8d66ce7196e3f0247186ddb",
+    "23662a29f602681d16c46a7c00554a7b74403a8818a65c5d00673e7f10b898f4",
+    "bf2d25d9dbe7f67bc450ef8925bc744466a6c3844ff9daf84ac5839e65003c12",
+    "d91dfb14623f880551e0b21ad64519df766094ccc933c6e639da11a02d070a01",
+    "f3d7a1d291bdc7698136d2306352855d23e9a0fc9f45222518da42d32ccec0ca",
+    "43c741de6b049a05e8cf6a7e1d0e3f98080451444b382b0f96250396caae7d63"
+  ],
+  "generated_at": "2020-01-01T00:00:17Z",
+  "results": [
+    {
+      "lookup_id": "c124e3f77ba30ce40282e1a2bb9b9b550e710edaf71d09c592ed28745bb8a425",
+      "source_id": "d9f284b88032eb521650732188d80617a1769ce88225f10ed4000d218afa9be0",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper nvmber 0 Test Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:00Z",
+      "finished_at": "2020-01-01T00:00:00Z",
+      "latency_ms": 0.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:00Z",
+          "finished_at": "2020-01-01T00:00:00Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-0",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "eb80d9bbc54a7069bb4ead9c0997b0439a8f23bcae8f052bd102ea86d6759333",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "70b0ecb0c7a0da333e8a2e1787c9f700542e9050c3400dafc799adb066f8e4d0",
+      "source_id": "7afe5660f4e4628060139228d08ed7d432b9598b15ffa77e118133773fa963fb",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 0 T. Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:00Z",
+      "finished_at": "2020-01-01T00:00:01Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:01Z",
+          "finished_at": "2020-01-01T00:00:01Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-0",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "eb80d9bbc54a7069bb4ead9c0997b0439a8f23bcae8f052bd102ea86d6759333",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "59996ad8414a244705de0b6ab2d75885bf6bf984545a607e92d3c5f212cc8f75",
+      "source_id": "2e7b41e8c309d67a474446ea92fde02fb705c1ccd4a56145450238147556c0f2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 0 Test Author 2019 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:01Z",
+      "finished_at": "2020-01-01T00:00:02Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:02Z",
+          "finished_at": "2020-01-01T00:00:02Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-0",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "eb80d9bbc54a7069bb4ead9c0997b0439a8f23bcae8f052bd102ea86d6759333",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "aa9adcf2b1c3f9e9968096aee966fc612fdc5a5d528190bdc2df3ab87f923ab1",
+      "source_id": "02acdc4726ab73ef2782949e368ab5310201116e5814954542d52f1e4b938c68",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 0 Test Author 2021 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:02Z",
+      "finished_at": "2020-01-01T00:00:03Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:03Z",
+          "finished_at": "2020-01-01T00:00:03Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-0",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "eb80d9bbc54a7069bb4ead9c0997b0439a8f23bcae8f052bd102ea86d6759333",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "6db044ceb350960717bdb4abfaa58922c2c539a52c2e4732286b0d1083099ed8",
+      "source_id": "43358c6add58133973e5180238ea02259ef7422c65d438af3c5b14d678c0d40f",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "paper number 0 Test Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:03Z",
+      "finished_at": "2020-01-01T00:00:04Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:04Z",
+          "finished_at": "2020-01-01T00:00:04Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-0",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "eb80d9bbc54a7069bb4ead9c0997b0439a8f23bcae8f052bd102ea86d6759333",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "be9c8ad5f9ff417185aaacdd40b8df6b5c69344ecec53dd0ffce89d220efdfae",
+      "source_id": "c5bfb6636b489378a5fccb64e1b9e64d8ce8c161cd1b69c450f797e54ea2c58d",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-0",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 0 Test Author 2020 21 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 0",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "21",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-0",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:04Z",
+      "finished_at": "2020-01-01T00:00:05Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:05Z",
+          "finished_at": "2020-01-01T00:00:05Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-0",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "eb80d9bbc54a7069bb4ead9c0997b0439a8f23bcae8f052bd102ea86d6759333",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "4a842e872f5cdf38c294f1664a5b04fb61959bff8bfc35a60cf3a85537c01b94",
+      "source_id": "33544d2f2612b2825b591f79c4f3992fc1e986b28eb1224bd56bb2c41cc2d973",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paqer number 1 Test Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paqer number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:05Z",
+      "finished_at": "2020-01-01T00:00:06Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:06Z",
+          "finished_at": "2020-01-01T00:00:06Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "188234faa540825b00d1937ebacd0f9b3586b1aa13bc035c75bc12b5e6064d1d",
+      "source_id": "81cf920ad5946b7ce8e1d12847cd6b2172a5ecf27f2ff0ebc09ea4494f7ff178",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 1 T. Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-1",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:06Z",
+      "finished_at": "2020-01-01T00:00:07Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:07Z",
+          "finished_at": "2020-01-01T00:00:07Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-1",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "2ea6c0308c66d66f5f069ae4791c66554c68f787021cd6823c2e69a4e9441eae",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "ec2ebab4309557619866a07336089937bd532600f154bfa5623a5374d1776949",
+      "source_id": "7ac21d008f07005c59a7e3a1f469f73646c958e65037b8cedba310dbd2da71f6",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 1 Test Author 2019 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:07Z",
+      "finished_at": "2020-01-01T00:00:08Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:08Z",
+          "finished_at": "2020-01-01T00:00:08Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "78c8a71119af6d055c516f87ab9873a5b3766c514cde2c11e43d3742a9362edf",
+      "source_id": "047f43858aa4ce2783100bbfe9f2f5be988ffc9fad8d60ba0b778d9958577de2",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 1 Test Author 2021 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:08Z",
+      "finished_at": "2020-01-01T00:00:09Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:09Z",
+          "finished_at": "2020-01-01T00:00:09Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "c48359edb4400efe7c10fea8fec1b1365b5b98a3010b14dc5ec5a501e42b07be",
+      "source_id": "19c764651c6e2b8c3a2c5c866a96ff28eca0b5d1c9fecf5b4175d2efbe96f467",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic  number 1 Test Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-1",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:09Z",
+      "finished_at": "2020-01-01T00:00:10Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:10Z",
+          "finished_at": "2020-01-01T00:00:10Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-1",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "2ea6c0308c66d66f5f069ae4791c66554c68f787021cd6823c2e69a4e9441eae",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "fa27538edb49fd3dca9525827e77b02ba513085b8ff4e2d30ade71f2ea86db8b",
+      "source_id": "626a885a0dc829cebef106f13143f3b6c92058ed0c0e488b95596144d9a04612",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-1",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 1 Test Author 2020 12 43"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 1",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "43"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "NOT_FOUND",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:10Z",
+      "finished_at": "2020-01-01T00:00:11Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:11Z",
+          "finished_at": "2020-01-01T00:00:11Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "NOT_FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": []
+          },
+          "response_body_sha256": "5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "eaf35050b2fa43ca4d7829c09bc4ff8c60b1668295bc0082b4e6bb653efcc1fd",
+      "source_id": "f0881b616c9a7134ec809fe37ec92f1b96f3587fd8d66ce7196e3f0247186ddb",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper nvmber 2 Test Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper nvmber 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:11Z",
+      "finished_at": "2020-01-01T00:00:12Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:12Z",
+          "finished_at": "2020-01-01T00:00:12Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.5094525123616872,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "d05b50c6d6fdffb1772f5cf827603490b6d0a6f3c73044f800b3b24f5b73b36a",
+      "source_id": "23662a29f602681d16c46a7c00554a7b74403a8818a65c5d00673e7f10b898f4",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 2 T. Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "T.",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-2",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:12Z",
+      "finished_at": "2020-01-01T00:00:13Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:13Z",
+          "finished_at": "2020-01-01T00:00:13Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-2",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "42a27596cf243fd9f9a99a7d7db1a2f7a756663e82504980fb0ebae0a69db01a",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "ec83d5b6622d29495efebb9947944c61775a37c95752bf77f04c6d73679539f4",
+      "source_id": "bf2d25d9dbe7f67bc450ef8925bc744466a6c3844ff9daf84ac5839e65003c12",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 2 Test Author 2019 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2019,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/simulated-unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:13Z",
+      "finished_at": "2020-01-01T00:00:14Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:14Z",
+          "finished_at": "2020-01-01T00:00:14Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/simulated-unmapped",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "f3c94d80146bbe3c2c8add91062e68df2746253b79658926f0e0ab1136213413",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "77b8af69b51e619776bdb097e0013509388b97512ecc5500b057c0894579ce1f",
+      "source_id": "d91dfb14623f880551e0b21ad64519df766094ccc933c6e639da11a02d070a01",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 2 Test Author 2021 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2021,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "API_ERROR",
+      "candidates": [],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:14Z",
+      "finished_at": "2020-01-01T00:00:15Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": null,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:15Z",
+          "finished_at": "2020-01-01T00:00:15Z",
+          "latency_ms": 0.0,
+          "response_status": null,
+          "outcome": "API_ERROR",
+          "retry_after": null,
+          "retry_delay_seconds": 0.41165293171027184,
+          "response": null,
+          "response_body_sha256": null,
+          "diagnostic": "Transport failure"
+        }
+      ]
+    },
+    {
+      "lookup_id": "40655e63ba8d31c79422f6782d7c2e8c0b3c4256bbb5cfe9581da46bfd55c4c8",
+      "source_id": "f3d7a1d291bdc7698136d2306352855d23e9a0fc9f45222518da42d32ccec0ca",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic  number 2 Test Author 2020 12 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic  number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "12",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/fixture-2",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:15Z",
+      "finished_at": "2020-01-01T00:00:16Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:16Z",
+          "finished_at": "2020-01-01T00:00:16Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/fixture-2",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "42a27596cf243fd9f9a99a7d7db1a2f7a756663e82504980fb0ebae0a69db01a",
+          "diagnostic": null
+        }
+      ]
+    },
+    {
+      "lookup_id": "dfcee58b6f7a08b80e296c64fe30bc859046db58629461530dffe2b209e0abb2",
+      "source_id": "43c741de6b049a05e8cf6a7e1d0e3f98080451444b382b0f96250396caae7d63",
+      "source_kind": "mutation",
+      "original_citation_id": "fixture-2",
+      "provider": "openalex",
+      "strategy": "metadata",
+      "request": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Synthetic paper number 2 Test Author 2020 21 34"
+        },
+        "submitted_metadata": {
+          "title": "Synthetic paper number 2",
+          "authors": [
+            {
+              "given": "Test",
+              "family": "Author"
+            }
+          ],
+          "year": 2020,
+          "volume": "21",
+          "issue": "34"
+        },
+        "submitted_identifier": null
+      },
+      "outcome": "FOUND",
+      "candidates": [
+        {
+          "provider_record_id": "https://openalex.org/W123",
+          "title": "Synthetic response title",
+          "authors": [],
+          "year": 2020,
+          "doi": "10.1234/simulated-unmapped",
+          "arxiv_id": null,
+          "provider_rank": 1,
+          "ranking": {
+            "relevance_score": 1.25
+          }
+        }
+      ],
+      "parsing_warnings": [],
+      "started_at": "2020-01-01T00:00:16Z",
+      "finished_at": "2020-01-01T00:00:17Z",
+      "latency_ms": 1000.0,
+      "retry_count": 0,
+      "response_status": 200,
+      "attempts": [
+        {
+          "request_sent": true,
+          "started_at": "2020-01-01T00:00:17Z",
+          "finished_at": "2020-01-01T00:00:17Z",
+          "latency_ms": 0.0,
+          "response_status": 200,
+          "outcome": "FOUND",
+          "retry_after": null,
+          "retry_delay_seconds": null,
+          "response": {
+            "results": [
+              {
+                "id": "https://openalex.org/W123",
+                "title": "Synthetic response title",
+                "doi": "10.1234/simulated-unmapped",
+                "publication_year": 2020,
+                "relevance_score": 1.25
+              }
+            ]
+          },
+          "response_body_sha256": "f3c94d80146bbe3c2c8add91062e68df2746253b79658926f0e0ab1136213413",
+          "diagnostic": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "bootstrap": false,
+  "experiment": "mutation-robustness",
+  "figure_formats": [
+    "svg"
+  ]
+}

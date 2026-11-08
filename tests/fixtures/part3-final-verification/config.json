@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "default_data_label": "simulated",
+  "input_labels": {},
+  "cohorts": {},
+  "groupings": [
+    [
+      "source_kind",
+      "mutation_type"
+    ],
+    [
+      "original_citation_id"
+    ],
+    [
+      "cohort"
+    ]
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "citation_title": "Attention Is All You Need",
+  "results_file": "artifacts\\live-smoke-20261108T191042667147Z\\lookup-results.json",
+  "providers": [
+    {
+      "provider": "openalex",
+      "http_status": null,
+      "outcome": "API_ERROR",
+      "candidate_count": 0,
+      "parsing_warnings": [],
+      "expected_title_appeared": false,
+      "transport_error_type": "ConnectError",
+      "diagnostics": [
+        "Transport failure"
+      ],
+      "candidates": [],
+      "request_metadata": {
+        "method": "GET",
+        "endpoint": "https://api.openalex.org/works",
+        "params": {
+          "per_page": "5",
+          "search": "Attention Is All You Need Ashish Vaswani Noam Shazeer Niki Parmar Jakob Uszkoreit Llion Jones Aidan N. Gomez Lukasz Kaiser Illia Polosukhin 2017"
+        },
+        "submitted_metadata": {
+          "title": "Attention Is All You Need",
+          "authors": [
+            {
+              "given": "Ashish",
+              "family": "Vaswani"
+            },
+            {
+              "given": "Noam",
+              "family": "Shazeer"
+            },
+            {
+              "given": "Niki",
+              "family": "Parmar"
+            },
+            {
+              "given": "Jakob",
+              "family": "Uszkoreit"
+            },
+            {
+              "given": "Llion",
+              "family": "Jones"
+            },
+            {
+              "given": "Aidan N.",
+              "family": "Gomez"
+            },
+            {
+              "given": "Lukasz",
+              "family": "Kaiser"
+            },
+            {
+              "given": "Illia",
+              "family": "Polosukhin"
+            }
+          ],
+          "year": 2017,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      }
+    },
+    {
+      "provider": "crossref",
+      "http_status": null,
+      "outcome": "API_ERROR",
+      "candidate_count": 0,
+      "parsing_warnings": [],
+      "expected_title_appeared": false,
+      "transport_error_type": "ConnectError",
+      "diagnostics": [
+        "Transport failure"
+      ],
+      "candidates": [],
+      "request_metadata": {
+        "method": "GET",
+        "endpoint": "https://api.crossref.org/works",
+        "params": {
+          "query.bibliographic": "Attention Is All You Need Ashish Vaswani Noam Shazeer Niki Parmar Jakob Uszkoreit Llion Jones Aidan N. Gomez Lukasz Kaiser Illia Polosukhin 2017",
+          "rows": "5"
+        },
+        "submitted_metadata": {
+          "title": "Attention Is All You Need",
+          "authors": [
+            {
+              "given": "Ashish",
+              "family": "Vaswani"
+            },
+            {
+              "given": "Noam",
+              "family": "Shazeer"
+            },
+            {
+              "given": "Niki",
+              "family": "Parmar"
+            },
+            {
+              "given": "Jakob",
+              "family": "Uszkoreit"
+            },
+            {
+              "given": "Llion",
+              "family": "Jones"
+            },
+            {
+              "given": "Aidan N.",
+              "family": "Gomez"
+            },
+            {
+              "given": "Lukasz",
+              "family": "Kaiser"
+            },
+            {
+              "given": "Illia",
+              "family": "Polosukhin"
+            }
+          ],
+          "year": 2017,
+          "volume": null,
+          "issue": null
+        },
+        "submitted_identifier": null
+      }
+    }
+  ],
+  "offline_replay_identical": true,
+  "canonical_dataset_unchanged": true,
+  "credential_scan_passed": true,
+  "provider_request_identifier_checks_passed": true
+}

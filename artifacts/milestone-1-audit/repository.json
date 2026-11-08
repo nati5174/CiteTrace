@@ -1,0 +1,53 @@
+{
+  "head": "30380a7c36a062907ce24172b8439d9bd553b0c8",
+  "recent_commits": [
+    "30380a7 feat: implement citation schemas and deterministic mutations"
+  ],
+  "tracked_modified_files": [
+    ".gitignore",
+    "README.md",
+    "pyproject.toml",
+    "src/citeprobe/cli.py"
+  ],
+  "untracked_file_count": 204,
+  "status_short": [
+    "M .gitignore",
+    " M README.md",
+    " M pyproject.toml",
+    " M src/citeprobe/cli.py",
+    "?? artifacts/",
+    "?? scripts/",
+    "?? src/citeprobe/analysis.py",
+    "?? src/citeprobe/analysis_models.py",
+    "?? src/citeprobe/analysis_validation.py",
+    "?? src/citeprobe/evaluation.py",
+    "?? src/citeprobe/evaluation_cli.py",
+    "?? src/citeprobe/evaluation_integrity.py",
+    "?? src/citeprobe/evaluation_io.py",
+    "?? src/citeprobe/evaluation_models.py",
+    "?? src/citeprobe/figures.py",
+    "?? src/citeprobe/identity.py",
+    "?? src/citeprobe/lookup_inputs.py",
+    "?? src/citeprobe/providers.py",
+    "?? src/citeprobe/report_cli.py",
+    "?? src/citeprobe/reporting.py",
+    "?? src/citeprobe/resolution_cli.py",
+    "?? src/citeprobe/resolution_models.py",
+    "?? src/citeprobe/resolver.py",
+    "?? src/citeprobe/uncertainty.py",
+    "?? tests/analysis_helpers.py",
+    "?? tests/evaluation_helpers.py",
+    "?? tests/fixtures/",
+    "?? tests/test_analysis.py",
+    "?? tests/test_analysis_validation.py",
+    "?? tests/test_evaluation_cli.py",
+    "?? tests/test_evaluation_final_verification.py",
+    "?? tests/test_evaluation_integrity.py",
+    "?? tests/test_evaluation_metrics.py",
+    "?? tests/test_identity.py",
+    "?? tests/test_milestone_audit.py",
+    "?? tests/test_reporting.py",
+    "?? tests/test_resolution.py",
+    "?? tests/test_uncertainty.py"
+  ]
+}

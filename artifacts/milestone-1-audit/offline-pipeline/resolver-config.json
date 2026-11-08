@@ -1,0 +1,1 @@
+{"concurrency":4,"provider_concurrency":1,"openalex_rps":100.0,"crossref_rps":100.0,"timeout_seconds":20.0,"max_attempts":1,"backoff_seconds":0.5,"max_retry_wait":30.0,"jitter_seed":0}

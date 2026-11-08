@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "dataset_fingerprint": "1bb15318fad454194d65a7cc4493bc627975b797cb32e2dc7e2e424c86c47f3e",
+  "citation_ids": [
+    "fixture-0",
+    "fixture-1",
+    "fixture-2"
+  ],
+  "sampling_method": "SIMULATED convenience sample; not observed research",
+  "verification_method": "SIMULATED verification events and publication dates for software tests",
+  "collection_started_at": "2019-12-31T23:00:17Z",
+  "collection_finished_at": "2020-01-01T00:00:17Z",
+  "reference_date": "2020-01-01",
+  "preprint_dates": [
+    {
+      "citation_id": "fixture-0",
+      "publication_date": "2019-12-29",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-0",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-1",
+      "publication_date": "2019-12-29",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-1",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    },
+    {
+      "citation_id": "fixture-2",
+      "publication_date": "2019-12-29",
+      "date_kind": "first_public_preprint",
+      "precision": "day",
+      "published_at": null,
+      "provenance": {
+        "source_url": "https://example.org/test-fixtures",
+        "record_identifier": "fixture-2",
+        "verification_status": "verified",
+        "verified_at": "2020-01-01T00:00:00Z"
+      }
+    }
+  ],
+  "lookup_bundle_ids": [
+    "bfb019aa66d6b9d35ec6b2f13277a1a6e667ffd57c7f4558aa7800b84341e221",
+    "778bcde42d22ad1b4125c3cbddba61ed82ff8935fe1ebb2d6ae7fd84e4b7f698",
+    "c4b29ec0c6812d930258b54aec82f4455c10b11a740f9371ef848936f5e64c16",
+    "87eb004af93efbb389832c4ade65af4fa2241d7a9ea4fbfcea36f241ed253650"
+  ]
+}

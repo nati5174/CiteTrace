@@ -1,0 +1,30 @@
+[
+  {
+    "command": "validate",
+    "help_exit_code": 0
+  },
+  {
+    "command": "mutate",
+    "help_exit_code": 0
+  },
+  {
+    "command": "resolve",
+    "help_exit_code": 0
+  },
+  {
+    "command": "resolve-mutations",
+    "help_exit_code": 0
+  },
+  {
+    "command": "replay",
+    "help_exit_code": 0
+  },
+  {
+    "command": "evaluate",
+    "help_exit_code": 0
+  },
+  {
+    "command": "report",
+    "help_exit_code": 0
+  }
+]

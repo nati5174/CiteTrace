@@ -1,0 +1,81 @@
+{
+  "data_label": "simulated",
+  "commands": [
+    {
+      "command": "validate",
+      "exit_code": 0
+    },
+    {
+      "command": "validate",
+      "exit_code": 0
+    },
+    {
+      "command": "mutate",
+      "exit_code": 0
+    },
+    {
+      "command": "mutate",
+      "exit_code": 0
+    },
+    {
+      "command": "resolve",
+      "exit_code": 0
+    },
+    {
+      "command": "resolve-mutations",
+      "exit_code": 0
+    },
+    {
+      "command": "replay",
+      "exit_code": 0
+    },
+    {
+      "command": "evaluate",
+      "exit_code": 0
+    },
+    {
+      "command": "report",
+      "exit_code": 0
+    },
+    {
+      "command": "evaluate",
+      "exit_code": 0
+    },
+    {
+      "command": "report",
+      "exit_code": 0
+    },
+    {
+      "command": "report",
+      "exit_code": 0
+    }
+  ],
+  "mutation_values_deterministic": true,
+  "replay_byte_identical": true,
+  "input_hashes_before": {
+    "tests/fixtures/part3-final-verification/dataset.json": "69949002cf309abe2e3c5197e1b3a208f03040184c57f3af77c7d552c697d003",
+    "tests/fixtures/part3-final-verification/lookups.json": "aa0e205d2b2a20361dd736d22ef93eaa89ade5b9362a62160596a3cf8fddf455",
+    "data/pilot_dataset.json": "0101092c2735f32d2e84ca08f54d5980b8ff14cff3404bfe5e5ef1909605ddf4"
+  },
+  "input_hashes_after": {
+    "tests/fixtures/part3-final-verification/dataset.json": "69949002cf309abe2e3c5197e1b3a208f03040184c57f3af77c7d552c697d003",
+    "tests/fixtures/part3-final-verification/lookups.json": "aa0e205d2b2a20361dd736d22ef93eaa89ade5b9362a62160596a3cf8fddf455",
+    "data/pilot_dataset.json": "0101092c2735f32d2e84ca08f54d5980b8ff14cff3404bfe5e5ef1909605ddf4"
+  },
+  "inputs_unchanged": true,
+  "mocked_http_attempts": 72,
+  "live_http_requests": 0,
+  "identifier_hints_absent": true,
+  "evaluated_lookup_count": 72,
+  "origin_isolation_passed": true,
+  "lookup_file_hashes_recorded_by_evaluator": {
+    "canonical-lookups.json": "27eccb8015772b3e79de4a042ced80ef56bfb0c346f7d6261a3c0690be1ebe5b",
+    "mutated-lookups.json": "275af1696604f9c505f83286981287162ec174fe5738b72c4c3bae0a16b97bcf"
+  },
+  "lookup_file_hashes_after_reports": {
+    "canonical-lookups.json": "27eccb8015772b3e79de4a042ced80ef56bfb0c346f7d6261a3c0690be1ebe5b",
+    "mutated-lookups.json": "275af1696604f9c505f83286981287162ec174fe5738b72c4c3bae0a16b97bcf"
+  },
+  "generated_lookup_files_unchanged": true,
+  "dataset_copy_unchanged": true
+}

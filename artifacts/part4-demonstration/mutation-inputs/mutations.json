@@ -1,0 +1,496 @@
+{
+  "schema_version": "1.0",
+  "dataset_version": "synthetic-test-only-1",
+  "seed": 42,
+  "algorithm_version": "1",
+  "generated_at": "2026-11-08T20:27:50.521140Z",
+  "mutations": [
+    {
+      "mutation_id": "d9f284b88032eb521650732188d80617a1769ce88225f10ed4000d218afa9be0",
+      "mutation_type": "title_typo",
+      "original_citation_id": "fixture-0",
+      "mutated_fields": [
+        "title"
+      ],
+      "parameters": {
+        "character_index": 17,
+        "replacement": "v"
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper nvmber 0",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-0",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "7afe5660f4e4628060139228d08ed7d432b9598b15ffa77e118133773fa963fb",
+      "mutation_type": "author_initials",
+      "original_citation_id": "fixture-0",
+      "mutated_fields": [
+        "authors"
+      ],
+      "parameters": {},
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 0",
+        "authors": [
+          {
+            "given": "T.",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-0",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "2e7b41e8c309d67a474446ea92fde02fb705c1ccd4a56145450238147556c0f2",
+      "mutation_type": "year_shift",
+      "original_citation_id": "fixture-0",
+      "mutated_fields": [
+        "year"
+      ],
+      "parameters": {
+        "delta": -1
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 0",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2019,
+        "doi": "10.1234/fixture-0",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "02acdc4726ab73ef2782949e368ab5310201116e5814954542d52f1e4b938c68",
+      "mutation_type": "year_shift",
+      "original_citation_id": "fixture-0",
+      "mutated_fields": [
+        "year"
+      ],
+      "parameters": {
+        "delta": 1
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 0",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2021,
+        "doi": "10.1234/fixture-0",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "43358c6add58133973e5180238ea02259ef7422c65d438af3c5b14d678c0d40f",
+      "mutation_type": "title_word_deletion",
+      "original_citation_id": "fixture-0",
+      "mutated_fields": [
+        "title"
+      ],
+      "parameters": {
+        "word_index": 0,
+        "deleted_word": "Synthetic"
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "paper number 0",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-0",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "c5bfb6636b489378a5fccb64e1b9e64d8ce8c161cd1b69c450f797e54ea2c58d",
+      "mutation_type": "digit_transposition",
+      "original_citation_id": "fixture-0",
+      "mutated_fields": [
+        "volume"
+      ],
+      "parameters": {
+        "digit_index": 0
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 0",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-0",
+        "arxiv_id": null,
+        "volume": "21",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "33544d2f2612b2825b591f79c4f3992fc1e986b28eb1224bd56bb2c41cc2d973",
+      "mutation_type": "title_typo",
+      "original_citation_id": "fixture-1",
+      "mutated_fields": [
+        "title"
+      ],
+      "parameters": {
+        "character_index": 12,
+        "replacement": "q"
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paqer number 1",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-1",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "81cf920ad5946b7ce8e1d12847cd6b2172a5ecf27f2ff0ebc09ea4494f7ff178",
+      "mutation_type": "author_initials",
+      "original_citation_id": "fixture-1",
+      "mutated_fields": [
+        "authors"
+      ],
+      "parameters": {},
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 1",
+        "authors": [
+          {
+            "given": "T.",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-1",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "7ac21d008f07005c59a7e3a1f469f73646c958e65037b8cedba310dbd2da71f6",
+      "mutation_type": "year_shift",
+      "original_citation_id": "fixture-1",
+      "mutated_fields": [
+        "year"
+      ],
+      "parameters": {
+        "delta": -1
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 1",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2019,
+        "doi": "10.1234/fixture-1",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "047f43858aa4ce2783100bbfe9f2f5be988ffc9fad8d60ba0b778d9958577de2",
+      "mutation_type": "year_shift",
+      "original_citation_id": "fixture-1",
+      "mutated_fields": [
+        "year"
+      ],
+      "parameters": {
+        "delta": 1
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 1",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2021,
+        "doi": "10.1234/fixture-1",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "19c764651c6e2b8c3a2c5c866a96ff28eca0b5d1c9fecf5b4175d2efbe96f467",
+      "mutation_type": "title_word_deletion",
+      "original_citation_id": "fixture-1",
+      "mutated_fields": [
+        "title"
+      ],
+      "parameters": {
+        "word_index": 1,
+        "deleted_word": "paper"
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic  number 1",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-1",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "626a885a0dc829cebef106f13143f3b6c92058ed0c0e488b95596144d9a04612",
+      "mutation_type": "digit_transposition",
+      "original_citation_id": "fixture-1",
+      "mutated_fields": [
+        "issue"
+      ],
+      "parameters": {
+        "digit_index": 0
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 1",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-1",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "43"
+      }
+    },
+    {
+      "mutation_id": "f0881b616c9a7134ec809fe37ec92f1b96f3587fd8d66ce7196e3f0247186ddb",
+      "mutation_type": "title_typo",
+      "original_citation_id": "fixture-2",
+      "mutated_fields": [
+        "title"
+      ],
+      "parameters": {
+        "character_index": 17,
+        "replacement": "v"
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper nvmber 2",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-2",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "23662a29f602681d16c46a7c00554a7b74403a8818a65c5d00673e7f10b898f4",
+      "mutation_type": "author_initials",
+      "original_citation_id": "fixture-2",
+      "mutated_fields": [
+        "authors"
+      ],
+      "parameters": {},
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 2",
+        "authors": [
+          {
+            "given": "T.",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-2",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "bf2d25d9dbe7f67bc450ef8925bc744466a6c3844ff9daf84ac5839e65003c12",
+      "mutation_type": "year_shift",
+      "original_citation_id": "fixture-2",
+      "mutated_fields": [
+        "year"
+      ],
+      "parameters": {
+        "delta": -1
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 2",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2019,
+        "doi": "10.1234/fixture-2",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "d91dfb14623f880551e0b21ad64519df766094ccc933c6e639da11a02d070a01",
+      "mutation_type": "year_shift",
+      "original_citation_id": "fixture-2",
+      "mutated_fields": [
+        "year"
+      ],
+      "parameters": {
+        "delta": 1
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 2",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2021,
+        "doi": "10.1234/fixture-2",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "f3d7a1d291bdc7698136d2306352855d23e9a0fc9f45222518da42d32ccec0ca",
+      "mutation_type": "title_word_deletion",
+      "original_citation_id": "fixture-2",
+      "mutated_fields": [
+        "title"
+      ],
+      "parameters": {
+        "word_index": 1,
+        "deleted_word": "paper"
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic  number 2",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-2",
+        "arxiv_id": null,
+        "volume": "12",
+        "issue": "34"
+      }
+    },
+    {
+      "mutation_id": "43c741de6b049a05e8cf6a7e1d0e3f98080451444b382b0f96250396caae7d63",
+      "mutation_type": "digit_transposition",
+      "original_citation_id": "fixture-2",
+      "mutated_fields": [
+        "volume"
+      ],
+      "parameters": {
+        "digit_index": 0
+      },
+      "seed": 42,
+      "algorithm_version": "1",
+      "citation": {
+        "title": "Synthetic paper number 2",
+        "authors": [
+          {
+            "given": "Test",
+            "family": "Author"
+          }
+        ],
+        "year": 2020,
+        "doi": "10.1234/fixture-2",
+        "arxiv_id": null,
+        "volume": "21",
+        "issue": "34"
+      }
+    }
+  ],
+  "skipped": []
+}
