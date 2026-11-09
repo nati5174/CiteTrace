@@ -620,3 +620,26 @@ python -m mypy
 
 Reuse the workspace-local `.pytest-tmp` directory; do not point `--basetemp` at an
 input or report directory because pytest clears its own temporary storage.
+# Milestone 3B research dataset infrastructure
+
+[Milestone 3C-5](docs/research/milestone-3c5.md) adds raw response evidence,
+source-located extraction, and offline `evidence-verify` replay. Historical
+projection-only artifacts remain unchanged. No live authorization is implied.
+
+Acquisition preparation and offline replay are documented in
+[Milestone 3C-1](docs/research/milestone-3c1.md). Live acquisition requires separate
+explicit authorization; no empirical data is bundled with its synthetic fixtures.
+
+See [offline dataset infrastructure](docs/research/milestone-3b.md) for the
+`dataset-validate`, `dataset-sample`, `dataset-freeze`, and `dataset-verify` commands.
+They do not acquire papers or perform provider requests. Existing commands remain
+available. Research collection still requires separate approval.
+
+Milestone 3C-7 adds bounded pilot inventories, complete enumeration, exact-ID
+batches, curator-reviewed selection and frozen replay. See the
+[pilot acquisition commands and request budgets](docs/research/milestone-3c7.md).
+The approved A-S1 pilot uses **submission age**; the original announcement-age
+protocol remains separate. `pilot-plan-*`, `pilot-frame`, `pilot-replay`,
+`pilot-acl-pin`, `pilot-select`, `pilot-freeze` and `pilot-verify` run offline.
+`pilot-run` requires a separately authorized, hashed request inventory and window.
+

@@ -5,10 +5,14 @@ import os
 import sys
 from pathlib import Path
 
+from citeprobe.acquisition_cli import add_acquisition_commands, run_acquisition
 from citeprobe.dataset import benchmark_citations, load_dataset
 from citeprobe.evaluation_cli import add_evaluation_command, run_evaluation
+from citeprobe.evidence_cli import add_evidence_command, run_evidence
 from citeprobe.mutations import generate_mutations
+from citeprobe.pilot_cli import add_pilot_commands, run_pilot
 from citeprobe.report_cli import add_report_command, run_report
+from citeprobe.research_cli import add_research_commands, run_research
 from citeprobe.resolution_cli import add_commands, run
 
 
@@ -24,8 +28,20 @@ def main(argv: list[str] | None = None) -> int:
     add_commands(commands)
     add_evaluation_command(commands)
     add_report_command(commands)
+    add_research_commands(commands)
+    add_acquisition_commands(commands)
+    add_evidence_command(commands)
+    add_pilot_commands(commands)
     args = parser.parse_args(argv)
     try:
+        if args.command.startswith("pilot-"):
+            return run_pilot(args)
+        if args.command == "evidence-verify":
+            return run_evidence(args)
+        if args.command.startswith("acquisition-"):
+            return run_acquisition(args)
+        if args.command.startswith("dataset-"):
+            return run_research(args)
         if args.command == "report":
             return run_report(args)
         if args.command == "evaluate":
