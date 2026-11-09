@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC empty feed, not evidence of actual service behavior. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+<id>https://example.org/synthetic-feed</id>
+<title>Synthetic feed</title>
+<updated>2025-01-02T01:00:00+01:00</updated>
+<subtitle>No entries in this synthetic snapshot</subtitle>
+</feed>

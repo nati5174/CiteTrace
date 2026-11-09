@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC entries, never empirical research metadata. -->
+<a:feed xmlns:a="http://www.w3.org/2005/Atom" xmlns:x="http://arxiv.org/schemas/atom">
+<a:id>https://example.org/synthetic-feed</a:id><a:updated>2025-01-02T00:00:00Z</a:updated>
+<a:entry><a:id>synthetic-entry</a:id><a:title>Synthetic only</a:title>
+<a:published>2025-01-01T00:00:00Z</a:published><a:updated>2025-01-02T00:00:00Z</a:updated>
+<a:category term="cs.CL"/><x:primary_category term="cs.CL"/><x:announce_type>new</x:announce_type>
+</a:entry></a:feed>
