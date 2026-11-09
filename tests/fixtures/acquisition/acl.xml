@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Entirely synthetic metadata; identifiers are not real ground truth. -->
+<collection id="synthetic">
+  <volume id="1">
+    <meta><year>2020</year><booktitle>Synthetic Proceedings</booktitle></meta>
+    <paper id="1">
+      <title>Synthetic DOI fixture</title>
+      <author><first>Invented</first><last>Fixture</last></author>
+      <doi>10.1234/synthetic-acl</doi>
+      <url>synthetic.1</url>
+      <volume>12</volume><issue>21</issue>
+    </paper>
+  </volume>
+</collection>

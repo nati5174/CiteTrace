@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "origin": "simulated",
+  "plan": {
+    "schema_version": "1.0",
+    "source": "acl_xml",
+    "experiment": "mutation-robustness",
+    "reference_date": null,
+    "planned_started_at": "2025-01-01T00:00:00Z",
+    "planned_finished_at": "2025-01-02T00:00:00Z",
+    "max_records": 5,
+    "acl_commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "acl_volume": "synthetic",
+    "seed": 0,
+    "maximum_requests": 1
+  },
+  "request": {
+    "endpoint": "https://raw.githubusercontent.com/acl-org/acl-anthology/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/data/xml/synthetic.xml",
+    "params": {}
+  },
+  "started_at": "2025-01-01T00:00:00Z",
+  "finished_at": "2025-01-01T00:00:00Z",
+  "http_status": 200,
+  "exception_type": null,
+  "response_body_sha256": "ced6546469ed951d9dcfcd10374a4586f2ca2a14a176fd8b7358aaf090f33f18",
+  "metadata_xml": "<collection id=\"synthetic\">\n  <volume id=\"1\">\n    <meta><year>2020</year><booktitle>Synthetic Proceedings</booktitle></meta><paper id=\"1\">\n      <title>Synthetic DOI fixture</title><author><first>Invented</first><last>Fixture</last></author><doi>10.1234/synthetic-acl</doi><url>synthetic.1</url><volume>12</volume><issue>21</issue></paper></volume></collection>",
+  "metadata_sha256": "bde3abbfc2e2431917247466c83ec948c1187c157bf5c382e2c581560a3d3d07",
+  "retry_after": null,
+  "latency_ms": 0.0,
+  "authorization_reference": null
+}

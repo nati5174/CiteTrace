@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "origin": "simulated",
+  "plan": {
+    "schema_version": "1.0",
+    "source": "arxiv_atom",
+    "experiment": "mutation-robustness",
+    "reference_date": null,
+    "planned_started_at": "2025-01-01T00:00:00Z",
+    "planned_finished_at": "2025-01-02T00:00:00Z",
+    "max_records": 5,
+    "acl_commit": null,
+    "acl_volume": null,
+    "seed": 0,
+    "maximum_requests": 1
+  },
+  "request": {
+    "endpoint": "https://export.arxiv.org/api/query",
+    "params": {
+      "search_query": "cat:cs.CL AND submittedDate:[201801010000 TO 202312312359]",
+      "start": "0",
+      "max_results": "5",
+      "sortBy": "submittedDate",
+      "sortOrder": "ascending"
+    }
+  },
+  "started_at": "2025-01-01T00:00:00Z",
+  "finished_at": "2025-01-01T00:00:00Z",
+  "http_status": 200,
+  "exception_type": null,
+  "response_body_sha256": "079368aa82adec8af5791802de28f384a4dd032b8941c4f9564c9c401f233dc9",
+  "metadata_xml": "<ns0:feed xmlns:ns0=\"http://www.w3.org/2005/Atom\" xmlns:ns1=\"http://a9.com/-/spec/opensearch/1.1/\" xmlns:ns2=\"http://arxiv.org/schemas/atom\">\n  <ns1:totalResults>2</ns1:totalResults><ns0:entry>\n    <ns0:id>https://arxiv.org/abs/2001.00001v1</ns0:id><ns0:title>Synthetic test work 1</ns0:title><ns0:published>2020-01-01T12:00:00Z</ns0:published><ns0:updated>2020-01-02T12:00:00Z</ns0:updated><ns0:author><ns0:name>Invented Fixture</ns0:name></ns0:author><ns2:primary_category term=\"cs.CL\" /></ns0:entry><ns0:entry>\n    <ns0:id>https://arxiv.org/abs/2001.00002v1</ns0:id><ns0:title>Synthetic test work 2</ns0:title><ns0:published>2020-01-01T12:00:00+00:00</ns0:published><ns0:author><ns0:name>Invented Fixture</ns0:name></ns0:author><ns2:primary_category term=\"cs.CL\" /></ns0:entry></ns0:feed>",
+  "metadata_sha256": "079368aa82adec8af5791802de28f384a4dd032b8941c4f9564c9c401f233dc9",
+  "retry_after": null,
+  "latency_ms": 0.0,
+  "authorization_reference": null
+}
