@@ -1,0 +1,56 @@
+{
+  "amendment_id": "A-S1",
+  "version": "1.0",
+  "status": "PROPOSED_NOT_ADOPTED",
+  "live_requests_authorized": 0,
+  "original_protocol_preserved": "docs/research/v1/experiment-a.md",
+  "date_basis": "first_arxiv_submission",
+  "not_date_basis": "first_public_announcement",
+  "reference_date_proposed": "2026-11-23",
+  "target_papers": 8,
+  "fixed_source_days_proposed": {
+    "1-7": {
+      "date": "2026-11-19",
+      "target": 2,
+      "panel_cap": 6
+    },
+    "8-14": {
+      "date": "2026-11-12",
+      "target": 2,
+      "panel_cap": 6
+    },
+    "15-30": {
+      "date": "2026-11-01",
+      "target": 2,
+      "panel_cap": 6
+    },
+    "31-60": {
+      "date": "2026-10-09",
+      "target": 2,
+      "panel_cap": 6
+    }
+  },
+  "enumeration": {
+    "page_size": 100,
+    "maximum_pages_per_day": 2,
+    "maximum_attempts": 8,
+    "require_complete": true
+  },
+  "conditional_request_caps": {
+    "enumeration": 8,
+    "selected_id_batches": 3,
+    "panel_record_verification": 24
+  },
+  "conditional_request_ceiling": 35,
+  "curation_panel_cap": 24,
+  "seed": 0,
+  "required_approvals": [
+    "question and first-submission date basis",
+    "four fixed-day pilot frame",
+    "two-stage panel and shortfall rules",
+    "reference date and windows",
+    "offline implementation",
+    "exact later acquisition budget"
+  ],
+  "document_sha256": "53991fb297745f620068a72c22a255b5245eb7f0f680ed19b5abc7d329bd71bb"
+}

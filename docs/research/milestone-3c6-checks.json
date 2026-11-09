@@ -1,0 +1,22 @@
+{
+  "milestone": "3C-6",
+  "assistant_live_requests": 0,
+  "live_results_pending": true,
+  "authorized_remaining_request_count": 1,
+  "authorized_url": "https://info.arxiv.org/help/atom_specifications.html",
+  "budget_sha256": "47a8a7dfd2a874d384a141657665e08042085c902cba2be3e3ccb135b52cdc44",
+  "pytest": "415 passed in 12.35s; warnings as errors",
+  "ruff_lint": "passed",
+  "ruff_format": "97 files already formatted",
+  "mypy": "passed; 56 source files",
+  "protected_counts": {
+    "baseline": 32,
+    "C2": 5,
+    "C4": 5
+  },
+  "version2_demo_anchor_verified": true,
+  "ACL_authentic_revision_available_offline": false,
+  "A_empirical_acquisition": "NO_GO",
+  "B_empirical_acquisition": "NO_GO",
+  "methodological_amendment_adopted": false
+}

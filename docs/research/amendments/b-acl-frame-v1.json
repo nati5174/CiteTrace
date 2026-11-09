@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "B-ACL-S1-v1",
+  "status": "APPROVED_SCOPE_OFFLINE_IMPLEMENTATION_ONLY",
+  "approval_source": "User instruction: Experiment B Sampling-Frame Amendment",
+  "live_requests_authorized": 0,
+  "preserve_original_protocol": true,
+  "fixed_volumes": {
+    "P18": ["1"],
+    "P19": ["1"],
+    "2020.acl": ["main"],
+    "2021.acl": ["long", "short"]
+  },
+  "observed_2021_counts": {"long": 571, "short": 139},
+  "prospective_collections": ["2022.acl", "2023.acl"],
+  "prospective_rule": "Official annual-conference main research proceedings: a sole main representation, or both separately represented long and short research volumes. Stop for mixed, incomplete, duplicate or ambiguous structures.",
+  "excluded_tracks": ["findings", "demos", "workshops", "tutorials", "industry", "student research workshops", "other non-main-research tracks"],
+  "volume_identity_rule": "Keep long and short as distinct source volume identities; neither is an alias for main.",
+  "sampling_rule": "Pool the explicitly included research volumes within each conference year before applying the unchanged deterministic two-record ACL panel ranking."
+}

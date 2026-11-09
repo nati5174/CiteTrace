@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0",
+  "budget_id": "milestone-3c6-atom-specification-001",
+  "authorization_reference": "User-approved Milestone 3C-6: one official Atom specification request only",
+  "origin": "observed",
+  "maximum_requests": 1,
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://info.arxiv.org/help/atom_specifications.html",
+      "source_kind": "arxiv_rss_doc"
+    }
+  ]
+}

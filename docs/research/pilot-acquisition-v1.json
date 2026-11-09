@@ -1,0 +1,70 @@
+{
+  "plan_version": "1.0",
+  "milestone": "3C-3",
+  "status": "PROPOSED_NOT_AUTHORIZED",
+  "live_requests_authorized": 0,
+  "reference_date_proposed": "2026-11-23",
+  "experiment_A": {
+    "target": 8,
+    "cohorts": {
+      "1-7": {
+        "first_public_date_from": "2026-11-16",
+        "first_public_date_through": "2026-11-22",
+        "target": 2
+      },
+      "8-14": {
+        "first_public_date_from": "2026-11-09",
+        "first_public_date_through": "2026-11-15",
+        "target": 2
+      },
+      "15-30": {
+        "first_public_date_from": "2026-10-24",
+        "first_public_date_through": "2026-11-08",
+        "target": 2
+      },
+      "31-60": {
+        "first_public_date_from": "2026-09-24",
+        "first_public_date_through": "2026-10-23",
+        "target": 2
+      }
+    },
+    "curation_panel_target": 24,
+    "historical_public_announcement_endpoint": null,
+    "date_verification_feasible": null
+  },
+  "experiment_B": {
+    "target": 6,
+    "stratum_targets": {
+      "doi_only": 2,
+      "arxiv_only": 2,
+      "dual": 2
+    },
+    "curation_panel_target": 18,
+    "ACL_commit_approved": null
+  },
+  "pilot_frame_amendments_approved": false,
+  "request_budget_conditional": {
+    "source_feasibility": 3,
+    "A_announcement_enumeration": 120,
+    "A_panel_metadata": 3,
+    "A_panel_verification": 24,
+    "B_ACL_inventory": 6,
+    "B_arxiv_inventory": 12,
+    "B_panel_verification": 18,
+    "additional_identity_evidence": 12
+  },
+  "request_ceiling_conditional": 198,
+  "recommended_first_stage_request_ceiling": 3,
+  "complete_batch_runner_implemented": false,
+  "go_for_empirical_acquisition": false,
+  "blocking_gates": [
+    "authoritative historical first-public evidence",
+    "approved pilot frame amendments",
+    "approved ACL pin and inventory",
+    "complete enumeration runner and request inventory",
+    "explicit stage-specific live authorization"
+  ],
+  "protected_baseline_hashes_matched": 32,
+  "C2_original_input_hashes_matched": 5,
+  "plan_document_sha256": "2994ec7ef4427141dd673a2c224dde52500e70b0fba83d3c17386f0ccb264a2a"
+}

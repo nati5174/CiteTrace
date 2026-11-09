@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "policy_id": "B-ACL-R1-v1",
+  "status": "APPROVED_RESOURCE_PREPARATION_ONLY",
+  "approval_source": "User instruction: Experiment B Resource-Limit Amendment",
+  "live_requests_authorized": 0,
+  "exception_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/032cc14d4a17181e8754f33512c22ff53d9cbbc6/data/xml/2023.acl.xml",
+  "maximum_capture_bytes": 4000000,
+  "maximum_decoded_bytes": 4000000,
+  "maximum_xml_bytes": 4000000,
+  "default_other_request_limits": 2000000,
+  "maximum_new_attempts_for_exception_url": 1,
+  "automatic_retries": 0,
+  "maximum_arxiv_request_slots": 12,
+  "preserve_old_evidence_and_limits": true,
+  "retain_old_incomplete_2023_attempt_as_failure_evidence": true
+}

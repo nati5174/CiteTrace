@@ -1,0 +1,11 @@
+{
+  "revision": "1.1",
+  "reason": "Milestone 3B approved policy clarifications",
+  "documents": {
+    "identity-policy.md": "99be7655588b64527ff2e2fa3aa7c2ca0c8af9a16a762836dd8b6c32f685173d",
+    "experiment-a.md": "bcc5fc1ccadee0f5da15d7ebbacbbf7b54af51a7a4869d537ec92f6fedfe8af7",
+    "experiment-b.md": "5f11e7824b132417106d68d4e1d8e4b503b6064f0319c1665543e26a3ca49d0f",
+    "schema-and-provenance-checklist.md": "e566bce7151b2faa8208561d85244e3fcfbc643217f49eb6438ac5754af0f570"
+  },
+  "empirical_collection_authorized": false
+}

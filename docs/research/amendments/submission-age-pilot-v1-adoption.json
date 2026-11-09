@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "amendment": "A-S1",
+  "document": "docs/research/amendments/submission-age-pilot-v1.md",
+  "approval_source": "User instruction: Milestone 3C-7: Implement Empirical Pilot Acquisition",
+  "status": "APPROVED_PILOT_ONLY",
+  "scope": "Eight-paper submission-age workflow pilot, fixed source-day frames and curation panels",
+  "original_announcement_age_protocol": "docs/research/v1/experiment-a.md",
+  "original_protocol_changed": false,
+  "live_requests_authorized_by_this_milestone": 0,
+  "note": "This adoption record supersedes the proposal status for the pilot only. Concrete execution dates, exact inventories and live budgets still require approval. No approval timestamp has been invented."
+}
