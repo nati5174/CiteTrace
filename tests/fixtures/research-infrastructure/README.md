@@ -1,0 +1,1 @@
+All metadata, verification assertions, source hashes and events in these fixtures are synthetic. Origin is simulated; example.org is not authoritative evidence. Do not use these as empirical ground truth. Both manifests refer to the same invented dataset.

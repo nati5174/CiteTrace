@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "manifest_version": "synthetic-1",
+  "manifest_fingerprint": "864d6426a282e865e9d5abc21c3524056a09445081e29ebfef9a09346b5aa6b0",
+  "dataset_version": "synthetic-research-1",
+  "dataset_fingerprint": "2561ad44ed419ebbe25a1ed6376bf27570e2702662e46c3ae10a94477763515c",
+  "experiment": "mutation-robustness",
+  "origin": "simulated",
+  "policy_version": "1.1",
+  "protocol_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+  "frame_source": {
+    "source_url": "https://example.org/synthetic/source",
+    "record_identifier": "synthetic",
+    "verification_status": "verified",
+    "verified_at": "2025-01-01T00:00:00Z"
+  },
+  "frame_evidence_id": "source",
+  "frame_snapshot_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+  "frame_definition": "Synthetic cs.CL English frame",
+  "sampling_method": "sha256-v1",
+  "seed": 0,
+  "target_per_group": {
+    "doi_only": 1,
+    "arxiv_only": 1,
+    "dual": 1
+  },
+  "reference_date": null,
+  "planned_started_at": "2025-01-31T00:00:00Z",
+  "planned_finished_at": "2025-01-31T23:59:00Z",
+  "stage": "pre_collection",
+  "actual_started_at": null,
+  "actual_finished_at": null,
+  "observation_bundle_ids": [],
+  "sources": [
+    {
+      "evidence_id": "source",
+      "provenance": {
+        "source_url": "https://example.org/synthetic/source",
+        "record_identifier": "synthetic",
+        "verification_status": "verified",
+        "verified_at": "2025-01-01T00:00:00Z"
+      },
+      "origin": "simulated",
+      "authority": "original_repository",
+      "retrieved_at": "2025-01-01T00:00:00Z",
+      "evidence_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "excerpt": "Synthetic assertion, not real evidence",
+      "supports": [
+        "title",
+        "authors",
+        "year",
+        "arxiv_id",
+        "doi",
+        "volume",
+        "issue",
+        "first_public_date",
+        "declared_identifiers"
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "citation_id": "synthetic-1",
+      "evidence_ids": [
+        "source"
+      ],
+      "verified_fields": [
+        "title",
+        "authors",
+        "year",
+        "arxiv_id"
+      ],
+      "decision": "include",
+      "reason": "Synthetic eligible fixture",
+      "exclusion_kind": null,
+      "public_date": null,
+      "public_date_basis": "unknown",
+      "cohort": null,
+      "identifier_stratum": "arxiv_only"
+    },
+    {
+      "citation_id": "synthetic-2",
+      "evidence_ids": [
+        "source"
+      ],
+      "verified_fields": [
+        "title",
+        "authors",
+        "year",
+        "arxiv_id"
+      ],
+      "decision": "include",
+      "reason": "Synthetic eligible fixture",
+      "exclusion_kind": null,
+      "public_date": null,
+      "public_date_basis": "unknown",
+      "cohort": null,
+      "identifier_stratum": "arxiv_only"
+    }
+  ],
+  "identity_claims": [],
+  "duplicates": []
+}

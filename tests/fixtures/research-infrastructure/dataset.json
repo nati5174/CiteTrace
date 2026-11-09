@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "dataset_version": "synthetic-research-1",
+  "citations": [
+    {
+      "title": "Synthetic test work 1",
+      "authors": [
+        {
+          "given": "Invented",
+          "family": "Fixture"
+        }
+      ],
+      "year": 2024,
+      "doi": null,
+      "arxiv_id": "2401.00001",
+      "volume": null,
+      "issue": null,
+      "citation_id": "synthetic-1",
+      "provenance": {
+        "source_url": "https://example.org/synthetic/source",
+        "record_identifier": "synthetic",
+        "verification_status": "verified",
+        "verified_at": "2025-01-01T00:00:00Z"
+      }
+    },
+    {
+      "title": "Synthetic test work 2",
+      "authors": [
+        {
+          "given": "Invented",
+          "family": "Fixture"
+        }
+      ],
+      "year": 2024,
+      "doi": null,
+      "arxiv_id": "2401.00002",
+      "volume": null,
+      "issue": null,
+      "citation_id": "synthetic-2",
+      "provenance": {
+        "source_url": "https://example.org/synthetic/source",
+        "record_identifier": "synthetic",
+        "verification_status": "verified",
+        "verified_at": "2025-01-01T00:00:00Z"
+      }
+    }
+  ]
+}
