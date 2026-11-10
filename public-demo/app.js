@@ -6,6 +6,7 @@ const dialog = document.getElementById('detail');
 const detail = document.getElementById('detail-content');
 let papers = [];
 let cohort = 'all';
+let loadState = 'loading';
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -24,8 +25,9 @@ function validate(data) {
   }
   return data.papers;
 }
-function resultStatus(result) {
+function resultStatus(result, provider) {
   const box = el('div', 'status ' + (result.outcome === 'FOUND' ? 'found' : 'empty'));
+  box.append(el('span', 'provider-name', provider));
   box.append(el('span', '', result.outcome === 'FOUND' ? '●  FOUND' : '○  NOT FOUND'));
   box.append(el('small', '', `${result.candidates.length} candidate${result.candidates.length === 1 ? '' : 's'}`));
   return box;
@@ -47,12 +49,20 @@ function drawComparison() {
 }
 function drawPapers() {
   papersEl.replaceChildren();
+  if (loadState !== 'ready') {
+    const failed = loadState === 'error';
+    papersEl.append(el('div', failed ? 'error' : 'loading', failed
+      ? 'The evaluation data could not be loaded. Refresh to try again.'
+      : 'Loading papers…'));
+    countEl.textContent = failed ? 'DATA UNAVAILABLE' : 'LOADING';
+    return;
+  }
   const subset = papers.filter(p => cohort === 'all' || p.cohort === cohort);
   if (!subset.length) papersEl.append(el('div','loading','No papers in this cohort.'));
   for (const paper of subset) {
     const row = el('button','paper-row'); row.type = 'button'; row.setAttribute('aria-label',`Inspect ${paper.title}`);
     const info = el('div'); info.append(el('div','paper-title',paper.title),el('div','paper-meta',`arXiv:${paper.id}  ·  ${paper.cohort} days`));
-    row.append(info,resultStatus(paper.results.openalex),resultStatus(paper.results.crossref),el('span','arrow','↗'));
+    row.append(info,resultStatus(paper.results.openalex, 'OpenAlex'),resultStatus(paper.results.crossref, 'Crossref'),el('span','arrow','↗'));
     row.addEventListener('click',()=>showDetail(paper)); papersEl.append(row);
   }
   countEl.textContent = `SHOWING ${subset.length} OF ${papers.length} PAPERS`;
@@ -81,4 +91,4 @@ document.getElementById('close-detail').addEventListener('click',()=>dialog.clos
 document.querySelectorAll('[data-cohort]').forEach(button=>button.addEventListener('click',()=>{
   cohort=button.dataset.cohort; document.querySelectorAll('[data-cohort]').forEach(b=>{b.classList.toggle('active',b===button); b.setAttribute('aria-pressed',String(b===button));}); drawPapers();
 }));
-fetch('data.json').then(response=>{if(!response.ok) throw new Error('Data unavailable'); return response.json();}).then(data=>{papers=validate(data);drawComparison();drawPapers();}).catch(()=>{papersEl.replaceChildren(el('div','error','The evaluation data could not be loaded. Refresh or check the local server.'));comparisonEl.replaceChildren(el('div','error','Comparison unavailable.'));});
+fetch('data.json').then(response=>{if(!response.ok) throw new Error('Data unavailable'); return response.json();}).then(data=>{papers=validate(data);loadState='ready';drawComparison();drawPapers();}).catch(()=>{loadState='error';drawPapers();comparisonEl.replaceChildren(el('div','error','Comparison unavailable because the evaluation data could not be loaded. Refresh to try again.'));});

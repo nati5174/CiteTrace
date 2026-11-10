@@ -1,6 +1,6 @@
 # CiteProbe local public-demo draft
 
-Status: **owner security and publication review pending**. Nothing has been deployed. `public-demo/` is a static-only site and is the only directory intended for Vercel upload; raw evidence is outside it. The site makes no OpenAlex or Crossref requests and uses no API key. The draft export was generated from the frozen dataset and the approved offline evaluation, retaining only citation titles, author names, identifiers, cohort, candidate metadata and identity judgments. Scholarly author names remain personal information and require your publication review.
+Status: **owner security and publication review pending**. The owner has deployed the demo at https://citeprobe.vercel.app/. Changes in this repair have not been deployed. `public-demo/` is a static-only site and is the only directory intended for Vercel upload; raw evidence is outside it. The site makes no OpenAlex or Crossref requests and uses no API key. The draft export was generated from the frozen dataset and the approved offline evaluation, retaining only citation titles, author names, identifiers, cohort, candidate metadata and identity judgments. Scholarly author names remain personal information and require your publication review.
 
 ## Security review
 
@@ -25,6 +25,101 @@ The static site uses only five files (`index.html`, `methodology.html`, `style.c
 Open `http://127.0.0.1:4173/` in your browser. Stop the server with Ctrl+C. Use an HTTP server because browser `fetch()` generally cannot load the data reliably from `file://` URLs.
 
 ## Deployment after owner review and explicit authorization
+
+### Missing-data repair (2026-11-09)
+
+The production `/data.json` endpoint returned HTTP 404 with `X-Vercel-Error:
+NOT_FOUND`. Vercel reported production commit `4ea31f1`; that commit contains the
+four site assets but omits the locally generated `public-demo/data.json`. Neither
+the repository `.gitignore` nor a `.vercelignore` excludes the export (there is no
+`.vercelignore`). The validated export is now staged for inclusion in the next
+commit. No commit, push, deployment, or production setting change was performed.
+
+The authoritative inputs are
+`artifacts/empirical-pilot-immediate-001/a-frozen-001/dataset.json` and
+`artifacts/empirical-pilot-immediate-001/a-empirical-evaluation-001/evaluation.json`.
+The exporter checks their SHA-256 digests against the existing frozen integrity
+and evaluation reproducibility records before validating their Pydantic schemas.
+The existing public JSON exactly matches the export; no research was rerun.
+Candidate order, metadata, identity decisions and recall evidence are retained.
+Only explicitly selected public fields are exported; raw responses stay outside
+the site. The research artifacts are local and untracked, so regeneration and
+artifact-comparison tests require the owner's existing artifact workspace.
+
+With the supplied Root Directory `public-demo`, Other/static framework, no build
+command, and the root itself as output, the five files can be served directly.
+Python and private research artifacts are not needed on Vercel. Do not add a
+deployment-time export step. The read-only Vercel tools confirmed the deployment
+and commit but did not expose the root/build/output settings; those settings were
+not independently verified or changed. Include `data.json` in the eventual commit,
+then verify `/data.json` returns JSON after an explicitly authorized deployment.
+
+The regression tests check static HTTP delivery, Git inclusion, schema-compatible
+rendering, evidence bounds, candidate inspection, and cohort transitions both
+before data arrives and after failed requests. Failed loads retain an error and
+`DATA UNAVAILABLE`; they never become an empty-cohort finding.
+
+### Mobile release repair
+
+The main navigation now remains visible below 800px as a wrapping row of native
+links in the existing labeled navigation landmark. Tab, Enter, visible focus and
+normal anchor behavior work without a menu script. The desktop navigation and
+two-column hero remain in place. Reduced-motion preferences disable smooth scroll.
+
+The 320px overflow originated in the hero grid's intrinsic minimum width: the
+diagram's icon, text and unbroken status tag forced the hero children wider than
+their available column. The hero now uses zero-minimum grid tracks, its children
+can shrink, and diagram rows wrap at mobile widths. Filters wrap into rows rather
+than requiring horizontal scrolling. Below 600px, paper titles span the row above
+two provider results, each with a visible provider name. Long titles and candidate
+identifiers wrap inside the dialog. There is no global overflow-hiding rule.
+
+Research metadata, statuses and candidate labels use at least 12px text. Muted
+greens were darkened while retaining the existing backgrounds and visual identity.
+The browser checks calculate unrounded sRGB contrast and require at least 4.5:1
+for visible alphanumeric text on the homepage, candidate dialog, standalone
+methodology page and data-error state. This verifies the requested text contrast,
+not every WCAG success criterion or every assistive-technology/browser combination.
+See [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html).
+
+`tests/test_public_demo_browser.py` and `tests/public_demo_browser.cjs` provide
+real Chromium regression checks at 320, 390, 768 and 1440 CSS pixels using the
+browser's debugging protocol and Node's built-in WebSocket (Node 22+). They check
+static delivery from `public-demo`, navigation with real Tab/Enter events, eight
+papers and 41 candidate records, preserved displayed ranks/identity judgments,
+dialog open/close and Escape/focus restoration, all cohort filters, readable text,
+page/dialog overflow, methodology access, delayed/failed requests, and JavaScript
+console/runtime errors. The intentionally failed HTTP request is expected.
+Screenshots stay under the ignored pytest temporary directory.
+
+Run the complete suite, including browser tests, from the repository root:
+
+```powershell
+$env:CITEPROBE_BROWSER = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+.\.venv\Scripts\python -m pytest -q --basetemp=.pytest-tmp-release -o cache_dir=.pytest-tmp-release-cache
+.\.venv\Scripts\python -m ruff check scripts/export_public_demo.py tests/test_public_demo.py tests/test_public_demo_browser.py
+.\.venv\Scripts\python -m ruff format --check scripts/export_public_demo.py tests/test_public_demo.py tests/test_public_demo_browser.py
+.\.venv\Scripts\python -m mypy
+node --check public-demo/app.js
+node --check tests/public_demo_browser.cjs
+git diff --check
+git diff --cached --check
+```
+
+An installed Chrome or Edge executable can be supplied; no browser automation
+dependency is added. Without `CITEPROBE_BROWSER`, the four browser cases are
+explicitly reported as skipped, so that mode alone is insufficient for release.
+The artifact-comparison tests still need the existing private frozen artifacts;
+those artifacts are not part of the release or Vercel upload.
+
+The release scope is exactly eight files: `public-demo/data.json`,
+`public-demo/app.js`, `public-demo/style.css`, `scripts/export_public_demo.py`,
+`tests/test_public_demo.py`, `tests/test_public_demo_browser.py`,
+`tests/public_demo_browser.cjs`, and this document. Stage these explicit paths
+only. Internal artifacts, credentials, ZIPs and browser profiles stay excluded.
+The validated public JSON and frozen research artifacts are unchanged by the
+mobile repair. Committing, pushing, deploying and changing Vercel settings are
+separate actions requiring owner authorization.
 
 Install and authenticate the Vercel CLI locally according to Vercel's instructions. In Vercel, create a new project with `public-demo` as its root and select static/other framework with no build command. Verify the project root is **only** `public-demo`; do not upload the repository or `artifacts/`. After reviewing that directory and authorizing publication:
 

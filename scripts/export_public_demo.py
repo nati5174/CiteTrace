@@ -13,9 +13,16 @@ ROOT = Path("artifacts/empirical-pilot-immediate-001")
 EVAL = ROOT / "a-empirical-evaluation-001/evaluation.json"
 DATASET = ROOT / "a-frozen-001/dataset.json"
 TARGET = Path("public-demo/data.json")
+FROZEN_SHA256 = {
+    DATASET: "a8ffee33582fd352fe72db5c410300ac29a92c5e0cbca94b76b1a14a5e5b156d",
+    EVAL: "375e40982278ba2a068284b07052279b408f2dbdd20fdcab54c99a4ddcddde1c",
+}
 
 
 def export() -> dict[str, Any]:
+    for path, expected in FROZEN_SHA256.items():
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            raise ValueError(f"Frozen input checksum mismatch: {path}")
     dataset = Dataset.model_validate_json(DATASET.read_bytes())
     evaluation = EvaluationOutput.model_validate_json(EVAL.read_bytes())
     if (

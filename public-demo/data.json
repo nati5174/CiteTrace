@@ -1,0 +1,923 @@
+{
+  "schema_version": "1.0",
+  "review_status": "owner_review_pending",
+  "evaluation_id": "c5a1b3f11d8e4a60f150bba38297f5170ee238fdb8a7323ba8e61d4f9cf6eea8",
+  "dataset_sha256": "a8ffee33582fd352fe72db5c410300ac29a92c5e0cbca94b76b1a14a5e5b156d",
+  "papers": [
+    {
+      "id": "2611.07721",
+      "title": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision",
+      "authors": [
+        "Jiawei Jiang",
+        "Zhaoxiang Zang",
+        "Zhengtao Yu"
+      ],
+      "cohort": "1-7",
+      "results": {
+        "openalex": {
+          "outcome": "NOT_FOUND",
+          "recall_at_1": "MISS",
+          "recall_at_5": "MISS",
+          "rank_one_judgment": null,
+          "candidates": []
+        },
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "MetaEval: Token-level Self-Evaluation and Selective Decision Training for Autoregressive Language Models",
+              "authors": [
+                "Zhang Sulin"
+              ],
+              "year": 2026,
+              "doi": "10.2139/ssrn.6090006",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "DyToS: Budget-aware dynamic token scheduling for efficient multi-modal large language models",
+              "authors": [
+                "Yifei Xing",
+                "Yijie Yu",
+                "Ruiping Wang",
+                "Wenjun Huang",
+                "Qingfang Zheng",
+                "Dongmei Jiang",
+                "Xiangyuan Lan"
+              ],
+              "year": 2026,
+              "doi": "10.1016/j.neucom.2026.134181",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "BiDPO: Bidirectional Preference Optimization with Token-level Supervision for Vision-Language Models",
+              "authors": [
+                "Jing Liang",
+                "Rui Wang",
+                "Long Hu",
+                "Xianzhi Li",
+                "Yixue Hao",
+                "Tao Guan",
+                "Min Chen"
+              ],
+              "year": 2026,
+              "doi": "10.36227/techrxiv.177091884.42596378/v1",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "Efficient Training with Foresight: Multi-Token Auxiliary Supervision for Autoregressive Image Generation",
+              "authors": [
+                "Guo Niu",
+                "Xiongfei Yao",
+                "Teng Wang",
+                "Nannan Zhu"
+              ],
+              "year": 2026,
+              "doi": "10.1145/3767308.3835450",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "Author response for \"Tridentate PyMPAA Ligands Enable Efficient Pd-Catalyzed Non-Directed Arene Deuteration\"",
+              "authors": [
+                "Jiawei Han",
+                "Mengtao Zhu",
+                "Yu Meng",
+                "Tao Cen",
+                "Jian-Fei Bai",
+                "Jia Chen",
+                "Zhi-Jiang Jiang",
+                "Zhanghua Gao"
+              ],
+              "year": 2026,
+              "doi": "10.1039/d6qo00600k/v2/response1",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2611.07797",
+      "title": "Dataset Collection and Fine-Tuning of NLLB for German--English Translation",
+      "authors": [
+        "SK Deeraj",
+        "Yash Ingle",
+        "Pruthwik Mishra"
+      ],
+      "cohort": "1-7",
+      "results": {
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "SCE-KIIT: Fine-Tuning NLLB-200 for English-Nagamese Translation",
+              "authors": [
+                "Agniva Maiti",
+                "Aarsh Muley",
+                "Sovan Sahoo"
+              ],
+              "year": 2026,
+              "doi": "10.18653/2026.wmt-main.156",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "JH_NLP_APAShreya2: LoRA Fine-Tuning of NLLB-200 for English–Manipuri Machine Translation at WMT 2026",
+              "authors": [
+                "Aparajita Sinha",
+                "Monika Agarwal",
+                "Shreya Bhat",
+                "Shreya Bonal",
+                "Aryan Agrahari"
+              ],
+              "year": 2026,
+              "doi": "10.18653/2026.wmt-main.163",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "Fine-Tuning Meta’s NLLB-200 Model for Telugu–English Neural Machine Translation and Real-Time WikiHow Deployment via Android App",
+              "authors": [
+                "Akshat Govil",
+                "C Ravindra Reddy",
+                "Haren A",
+                "Manju Venugopalan"
+              ],
+              "year": 2026,
+              "doi": "10.1109/i5cps67958.2026.11452590",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "Efficient Fine-Tuning of Large Language Models for Indic Language Translation Using LoRA and NLLB-200",
+              "authors": [
+                "Shrinidhi K. Naik",
+                "Yashaswini S."
+              ],
+              "year": 2026,
+              "doi": "10.1109/icnpcv69434.2026.11708961",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "IndicMT at WMT 2026: Full Fine-Tuning of NLLB-200-600M with Round-Trip Filtering and Forward Self-Training for Arabic-Asian Translation",
+              "authors": [
+                "Pramit Jana",
+                "Arindam Adhikari",
+                "Priyobroto Acharya",
+                "Dipankar Das"
+              ],
+              "year": 2026,
+              "doi": "10.18653/2026.wmt-main.172",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        },
+        "openalex": {
+          "outcome": "NOT_FOUND",
+          "recall_at_1": "MISS",
+          "recall_at_5": "MISS",
+          "rank_one_judgment": null,
+          "candidates": []
+        }
+      }
+    },
+    {
+      "id": "2610.39590",
+      "title": "Red-Teaming Large Language Models in Low-Resource African Languages: A Case Study of Yoruba and Nigerian Pidgin",
+      "authors": [
+        "Paula Chikaodinaka Anyanwu",
+        "Valdini Douglace Lemofouet",
+        "Blessing Ngozi Uzor",
+        "Ifeoluwa Dorcas Awotunde",
+        "Danielle Blanche Kapsa",
+        "Tassallah Abdullahi",
+        "Clemencia Siro",
+        "Idris Abdulmumin",
+        "Seid Muhie Yimam",
+        "Shamsuddeen Hassan Muhammad"
+      ],
+      "cohort": "8-14",
+      "results": {
+        "openalex": {
+          "outcome": "NOT_FOUND",
+          "recall_at_1": "MISS",
+          "recall_at_5": "MISS",
+          "rank_one_judgment": null,
+          "candidates": []
+        },
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "Red-Teaming African-Language LLMs: Safety Alignment Failures Across Low-Resource Languages",
+              "authors": [
+                "Godwill Nkwain Nyong",
+                "George Okeyo",
+                "Jema David Ndibwile"
+              ],
+              "year": 2026,
+              "doi": "10.21203/rs.3.rs-11242446/v1",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "Automatic Speech Recognition for African Low-Resource Languages: Challenges and Future Directions",
+              "authors": [
+                "Sukairaj Hafiz Imam",
+                "Babangida Sani",
+                "Dawit Ketema Gete",
+                "Bedru Yimam Ahmed",
+                "Ibrahim Said Ahmad",
+                "Idris Abdulmumin",
+                "Seid Muhie Yimam",
+                "Muhammad Yahuza Bello",
+                "Shamsuddeen Hassan Muhammad"
+              ],
+              "year": 2025,
+              "doi": "10.18653/v1/2025.africanlp-1.13",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "Full Fine-Tuning vs. Parameter-Efficient Adaptation for Low-Resource African ASR: A Controlled Study with Whisper-Small",
+              "authors": [
+                "Sukairaj Hafiz Imam",
+                "Muhammad Yahuza Bello",
+                "Hadiza Ali Umar",
+                "Tadesse Destaw Belay",
+                "Idris Abdulmumin",
+                "Seid Muhie Yimam",
+                "Shamsuddeen Hassan Muhammad"
+              ],
+              "year": 2026,
+              "doi": "10.18653/v1/2026.africanlp-main.19",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "AFRILANGTUTOR: Advancing Language Tutoring and Culture Education in Low-Resource Languages with Large Language Models",
+              "authors": [
+                "Tadesse Destaw Belay",
+                "Shahriar Kabir Nahin",
+                "Israel Abebe Azime",
+                "Ocean Monjur",
+                "Marek Rei",
+                "Chris Biemann",
+                "Shamsuddeen Hassan Muhammad",
+                "Seid Muhie Yimam",
+                "Anshuman Chhabra"
+              ],
+              "year": 2026,
+              "doi": "10.18653/2026.findings-emnlp.546",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "Bhattacharya_Lab at SemEval-2023 Task 12: A Transformer-based Language Model for Sentiment Classification for Low Resource African Languages: Nigerian Pidgin and Yoruba",
+              "authors": [
+                "Nathaniel Hughes",
+                "Kevan Baker",
+                "Aditya Singh",
+                "Aryavardhan Singh",
+                "Tharalillah Dauda",
+                "Sutanu Bhattacharya"
+              ],
+              "year": 2023,
+              "doi": "10.18653/v1/2023.semeval-1.207",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2610.40655",
+      "title": "Elucidating the Design Space of LM Data Attribution",
+      "authors": [
+        "Steven Yu",
+        "Sheng-Yu Wang",
+        "Kimia Hamidieh",
+        "Antonio Torralba",
+        "David Bau"
+      ],
+      "cohort": "8-14",
+      "results": {
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "Functional inorganic antiviral materials: Design principles, mechanistic insights, and potential applications",
+              "authors": [
+                "Yuheng Sheng",
+                "Bolun Wang",
+                "Jihong Yu"
+              ],
+              "year": 2026,
+              "doi": "10.1016/j.celbio.2026.100386",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "Author response for \"Linker attachment points: \"Finishing touch\" in PROTAC design\"",
+              "authors": [
+                "qiaojuan jiang",
+                "Hua-Sheng Shi",
+                "Chuan-Sheng Zhao",
+                "Zi-Yi Wang",
+                "Mei-Meng Yu",
+                "Cong-Jun Liu",
+                "Xin-Yue Zhang"
+              ],
+              "year": 2026,
+              "doi": "10.1039/d6md00346j/v2/response1",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "Design of Bioinspired\nOrdered Materials for Spectral\nModulation",
+              "authors": [
+                "Fu-Xing Zhao",
+                "Si-Zhe Sheng",
+                "Jin-Long Wang",
+                "Shu-Hong Yu"
+              ],
+              "year": 2026,
+              "doi": "10.1021/accountsmr.6c00249",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "LF-SSM: Lightweight HiPPO-Free State Space Model for Real-Time UAV Tracking",
+              "authors": [
+                "Tianyu Wang",
+                "Xinghua Xu",
+                "Shaohua Qiu",
+                "Changchong Sheng",
+                "Di Wang",
+                "Hui Tian",
+                "Jiawei Yu"
+              ],
+              "year": 2026,
+              "doi": "10.3390/drones10020102",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "Design of Granular Fuzzy Relation Models in Horizontal Federated Learning",
+              "authors": [
+                "Dan Wang",
+                "Kai Yu",
+                "Witold Pedrycz",
+                "Zhiwu Li",
+                "Zhenhua Yu",
+                "Cong Wang"
+              ],
+              "year": 2026,
+              "doi": "10.1109/tbdata.2026.3668597",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        },
+        "openalex": {
+          "outcome": "NOT_FOUND",
+          "recall_at_1": "MISS",
+          "recall_at_5": "MISS",
+          "rank_one_judgment": null,
+          "candidates": []
+        }
+      }
+    },
+    {
+      "id": "2610.25399",
+      "title": "From Unverifiable Domain Text to Cross-Lingual RLVR via Code-Switched Task Synthesis",
+      "authors": [
+        "Cheonbok Park",
+        "Jihwan Kim",
+        "Shinyoung Joo",
+        "Joosung Lee",
+        "Hwiyeol Jo",
+        "Jeonghoon Kim",
+        "Jaegul Choo"
+      ],
+      "cohort": "15-30",
+      "results": {
+        "openalex": {
+          "outcome": "NOT_FOUND",
+          "recall_at_1": "MISS",
+          "recall_at_5": "MISS",
+          "rank_one_judgment": null,
+          "candidates": []
+        },
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "From Unverifiable Domain Text to Cross-Lingual RLVR via Code-Switched Task Synthesis",
+              "authors": [
+                "Cheonbok Park",
+                "Jihwan Kim",
+                "Shinyoung Joo",
+                "Joosung Lee",
+                "Hwiyeol Jo",
+                "Jeonghoon Kim",
+                "Jaegul Choo"
+              ],
+              "year": 2026,
+              "doi": "10.18653/2026.emnlp-main.1375",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "Cross-Lingual Compositional Learning for Code-Switched Lip Reading",
+              "authors": [
+                "Jeonghyeon Joo",
+                "Jiyoung Lee"
+              ],
+              "year": 2026,
+              "doi": "10.21437/interspeech.2026-1163",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "Design of advanced voltage management system including manual operation mode via real-time simulation",
+              "authors": [
+                "Seung-Mook Baek",
+                "Suchul Nam",
+                "Jiyoung Song",
+                "Jaegul Lee",
+                "Taekyun Kim",
+                "Jeonghoon Shin"
+              ],
+              "year": 2011,
+              "doi": "10.1109/ias.2011.6074328",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "Stage-Consistent Domain Adaptation for Health Indicator Learning via a Cross-Domain Aligned Autoencoder",
+              "authors": [
+                "Jungho Choo",
+                "Hanbyeol Park",
+                "Gawon Lee",
+                "Yunkyung Park",
+                "Hyerim Bae"
+              ],
+              "year": 2026,
+              "doi": "10.2139/ssrn.6948978",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "Data-driven multiplexed microtomography of endogenous subcellular dynamics",
+              "authors": [
+                "YoungJu Jo",
+                "Hyungjoo Cho",
+                "Wei Sun Park",
+                "Geon Kim",
+                "Donghun Ryu",
+                "Young Seo Kim",
+                "Moosung Lee",
+                "Hosung Joo",
+                "HangHun Jo",
+                "Sumin Lee",
+                "Hyun-seok Min",
+                "Won Do Heo",
+                "YongKeun Park"
+              ],
+              "year": 2020,
+              "doi": "10.1101/2020.09.16.300392",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2610.25215",
+      "title": "Hidden Cartographer: Hidden State Guided Data Selection for Dual Budgeted Instruction Tuning",
+      "authors": [
+        "Zixuan Qin",
+        "Qi Qin",
+        "Erbo Li",
+        "Ting Wei",
+        "Yifan Sun",
+        "Zhaoxin Fan"
+      ],
+      "cohort": "15-30",
+      "results": {
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "Author response for \"Lasing characteristics and stress-tuning effects in GaN beam microcavities\"",
+              "authors": [
+                "Yitong Chen",
+                "Ying Yang",
+                "Xuefeng Fan",
+                "Zhiwei Sun",
+                "Daquan Yang",
+                "Zixuan Wang",
+                "Zhikuang Cai",
+                "Zhenfu Zhang",
+                "Junbo Yang",
+                "Feifei Qin",
+                "Gangyi Zhu"
+              ],
+              "year": 2026,
+              "doi": "10.1039/d6nr01334a/v2/response1",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "Demystifying Hidden-State Recurrence: Switchable Latent Reasoning with On-Policy Reinforcement Learning",
+              "authors": [
+                "Jiayu Yang",
+                "Chao Chen",
+                "Shengen Wu",
+                "Yinhong Liu",
+                "Yuxuan Fan",
+                "Lujundong Li",
+                "Songning Lai",
+                "Chengwei Qin",
+                "Zhijiang Guo"
+              ],
+              "year": 2026,
+              "doi": "10.18653/2026.findings-emnlp.457",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "Fast bootstrap and reliable readout using hidden references for DNA data storage",
+              "authors": [
+                "Weigang Chen",
+                "Shuang Liu",
+                "Quan Guo",
+                "Rui Qin",
+                "Qi Ge",
+                "Tingting Qi",
+                "Yingjin Yuan"
+              ],
+              "year": 2026,
+              "doi": "10.1002/imt2.70105",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "Hidden proteins encoded by non-canonical open reading frames: A review",
+              "authors": [
+                "Jiang-xue Li",
+                "Yan-xia Qin",
+                "Zhao Li",
+                "Liang Sun"
+              ],
+              "year": 2026,
+              "doi": "10.1016/j.yexmp.2026.105069",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "Author response for \"Hidden Solid-Liquid Interfacial Failure Governs Fast-Charging Degradation in Large-Capacity Semi-Solid-State Lithium-Ion Batteries\"",
+              "authors": [
+                "Shanpeng Qin",
+                "Yan Lyu",
+                "Jie Gao",
+                "Menghan Li"
+              ],
+              "year": 2026,
+              "doi": "10.1039/d6ta05518d/v2/response1",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        },
+        "openalex": {
+          "outcome": "NOT_FOUND",
+          "recall_at_1": "MISS",
+          "recall_at_5": "MISS",
+          "rank_one_judgment": null,
+          "candidates": []
+        }
+      }
+    },
+    {
+      "id": "2609.30897",
+      "title": "From annotation to reasoning: Culture in language models",
+      "authors": [
+        "Daniel Hershcovich",
+        "Alexander Conroy",
+        "Jens Bjerring-Hansen"
+      ],
+      "cohort": "31-60",
+      "results": {
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "From Sentiment to Interpretation: Teaching NLP for Literary Understanding Across Educational Contexts",
+              "authors": [
+                "Karl-Emil Kjær Bilstrup",
+                "Kirstine Nielsen Degn",
+                "Morten Schultz",
+                "Alexander Conroy",
+                "Jens Bjerring-Hansen",
+                "Daniel Hershcovich"
+              ],
+              "year": 2026,
+              "doi": "10.18653/v1/2026.teachingnlp-1.16",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "NOVELSUM: Evaluating Long-Form Summary Generation for Historical Scandinavian Novels",
+              "authors": [
+                "Ali Al-Laith",
+                "Alexander Conroy",
+                "Kirstine Nielsen Degn",
+                "Jens Bjerring-Hansen",
+                "Daniel Hershcovich"
+              ],
+              "year": 2026,
+              "doi": "10.63317/22upgvjw86b9",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "Development and Evaluation of Pre-trained Language Models for Historical Danish and Norwegian Literary Texts",
+              "authors": [
+                "Ali Al-Laith",
+                "Alexander Conroy",
+                "Jens Bjerring-Hansen",
+                "Daniel Hershcovich"
+              ],
+              "year": 2024,
+              "doi": "10.63317/2ixrvppuoo96",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "Noise, Novels, Numbers. A Framework for Detecting and Categorizing Noise in Danish and Norwegian Literature",
+              "authors": [
+                "Ali Al-Laith",
+                "Daniel Hershcovich",
+                "Jens Bjerring-Hansen",
+                "Jakob Ingemann Parby",
+                "Alexander Conroy",
+                "Timothy R Tangherlini"
+              ],
+              "year": 2024,
+              "doi": "10.18653/v1/2024.emnlp-main.196",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "Modeling Textual Emotions in Literary Fiction",
+              "authors": [
+                "Kirstine Nielsen Degn",
+                "Alexander Conroy",
+                "Xiaoyuan Jiang",
+                "Ali Al-Laith",
+                "Jens Bjerring-Hansen",
+                "Tanya Karoli Christensen",
+                "Ingo Zettler",
+                "Daniel Hershcovich"
+              ],
+              "year": 2026,
+              "doi": "10.5617/dhnbpub.13195",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        },
+        "openalex": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "From Sentiment to Interpretation: Teaching NLP for Literary Understanding Across Educational Contexts",
+              "authors": [
+                "Karl-Emil Kjær Bilstrup",
+                "Kirstine Nielsen Degn",
+                "Morten Schultz",
+                "Alexander Conroy",
+                "Jens Bjerring-Hansen",
+                "Daniel Hershcovich"
+              ],
+              "year": 2026,
+              "doi": "10.18653/v1/2026.teachingnlp-1.16",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2609.31169",
+      "title": "Improving Visual Sensitivity of LLMs on Multimodal Machine Translation with Metric-based Loss Weighting",
+      "authors": [
+        "Paweł Mąka",
+        "Piotr Andruszkiewicz",
+        "Yusuf Can Semerci",
+        "Jan Scholtes",
+        "Gerasimos Spanakis"
+      ],
+      "cohort": "31-60",
+      "results": {
+        "openalex": {
+          "outcome": "NOT_FOUND",
+          "recall_at_1": "MISS",
+          "recall_at_5": "MISS",
+          "rank_one_judgment": null,
+          "candidates": []
+        },
+        "crossref": {
+          "outcome": "FOUND",
+          "recall_at_1": "UNDETERMINED",
+          "recall_at_5": "UNDETERMINED",
+          "rank_one_judgment": "UNDETERMINED",
+          "candidates": [
+            {
+              "rank": 1,
+              "title": "Fixed and Adaptive Simultaneous Machine Translation Strategies Using Adapters",
+              "authors": [
+                "Abderrahmane Issam",
+                "Yusuf Can Semerci",
+                "Jan Scholtes",
+                "Gerasimos Spanakis"
+              ],
+              "year": 2024,
+              "doi": "10.18653/v1/2024.iwslt-1.36",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 2,
+              "title": "Align, Integrate, and Fire: Efficient Token-Level Alignment for Zero-Shot SpeechLLMs",
+              "authors": [
+                "Abderrahmane Issam",
+                "Yusuf Can Semerci",
+                "Jan Scholtes",
+                "Gerasimos Spanakis"
+              ],
+              "year": 2026,
+              "doi": "10.18653/2026.wmt-main.18",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 3,
+              "title": "Sequence Shortening for Context-Aware Machine Translation",
+              "authors": [
+                "Paweł Maka",
+                "Yusuf Semerci",
+                "Jan Scholtes",
+                "Gerasimos Spanakis"
+              ],
+              "year": 2024,
+              "doi": "10.18653/v1/2024.findings-eacl.127",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 4,
+              "title": "Cross-Modal Robustness Transfer (CMRT): Training Robust Speech Translation Models Using Adversarial Text",
+              "authors": [
+                "Abderrahmane Issam",
+                "Yusuf Can Semerci",
+                "Jan Scholtes",
+                "Gerasimos Spanakis"
+              ],
+              "year": 2026,
+              "doi": "10.21437/interspeech.2026-2278",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            },
+            {
+              "rank": 5,
+              "title": "DTW-Align: Bridging the Modality Gap in End-to-End Speech Translation with Dynamic Time Warping Alignment",
+              "authors": [
+                "Abderrahmane Issam",
+                "Yusuf Can Semerci",
+                "Jan Scholtes",
+                "Gerasimos Spanakis"
+              ],
+              "year": 2025,
+              "doi": "10.18653/v1/2025.wmt-1.11",
+              "arxiv_id": null,
+              "judgment": "UNDETERMINED",
+              "reason": "No verified evidence of identity or distinctness"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
