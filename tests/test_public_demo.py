@@ -54,7 +54,7 @@ def test_export_matches_evaluation_and_has_no_private_fields() -> None:
     evaluation = EvaluationOutput.model_validate_json(
         (ROOT / "a-empirical-evaluation-001/evaluation.json").read_bytes()
     )
-    assert data["review_status"] == "owner_review_pending"
+    assert data["review_status"] == "owner_approved"
     assert data == export()
     assert set(data) == {
         "schema_version",
@@ -144,6 +144,16 @@ for (const button of [buttons[1], buttons[0]]) {
 }
 setImmediate(()=>{
   if(ids.papers.children.length!==8 || ids.comparison.children.length!==2) throw Error('render');
+  for(const review_status of ['owner_review_pending','unknown']) {
+    let rejected=false;
+    try { validate({...DATA,review_status}); } catch { rejected=true; }
+    if(!rejected) throw Error('publication status mismatch');
+  }
+  const emptyStatuses=ids.papers.children.flatMap(row=>row.children)
+    .filter(node=>node.className==='status empty');
+  if(emptyStatuses.length!==7 || emptyStatuses.some(node=>
+    !node.children[1].textContent.includes('No candidates returned')))
+    throw Error('empty response label');
   for (const [index,provider] of ['openalex','crossref'].entries()) {
     const results=DATA.papers.map(p=>p.results[provider]);
     const hits=results.filter(r=>r.recall_at_5==='HIT').length;
@@ -154,8 +164,15 @@ setImmediate(()=>{
   buttons[1].click(); if(ids.papers.children.length!==2) throw Error('filter');
   ids.papers.children[0].click();
   if(!ids.detail.open || ids['detail-content'].children.length<4) throw Error('detail');
+  const headings=ids['detail-content'].children.slice(2).map(section=>section.children[0]);
+  if(!headings.some(node=>node.textContent.includes('No candidates returned')) ||
+    headings.some(node=>node.textContent.includes('NOT_FOUND')))
+    throw Error('detail response label');
   const nested=ids['detail-content'].children.flatMap(n=>n.children).flatMap(n=>n.children);
   if(!nested.some(y=>String(y.textContent).includes('UNDETERMINED'))) throw Error('judgment');
+  const sectionContents=ids['detail-content'].children.flatMap(section=>section.children);
+  if(!sectionContents.some(y=>String(y.textContent).includes('does not establish absence')))
+    throw Error('absence limitation');
   ids['close-detail'].click(); if(ids.detail.open) throw Error('close');
   console.log('render, filter, candidate inspection, and close passed');
 });
@@ -262,3 +279,32 @@ def test_export_rejects_changed_frozen_input(
     monkeypatch.setattr(export_public_demo, "FROZEN_SHA256", {changed: "0" * 64})
     with pytest.raises(ValueError, match="Frozen input checksum mismatch"):
         export()
+
+
+def test_publication_copy_matches_export_status() -> None:
+    for name in ("index.html", "methodology.html"):
+        html = Path("public-demo", name).read_text(encoding="utf-8")
+        assert "PUBLIC EXPLORATORY PILOT" in html
+        assert "PRIVATE PREVIEW" not in html
+        assert "review pending" not in html.lower()
+        assert "pending owner" not in html.lower()
+    methods = Path("public-demo/methodology.html").read_text(encoding="utf-8")
+    assert "not that a paper is missing from a database" in methods
+    assert "eight papers cannot support population-level conclusions" in methods
+    assert "Raw captures and credentials are excluded" in methods
+
+
+def test_publication_copy_avoids_licensing_claims() -> None:
+    paths = [
+        Path("public-demo/index.html"),
+        Path("public-demo/methodology.html"),
+        Path("README.md"),
+        Path("docs/public-demo.md"),
+        Path("pyproject.toml"),
+    ]
+    for path in paths:
+        copy = path.read_text(encoding="utf-8")
+        assert not re.search(r"open[- ]source", copy, re.IGNORECASE), path
+    homepage = paths[0].read_text(encoding="utf-8")
+    assert "Research prototype in progress" in homepage
+    assert "PUBLIC EXPLORATORY PILOT" in homepage

@@ -1,4 +1,4 @@
-/* CiteProbe exploratory pilot. All visible values come from the reviewed draft export. */
+/* CiteProbe exploratory pilot. All visible values come from the public pilot export. */
 const papersEl = document.getElementById('papers');
 const comparisonEl = document.getElementById('comparison');
 const countEl = document.getElementById('paper-count');
@@ -15,7 +15,7 @@ function el(tag, className, text) {
   return node;
 }
 function validate(data) {
-  if (data.schema_version !== '1.0' || data.review_status !== 'owner_review_pending' || !Array.isArray(data.papers) || data.papers.length !== 8) throw new Error('Unexpected dataset');
+  if (data.schema_version !== '1.0' || data.review_status !== 'owner_approved' || !Array.isArray(data.papers) || data.papers.length !== 8) throw new Error('Unexpected dataset');
   for (const p of data.papers) {
     if (!p.title || !p.id || !['1-7','8-14','15-30','31-60'].includes(p.cohort)) throw new Error('Invalid paper');
     for (const provider of ['openalex','crossref']) {
@@ -25,10 +25,13 @@ function validate(data) {
   }
   return data.papers;
 }
+function resultLabel(result) {
+  return result.outcome === 'FOUND' ? 'FOUND' : 'No candidates returned';
+}
 function resultStatus(result, provider) {
   const box = el('div', 'status ' + (result.outcome === 'FOUND' ? 'found' : 'empty'));
   box.append(el('span', 'provider-name', provider));
-  box.append(el('span', '', result.outcome === 'FOUND' ? '●  FOUND' : '○  NOT FOUND'));
+  box.append(el('span', '', `${result.outcome === 'FOUND' ? '●' : '○'}  ${resultLabel(result)}`));
   box.append(el('small', '', `${result.candidates.length} candidate${result.candidates.length === 1 ? '' : 's'}`));
   return box;
 }
@@ -73,7 +76,7 @@ function showDetail(paper) {
   detail.append(el('p','',`${paper.authors.join(', ')} · arXiv:${paper.id} · ${paper.cohort} days`));
   for (const [key,name] of [['openalex','OpenAlex'],['crossref','Crossref']]) {
     const result = paper.results[key]; const section = el('section','candidate');
-    section.append(el('div','eyebrow',`${name.toUpperCase()} · ${result.outcome} · ${result.candidates.length} CANDIDATES`));
+    section.append(el('div','eyebrow',`${name.toUpperCase()} · ${resultLabel(result)} · ${result.candidates.length} CANDIDATES`));
     if (!result.candidates.length) section.append(el('p','','No candidates were returned by this search. This does not establish absence from the provider’s database.'));
     for (const candidate of result.candidates) {
       const item = el('div','candidate');

@@ -1,6 +1,6 @@
 # CiteProbe
 
-An open-source Python benchmark for academic citation retrieval reliability.
+A Python research prototype for academic citation retrieval reliability.
 Parts 1 through 4 implement dataset schemas, ground truth, deterministic mutations,
 asynchronous OpenAlex/Crossref candidate retrieval, and offline identity evaluation
 with explicit metric denominators and evidence bounds, plus offline analysis,

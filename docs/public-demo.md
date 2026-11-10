@@ -1,6 +1,6 @@
-# CiteProbe local public-demo draft
+# CiteProbe public exploratory pilot
 
-Status: **owner security and publication review pending**. The owner has deployed the demo at https://citeprobe.vercel.app/. Changes in this repair have not been deployed. `public-demo/` is a static-only site and is the only directory intended for Vercel upload; raw evidence is outside it. The site makes no OpenAlex or Crossref requests and uses no API key. The draft export was generated from the frozen dataset and the approved offline evaluation, retaining only citation titles, author names, identifiers, cohort, candidate metadata and identity judgments. Scholarly author names remain personal information and require your publication review.
+Status: **public exploratory pilot**. The site is hosted at https://citeprobe.vercel.app/. `public-demo/` is the only directory intended for Vercel publication. The site uses no API key and makes no provider API requests. Its selected metadata comes from the frozen dataset and verified offline evaluation; raw captures remain excluded. Publication metadata uses `owner_approved`; this does not certify canonical identities or change research evidence. Historical repair notes below describe earlier states.
 
 ## Security review
 
@@ -131,3 +131,17 @@ vercel deploy --prod
 This command publishes a production deployment. Do not run it until the owner has approved the secret and privacy review and deployment. Any preview deployment also uploads files to Vercel and requires approval; it is not necessarily private. See https://vercel.com/docs/cli/deploy.
 
 The page is an exploratory eight-paper pilot, not a general performance claim. Provider access conditions differ: the first OpenAlex lookup was anonymous; the following seven used an API key; Crossref was anonymous. The data shows retrieval outcomes and verified-identity uncertainty separately. The seed, frozen dataset, evidence and approved evaluation were not changed.
+
+## Public-release wording and publication metadata
+
+Empty provider responses display “No candidates returned” in rows and dialogs.
+The serialized `NOT_FOUND` outcome is retained. An empty search does not establish
+absence from the provider database. Scientific limitations, verified identity
+criteria, candidate rankings, judgments, recall bounds and denominators are unchanged.
+
+The public banners read “PUBLIC EXPLORATORY PILOT”; pending-review copy is removed
+from the public pages. The JSON, exporter, frontend validator and regression tests
+use `review_status: owner_approved` together. This is publication metadata, not a
+research outcome. Do not infer new verification or empirical findings from it.
+Frozen dataset/evaluation checksums remain enforced; the public JSON differs from
+the prior export only in `review_status`. No raw captures are published.

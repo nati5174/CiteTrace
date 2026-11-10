@@ -1,4 +1,4 @@
-"""Build a minimal, review-pending public demo from the verified evaluation."""
+"""Build the public pilot export from the frozen, verified evaluation."""
 
 import hashlib
 import json
@@ -67,7 +67,7 @@ def export() -> dict[str, Any]:
         )
     data = {
         "schema_version": "1.0",
-        "review_status": "owner_review_pending",
+        "review_status": "owner_approved",
         "evaluation_id": evaluation.evaluation_id,
         "dataset_sha256": hashlib.sha256(DATASET.read_bytes()).hexdigest(),
         "papers": papers,
