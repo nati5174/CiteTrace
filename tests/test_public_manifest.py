@@ -115,10 +115,14 @@ def test_public_assets_are_sanitized_and_self_contained() -> None:
         "index.html",
         "methodology.html",
         "style.css",
+        "refine.css",
+        "integrated.css",
         "app.js",
+        "integrated.js",
         "data.json",
         "experiment-manifest.json",
         "verify.py",
+        "fonts",
     }
     patterns = (
         r"(?i)(?:api[_-]?key|authorization|access[_-]?token|bearer)\s*[:=]",
@@ -128,6 +132,20 @@ def test_public_assets_are_sanitized_and_self_contained() -> None:
         r"(?:gh[pousr]_[a-zA-Z0-9]{20,}|sk-[a-zA-Z0-9_-]{20,}|AKIA[A-Z0-9]{16})",
     )
     for asset in assets:
+        if asset.name == "fonts":
+            assert {p.name for p in asset.iterdir()} == {
+                "IBMPlexSans-Regular.woff",
+                "IBMPlexSans-SemiBold.woff",
+                "IBMPlexSans-Bold.woff",
+                "IBMPlexMono-Regular.woff",
+                "Sans-LICENSE.txt",
+                "Mono-LICENSE.txt",
+            }
+            for font in asset.glob("*.woff"):
+                assert font.read_bytes()[:4] == b"wOFF", font.name
+            for license_file in asset.glob("*-LICENSE.txt"):
+                assert "SIL OPEN FONT LICENSE" in license_file.read_text(encoding="utf-8")
+            continue
         contents = asset.read_text(encoding="utf-8")
         assert not any(re.search(pattern, contents) for pattern in patterns), asset.name
     css = Path("public-demo/style.css").read_text()

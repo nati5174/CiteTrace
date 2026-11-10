@@ -2,8 +2,9 @@
 
 CiteProbe is an **exploratory citation-retrieval pilot**, not a validated accuracy
 benchmark. It makes the difference between retrieving a scholarly record and
-verifying its identity inspectable. This local improvement pass has not been
-committed, pushed or deployed; production remains the prior approved release.
+verifying its identity inspectable. The homepage uses the Pilot Atlas to navigate
+the frozen searches; individual paper inspections use the Review Register
+workbench.
 
 ## Frozen scientific scope
 
@@ -24,10 +25,11 @@ performance, and does not establish mutation robustness.
 `public-demo/data.json` remains byte-identical to the prior approved export.
 Canonical identities, provider ranks, candidate metadata, judgments, explanations,
 counts, evidence bounds, evaluation ID and dataset checksum are preserved. Its
-existing `owner_approved` metadata describes the prior export approval; it does not
-approve this new manifest/UI release or independently certify the research.
+`owner_approved` metadata labels the frozen export. The UI release was explicitly
+approved by the project owner on 10 November 2026; neither approval independently
+certifies the research or verifies any candidate identity.
 
-## Seven public static assets
+## Public static assets
 
 Only `public-demo/` is intended for site publication:
 
@@ -35,11 +37,51 @@ Only `public-demo/` is intended for site publication:
 | --- | --- |
 | `index.html` | Pilot question, observations, limitations and source/candidate exploration |
 | `methodology.html` | Ten sections separating recorded observations, identity evidence, limits and future work |
-| `style.css` | Responsive layout, readable text, CSS arrow icons and visible focus states |
-| `app.js` | Schema/inventory checks, deterministic arithmetic and safe text rendering |
+| `style.css`, `refine.css`, `integrated.css` | Review Register system and responsive Pilot Atlas/workbench composition |
+| `app.js`, `integrated.js` | Schema checks, safe rendering, Atlas navigation, evidence path and rank jumps |
 | `data.json` | Unchanged source metadata and frozen candidate/evaluation projection |
 | `experiment-manifest.json` | Sanitized historical request metadata and explicit provenance gaps |
 | `verify.py` | Standalone standard-library verifier for downloaded public artifacts |
+| `fonts/` | Local IBM Plex Sans/Mono WOFF fonts and their SIL Open Font License notices |
+
+## Evidence-workbench navigation
+
+The approved Pilot Atlas and Review Register interface uses graphite source context, white ranked
+records, steel-blue interactions and explicitly labeled copper identity annotations.
+The homepage specimen is one real frozen record, not a representative finding.
+Findings places return counts, identity-evidence bounds and recorded access together.
+
+Open `index.html#paper=2611.07721` to inspect a paper directly. Append
+`&provider=openalex` or `&provider=crossref` to select a provider. Without a provider,
+the first provider with candidates is selected; controls retain OpenAlex/Crossref
+order. Within each search, candidate ranking is unchanged. Empty searches remain
+inspectable and do not establish absence from a provider's database.
+
+Paper links and Previous/Next add browser-history entries. Provider selection
+replaces the current paper entry, avoiding a Back step for every toggle. Browser
+Back/Forward restores the paper route, and return to the overview restores focus
+to its source link when visible. Cohort state is retained within the page session;
+it is not encoded in shared URLs. Copy link has a manual address-bar fallback.
+
+The homepage Atlas maps all eight sources and sixteen provider searches to their
+recorded ranks. On narrow screens, two sources display at a time with keyboard
+operable previous/next controls. Source and provider cells link directly to the
+matching inspection route. The above-map note clarifies that rank counts are not
+verified identity or accuracy, while recorded access conditions are stated below.
+
+Desktop keeps source context beside candidates; mobile uses a compact source
+reference and expandable provenance. The four-stage evidence path explains
+source, provider query, ranked returns, and unresolved identity in the inspection.
+Both provider names are included in source
+links' accessible names at every breakpoint. The mobile matrix retains explicit
+table/row/header roles while reflowing into labeled summaries. Enlarged-text,
+keyboard, provider-association and history regressions run in real Chromium.
+These checks do not certify complete screen-reader or touch-device accessibility.
+
+Both public JSON files must validate before evidence is displayed. Loading errors
+hide unavailable observations and expose an alert with recovery guidance. No
+provider requests occur in the browser. Fonts are served locally, with no external
+font-service requests. Implementation links point to the repository's origin URL.
 
 Do not upload repository roots, internal artifacts, raw responses, `.env`, logs,
 archives, browser profiles or pytest directories. The manifest exporter uses field
@@ -139,12 +181,11 @@ Screenshots, downloaded test files and JSON test reports remain in ignored pytes
 directories. These checks cover relevant accessibility criteria; they do not
 constitute a full WCAG certification, screen-reader audit or Safari/device test.
 
-## Release boundary
+## Release
 
 The existing Vercel project uses `public-demo` as its static root. No build-time
-provider request, secret or private evidence is needed to serve the seven files.
-No deployment, project-setting, authentication, environment-variable, domain,
-repository-visibility or licensing change is authorized by this local task.
-Only after owner approval may a release be committed/pushed and the existing Git
-integration allowed to deploy. Verify all new downloads on that later deployment;
-local HTTP/browser checks are not a claim that production already has the changes.
+provider request, secret or private evidence is needed to serve the static files.
+The Atlas and workbench render from the byte-preserved public export and manifest;
+all candidate identity judgments, ranks, counts, access observations and the
+reproducibility verifier remain unchanged. The deployed site should be checked at
+its production domain for direct paper routes, fonts and downloads after release.

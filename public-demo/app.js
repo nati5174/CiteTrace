@@ -1,19 +1,4 @@
-/* Frozen pilot presentation. Rendering and arithmetic never change the public records. */
-const papersEl = document.getElementById('papers');
-const comparisonEl = document.getElementById('comparison');
-const countEl = document.getElementById('paper-count');
-const dialog = document.getElementById('detail');
-const detail = document.getElementById('detail-content');
-let papers = [];
-let cohort = 'all';
-let loadState = 'loading';
-
-function el(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text !== undefined && text !== null) node.textContent = String(text);
-  return node;
-}
+/* Frozen research records are rendered without modification. */
 function validate(data) {
   const text = value => typeof value === 'string' && value.trim().length > 0;
   const authors = value => Array.isArray(value) && value.every(text);
@@ -58,140 +43,313 @@ function validate(data) {
   if (candidateCount !== 41) throw Error('Unexpected frozen candidate inventory');
   return data.papers;
 }
-function resultLabel(result) {
-  return result.outcome === 'FOUND' ? 'Candidates returned' : 'No candidates returned';
+
+const providerNames = {openalex: 'OpenAlex', crossref: 'Crossref'};
+const providers = Object.keys(providerNames);
+let papers = [];
+let searches = [];
+let cohort = 'all';
+let inspectedId = null;
+const $ = selector => document.querySelector(selector);
+
+function node(tag, text, className) {
+  const element = document.createElement(tag);
+  if (text !== undefined) element.textContent = text;
+  if (className) element.className = className;
+  return element;
 }
-function resultStatus(result, provider) {
-  const box = el('div', 'status ' + (result.outcome === 'FOUND' ? 'found' : 'empty'));
-  box.append(el('span', 'provider-name', provider));
-  box.append(el('span', '', resultLabel(result)));
-  box.append(el('small', '', `${result.candidates.length} candidate ${result.candidates.length === 1 ? 'entry' : 'entries'}`));
-  return box;
+
+function link(text, href) {
+  const element = node('a', text);
+  element.href = href;
+  return element;
 }
-function drawComparison() {
-  comparisonEl.replaceChildren();
-  for (const [key, name] of [['openalex', 'OpenAlex'], ['crossref', 'Crossref']]) {
-    const results = papers.map(p => p.results[key]);
-    const returned = results.filter(r => r.outcome === 'FOUND').length;
-    const entries = results.reduce((total, r) => total + r.candidates.length, 0);
-    const confirmed = results.filter(r => r.recall_at_5 === 'HIT').length;
-    const uncertain = results.filter(r => r.recall_at_5 === 'UNDETERMINED').length;
-    const card = el('article', 'provider-card');
-    const title = el('div', 'provider-title');
-    title.append(el('h3', '', name), el('span', '', 'RECORDED SEARCHES'));
-    const stats = el('div', 'provider-stats');
-    stats.append(el('strong', '', `${returned} / ${results.length}`), el('span', '', 'searches returned candidates'));
-    card.append(title, stats);
-    card.append(el('p', '', `${entries} candidate ${entries === 1 ? 'entry' : 'entries'} returned. ${results.length - returned} searches returned no candidates.`));
-    card.append(el('p', '', 'All candidate identities are undetermined. Return counts are not verified matches or accuracy scores.'));
-    const bounds = el('div', 'bounds');
-    bounds.append(el('span', '', 'Recall@5 identity-evidence bounds'), el('b', '', `${confirmed}–${confirmed + uncertain} / ${results.length}`));
-    card.append(bounds);
-    comparisonEl.append(card);
+
+function validateManifest(manifest, data) {
+  if (!manifest || manifest.schema_version !== '1.0'
+      || manifest.evaluation_id !== data.evaluation_id
+      || manifest.dataset_sha256 !== data.dataset_sha256
+      || !Array.isArray(manifest.searches) || manifest.searches.length !== 16)
+    throw Error('Invalid experiment manifest');
+  for (const paper of data.papers) {
+    for (const provider of providers) {
+      const rows = manifest.searches.filter(s =>
+        s.source_paper_id === paper.id && s.provider === provider);
+      const result = paper.results[provider];
+      if (rows.length !== 1 || rows[0].http_status !== 200
+          || !['anonymous', 'api_key_query_parameter'].includes(rows[0].authentication_mode)
+          || rows[0].outcome !== result.outcome
+          || JSON.stringify(rows[0].candidate_ranks)
+            !== JSON.stringify(result.candidates.map(c => c.rank)))
+        throw Error('Inconsistent request metadata');
+    }
+  }
+  return manifest.searches;
+}
+
+function readRoute(hash) {
+  const params = new URLSearchParams(hash.replace(/^#/, ''));
+  return {id: params.get('paper'), provider: params.get('provider')};
+}
+
+function selectedProvider(paper, requested) {
+  return providers.includes(requested) ? requested
+    : providers.find(provider => paper.results[provider].candidates.length) || providers[0];
+}
+
+function drawOverview() {
+  const list = $('#paper-list');
+  list.replaceChildren();
+  const subset = papers.filter(p => cohort === 'all' || p.cohort === cohort);
+  $('#count').textContent = `Showing ${subset.length} of ${papers.length} source papers`;
+  if (!subset.length) list.append(node('p', 'No papers in this cohort. Choose All papers.'));
+  for (const paper of subset) {
+    const row = link('', '#paper=' + paper.id);
+    row.className = 'paper-link';
+    const descriptions = providers.map(provider => {
+      const count = paper.results[provider].candidates.length;
+      return `${providerNames[provider]}: ${count} candidate entries returned; `
+        + (count ? 'identities undetermined' : 'no candidates to assess');
+    });
+    row.setAttribute('aria-label', `Inspect ${paper.title}. ${descriptions.join('. ')}.`);
+    const source = node('div');
+    source.append(node('strong', paper.title),
+      node('small', `arXiv:${paper.id} · ${paper.cohort} days`));
+    row.append(source);
+    for (const provider of providers) {
+      const status = node('div', providerNames[provider], 'status');
+      status.append(node('small', `${paper.results[provider].candidates.length} candidate entries`));
+      row.append(status);
+    }
+    list.append(row);
   }
 }
-function drawPapers() {
-  papersEl.replaceChildren();
-  if (loadState !== 'ready') {
-    const failed = loadState === 'error';
-    papersEl.append(el('p', failed ? 'error' : 'loading', failed
-      ? 'The evaluation data could not be loaded. Refresh to try again.' : 'Loading papers…'));
-    countEl.textContent = failed ? 'DATA UNAVAILABLE' : 'LOADING';
+
+function drawFindings() {
+  const labels = ['Provider', 'Searches returning records', 'Candidate entries',
+    'Identity evidence', 'Recall@5 bounds', 'Recorded access'];
+  $('#matrix').replaceChildren();
+  for (const provider of providers) {
+    const results = papers.map(p => p.results[provider]);
+    const returned = results.filter(r => r.candidates.length).length;
+    const entries = results.reduce((sum, r) => sum + r.candidates.length, 0);
+    const hits = results.filter(r => r.recall_at_5 === 'HIT').length;
+    const uncertain = results.filter(r => r.recall_at_5 === 'UNDETERMINED').length;
+    const requests = searches.filter(s => s.provider === provider);
+    const anonymous = requests.filter(s => s.authentication_mode === 'anonymous').length;
+    const access = [`${anonymous} anonymous`];
+    if (requests.length > anonymous) access.push(`${requests.length - anonymous} API key`);
+    const values = [providerNames[provider], `${returned} / ${results.length}`, String(entries),
+      'All returned identities undetermined', `${hits}–${hits + uncertain} / ${results.length}`,
+      access.join('; ')];
+    const row = node('tr');
+    row.setAttribute('role', 'row');
+    values.forEach((value, index) => {
+      const cell = node(index === 0 ? 'th' : 'td', value);
+      cell.setAttribute('role', index === 0 ? 'rowheader' : 'cell');
+      if (index === 0) cell.scope = 'row';
+      cell.dataset.label = labels[index];
+      row.append(cell);
+    });
+    $('#matrix').append(row);
+  }
+}
+
+function drawSpecimen() {
+  const paper = papers[0];
+  const candidate = paper.results.crossref.candidates[0];
+  const area = $('#specimen');
+  area.replaceChildren(node('h2', 'A real record from the frozen pilot'),
+    node('p', `Source · arXiv:${paper.id}`, 'meta'), node('h3', paper.title));
+  const result = node('div', undefined, 'sample-result');
+  result.append(node('span', `Crossref · provider rank ${candidate.rank}`, 'meta'),
+    node('h3', candidate.title),
+    node('p', 'Identity undetermined · ' + candidate.reason, 'tag'),
+    link(`Inspect this source and its ${paper.results.crossref.candidates.length} candidates`,
+      '#paper=' + paper.id));
+  area.append(result);
+}
+
+function changeProvider(id, provider) {
+  history.replaceState(null, '', `#paper=${id}&provider=${provider}`);
+  drawRoute();
+  $('.provider-nav button[aria-pressed=true]').focus({preventScroll: true});
+}
+
+function sourceContext(paper) {
+  const source = node('aside', undefined, 'source');
+  source.setAttribute('aria-label', 'Source paper context');
+  source.append(node('h2', 'Source paper'),
+    node('span', `arXiv:${paper.id}`, 'mobile-summary'), node('h3', paper.title),
+    node('p', `arXiv:${paper.id} · ${paper.cohort} days`, 'meta'));
+  const details = node('details');
+  details.append(node('summary', 'Full source & provenance'), node('p', paper.title),
+    node('p', paper.authors.join(', ')),
+    link('Source record on arXiv', 'https://arxiv.org/abs/' + paper.id),
+    node('p', 'Metadata source-verified; candidate identities remain unresolved.'),
+    link('Recorded request metadata · JSON', 'experiment-manifest.json'));
+  details.open = matchMedia('(min-width: 801px)').matches;
+  source.append(details);
+  return source;
+}
+
+function candidateRecord(candidate) {
+  const record = node('article', undefined, 'candidate-record');
+  const rank = node('span', String(candidate.rank).padStart(2, '0'), 'rank');
+  rank.setAttribute('aria-label', `Provider rank ${candidate.rank}`);
+  record.append(rank);
+  const body = node('div');
+  body.append(node('span', 'Identity undetermined', 'identity'),
+    node('h3', candidate.title || 'Title unavailable'),
+    node('p', `${candidate.authors.join(', ') || 'Authors unavailable'}`
+      + (candidate.year ? ' · ' + candidate.year : '')));
+  if (candidate.doi) body.append(link('DOI: ' + candidate.doi, 'https://doi.org/' + candidate.doi));
+  else if (candidate.arxiv_id)
+    body.append(link('arXiv: ' + candidate.arxiv_id, 'https://arxiv.org/abs/' + candidate.arxiv_id));
+  else body.append(node('p', 'Identifier unavailable'));
+  body.append(node('p', candidate.reason, 'note'));
+  record.append(body);
+  return record;
+}
+
+function drawInspection(paper, requested) {
+  const area = $('#inspection');
+  area.replaceChildren();
+  const top = node('div', undefined, 'inspection-top');
+  top.append(link('All source papers', '#explore'));
+  const tools = node('div');
+  const index = papers.indexOf(paper);
+  if (index > 0) tools.append(link('Previous', '#paper=' + papers[index - 1].id));
+  if (index < papers.length - 1) tools.append(link('Next', '#paper=' + papers[index + 1].id));
+  const copy = node('button', 'Copy link');
+  copy.type = 'button';
+  const feedback = node('span', '', 'copy-status');
+  feedback.setAttribute('role', 'status');
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(location.href);
+      feedback.textContent = 'Link copied';
+    } catch {
+      feedback.textContent = 'Copy this page URL from your address bar';
+    }
+  });
+  tools.append(copy, feedback);
+  top.append(tools);
+  const heading = node('h1', `Inspect source ${index + 1} of ${papers.length}`);
+  heading.id = 'inspection-title';
+  heading.tabIndex = -1;
+  area.append(top, heading);
+  const bench = node('div', undefined, 'workbench');
+  bench.append(sourceContext(paper));
+  const results = node('div');
+  const navigation = node('nav', undefined, 'provider-nav');
+  navigation.setAttribute('aria-label', 'Jump to provider results');
+  const active = selectedProvider(paper, requested);
+  for (const provider of providers) {
+    const button = node('button', `${providerNames[provider]} · `
+      + `${paper.results[provider].candidates.length} candidates`);
+    button.type = 'button';
+    button.setAttribute('aria-pressed', String(active === provider));
+    button.addEventListener('click', () => changeProvider(paper.id, provider));
+    navigation.append(button);
+  }
+  results.append(navigation);
+  const result = paper.results[active];
+  const request = searches.find(s => s.source_paper_id === paper.id && s.provider === active);
+  const summary = node('div', undefined, 'results-head');
+  summary.append(node('h2', providerNames[active] + ' recorded search'),
+    node('p', `${result.candidates.length} candidate entries · `
+      + `${request.authentication_mode === 'anonymous' ? 'Anonymous access' : 'API key access'}`
+      + ` · HTTP ${request.http_status}`, 'meta'),
+    node('p', 'Provider ranking preserved. Returned does not mean verified.', 'note'));
+  results.append(summary);
+  if (!result.candidates.length) {
+    results.append(node('p', 'No candidates returned by this recorded search. '
+      + 'This does not establish absence from the provider database.'));
+    for (const provider of providers.filter(p => paper.results[p].candidates.length)) {
+      const button = node('button', `View ${providerNames[provider]} · `
+        + `${paper.results[provider].candidates.length} candidates`);
+      button.type = 'button';
+      button.addEventListener('click', () => changeProvider(paper.id, provider));
+      results.append(button);
+    }
+  }
+  for (const candidate of result.candidates) results.append(candidateRecord(candidate));
+  bench.append(results);
+  area.append(bench);
+}
+
+function drawRoute() {
+  const {id, provider} = readRoute(location.hash);
+  const oldId = inspectedId;
+  $('#overview').hidden = Boolean(id);
+  $('#inspection').hidden = !id;
+  if (!id) {
+    document.title = 'CiteProbe — Exploratory citation-retrieval pilot';
+    if (oldId) {
+      const row = [...document.querySelectorAll('.paper-link')]
+        .find(a => a.hash === '#paper=' + oldId);
+      (row || $('#explore')).focus({preventScroll: true});
+    }
+    // Honor explicit navigation anchors instead of always jumping back to Explore.
+    const anchor = ['#findings', '#explore', '#reproduce', '#main'].includes(location.hash)
+      ? $(location.hash) : oldId ? $('#explore') : null;
+    anchor?.scrollIntoView();
+    inspectedId = null;
     return;
   }
-  const subset = papers.filter(p => cohort === 'all' || p.cohort === cohort);
-  if (!subset.length) papersEl.append(el('p', 'loading', 'No papers in this cohort.'));
-  for (const paper of subset) {
-    const row = el('button', 'paper-row');
-    row.type = 'button';
-    row.setAttribute('aria-label', `Inspect source paper: ${paper.title}`);
-    const info = el('div');
-    const meta = el('div', 'paper-meta', `arXiv:${paper.id} · ${paper.cohort} days`);
-    meta.id = `source-${paper.id}-meta`;
-    info.append(el('div', 'paper-title', paper.title), meta);
-    const openalex = resultStatus(paper.results.openalex, 'OpenAlex');
-    const crossref = resultStatus(paper.results.crossref, 'Crossref');
-    openalex.id = `source-${paper.id}-openalex`;
-    crossref.id = `source-${paper.id}-crossref`;
-    row.setAttribute('aria-describedby', `${meta.id} ${openalex.id} ${crossref.id}`);
-    const arrow = el('span', 'arrow icon-arrow');
-    arrow.setAttribute('aria-hidden', 'true');
-    row.append(info, openalex, crossref, arrow);
-    row.addEventListener('click', () => showDetail(paper));
-    papersEl.append(row);
+  const paper = papers.find(p => p.id === id);
+  if (!paper) {
+    $('#inspection').replaceChildren(node('h1', 'Source paper not found'),
+      link('Return to all eight papers', '#explore'));
+    return;
   }
-  countEl.textContent = `SHOWING ${subset.length} OF ${papers.length} PAPERS`;
-}
-function showDetail(paper) {
-  detail.replaceChildren();
-  const source = el('div', 'source-record');
-  const heading = el('h2', '', paper.title);
-  heading.id = 'detail-title';
-  source.append(el('div', 'eyebrow', 'SOURCE PAPER'), heading);
-  source.append(el('p', '', `arXiv:${paper.id} · ${paper.cohort} days`));
-  const sourceAuthors = el('details', 'source-authors');
-  sourceAuthors.append(el('summary', '', 'Source authors'), el('p', '', paper.authors.join(', ')));
-  source.append(sourceAuthors);
-  const sourceLink = el('a', 'text-link', 'View the source record on arXiv');
-  sourceLink.href = `https://arxiv.org/abs/${paper.id}`;
-  sourceLink.target = '_blank';
-  sourceLink.rel = 'noopener noreferrer';
-  source.append(sourceLink);
-  detail.append(source, el('p', 'request-note', 'Source metadata is separate from the returned candidates below. Undetermined does not mean incorrect.'));
-  const provenance = el('a', 'text-link', 'Inspect recorded request metadata (JSON)');
-  provenance.href = 'experiment-manifest.json';
-  provenance.setAttribute('download', 'experiment-manifest.json');
-  detail.append(provenance);
-  for (const [key, name] of [['openalex', 'OpenAlex'], ['crossref', 'Crossref']]) {
-    const result = paper.results[key];
-    const section = el('section', 'provider-results');
-    section.append(el('h3', '', `${name} recorded search`));
-    section.append(el('p', 'search-summary', `${resultLabel(result)} · ${result.candidates.length} candidate entries`));
-    if (!result.candidates.length) section.append(el('p', '', 'No candidates were returned by this search. This does not establish absence from the provider’s database.'));
-    for (const candidate of result.candidates) {
-      const item = el('article', 'candidate');
-      item.append(el('div', 'candidate-label', `RANK ${candidate.rank} · ${candidate.judgment}`));
-      item.append(el('h4', '', candidate.title || 'Title unavailable'));
-      item.append(el('p', '', `${candidate.authors.join(', ') || 'Authors unavailable'}${candidate.year ? ' · ' + candidate.year : ''}`));
-      const identifier = candidate.doi ? `DOI: ${candidate.doi}` : candidate.arxiv_id ? `arXiv: ${candidate.arxiv_id}` : 'Identifier unavailable';
-      const identifierNode = el(candidate.doi || candidate.arxiv_id ? 'a' : 'p', '', identifier);
-      if (candidate.doi || candidate.arxiv_id) {
-        identifierNode.href = candidate.doi ? `https://doi.org/${candidate.doi}` : `https://arxiv.org/abs/${candidate.arxiv_id}`;
-        identifierNode.target = '_blank';
-        identifierNode.rel = 'noopener noreferrer';
-      }
-      item.append(identifierNode, el('p', '', candidate.reason));
-      section.append(item);
-    }
-    detail.append(section);
+  inspectedId = id;
+  document.title = `${paper.title} — CiteProbe inspection`;
+  drawInspection(paper, provider);
+  if (oldId !== id) {
+    window.scrollTo(0, 0);
+    $('#inspection-title').focus({preventScroll: true});
   }
-  dialog.showModal();
 }
-document.getElementById('close-detail').addEventListener('click', () => dialog.close());
-document.querySelectorAll('[data-cohort]').forEach(button => button.addEventListener('click', () => {
-  cohort = button.dataset.cohort;
-  document.querySelectorAll('[data-cohort]').forEach(b => {
-    b.classList.toggle('active', b === button);
-    b.setAttribute('aria-pressed', String(b === button));
-  });
-  drawPapers();
-}));
+
 async function loadPilot() {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
   try {
-    const response = await fetch('data.json', {signal: controller.signal});
-    if (!response.ok) throw Error('Data unavailable');
-    papers = validate(await response.json());
-    loadState = 'ready';
-    drawComparison();
-    drawPapers();
+    const responses = await Promise.all(['data.json', 'experiment-manifest.json']
+      .map(file => fetch(file, {signal: controller.signal})));
+    if (responses.some(response => !response.ok)) throw Error('Data unavailable');
+    const [data, manifest] = await Promise.all(responses.map(response => response.json()));
+    const validated = validate(data);
+    searches = validateManifest(manifest, data);
+    papers = validated;
+    drawFindings();
+    drawOverview();
+    drawSpecimen();
+    $('#cohort').disabled = false;
+    $('#loading').hidden = true;
+    drawRoute();
   } catch {
-    loadState = 'error';
-    drawPapers();
-    comparisonEl.replaceChildren(el('p', 'error', 'Comparison unavailable because the evaluation data could not be loaded. Refresh to try again.'));
+    $('#overview').hidden = true;
+    $('#inspection').hidden = true;
+    $('#cohort').disabled = true;
+    $('#loading').hidden = false;
+    $('#loading').className = 'error';
+    $('#loading').setAttribute('role', 'alert');
+    $('#loading').replaceChildren(
+      node('p', 'The frozen records could not be loaded. Refresh to try again.'),
+      link('Read methodology', 'methodology.html'));
   } finally {
     clearTimeout(timeout);
   }
 }
-loadPilot();
+
+if (typeof document !== 'undefined') {
+  $('#cohort').addEventListener('change', event => {
+    cohort = event.target.value;
+    drawOverview();
+  });
+  window.addEventListener('hashchange', () => { if (papers.length) drawRoute(); });
+  loadPilot();
+}

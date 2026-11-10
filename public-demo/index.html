@@ -1,87 +1,40 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An exploratory citation-retrieval pilot. Inspect 16 recorded searches and 41 candidate entries, all with unresolved identity.">
-  <title>CiteProbe — Exploratory citation-retrieval pilot</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <a class="skip-link" href="#top">Skip to main content</a>
-  <div class="review-banner">PUBLIC EXPLORATORY PILOT</div>
-  <header class="nav wrap">
-    <a class="brand" href="#top"><span class="brand-icon" aria-hidden="true"></span>citeprobe<span class="brand-dot">.</span></a>
-    <nav aria-label="Main navigation"><a href="#findings">Findings</a><a href="#explore">Explore</a><a href="#methodology">Methodology</a></nav>
-    <a class="nav-link" href="#reproduce">Reproducibility <span class="icon-arrow" aria-hidden="true"></span></a>
-  </header>
-  <main id="top" tabindex="-1">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="eyebrow">EXPLORATORY CITATION-RETRIEVAL PILOT</div>
-        <h1 id="hero-title">A citation found is not a citation <em>verified.</em></h1>
-        <p>CiteProbe makes the difference between retrieving a scholarly record and verifying its identity inspectable.</p>
-        <p>We followed eight selected papers through sixteen metadata searches. The searches returned 41 candidate entries. Every candidate identity remains unresolved.</p>
-        <div class="hero-actions"><a class="button primary" href="#explore">Explore the pilot <span class="icon-arrow" aria-hidden="true"></span></a><a class="button quiet" href="methodology.html">Review methodology</a></div>
-        <p class="hero-foot">Research prototype in progress · Frozen observations from 9 November 2026</p>
-      </div>
-      <div class="hero-card" aria-label="The three stages of the pilot">
-        <div class="card-top">FROM RECORDS TO EVIDENCE</div>
-        <ol class="workflow">
-          <li><span class="node-icon" aria-hidden="true">01</span><div><strong>Start with source papers</strong><p>Eight source-verified arXiv citations. Title, authors and year go into each search.</p></div></li>
-          <li><span class="node-icon" aria-hidden="true">02</span><div><strong>Inspect returned records</strong><p>Sixteen recorded searches across OpenAlex and Crossref. Provider order is preserved.</p></div></li>
-          <li><span class="node-icon" aria-hidden="true">03</span><div><strong>Keep identity separate</strong><p>41 of 41 candidate entries are <strong>undetermined</strong>. None is confirmed correct or incorrect.</p></div></li>
-        </ol>
-        <p class="card-bottom">Retrieval shows what came back. Identity evidence shows what we can establish.</p>
-      </div>
-    </section>
-    <section class="strip" aria-label="Pilot scope"><div class="wrap strip-inner">
-      <div><strong>8</strong><span>selected source papers</span></div><div><strong>16</strong><span>recorded provider searches</span></div><div><strong>41</strong><span>returned candidate entries</span></div><div><strong>2</strong><span>metadata providers</span></div><p class="strip-note">A small workflow pilot.<br>No validated accuracy comparison.</p>
-    </div></section>
-    <section id="findings" class="section wrap" aria-labelledby="findings-title">
-      <div class="section-heading"><div><div class="eyebrow">01 / RECORDED OBSERVATIONS</div><h2 id="findings-title">What did the<br><em>searches return?</em></h2></div><p>Each provider was searched once for each paper using metadata. These are return counts, not provider accuracy scores. A returned record is not automatically the paper we searched for.</p></div>
-      <div id="comparison" class="comparison" aria-live="polite"><p class="loading">Loading recorded evaluation…</p></div>
-      <p class="caption">Both providers are shown on the same terms. Their access conditions and indexing scopes differ. More candidates do not establish better accuracy.</p>
-      <div class="evidence-note"><h3>41 identities unresolved</h3><p>No returned candidate is confirmed correct or confirmed incorrect under the verified-identifier policy. <strong>Undetermined means evidence is insufficient.</strong> It does not mean the candidate is an incorrect match.</p></div>
-      <details class="definitions"><summary>Understand identity evidence and Recall@5</summary><dl>
-        <dt>Identity evidence</dt><dd>Verified identifiers or supported mappings connecting a returned record to the source paper. Similar wording alone is not proof.</dd>
-        <dt>Recall@5 evidence bounds</dt><dd>Among the first five returned records, the lower count includes searches with a confirmed match. The upper count adds searches where a match remains possible but unresolved. Divide by eight searches per provider. These are identity-evidence bounds, not confidence intervals.</dd>
-        <dt>No candidates returned</dt><dd>The recorded query returned an empty list. This does not establish absence from the provider’s database.</dd>
-      </dl></details>
-      <aside class="limitations" aria-labelledby="limits-title"><h3 id="limits-title">Read this pilot within its limits</h3><p>Eight selected papers. Unequal access conditions. All candidate identities unresolved. No demonstrated provider-wide accuracy or indexing-latency conclusion.</p><details><summary>Access conditions and historical limits</summary><p>One OpenAlex search was anonymous; seven used an API key. All eight Crossref searches were anonymous. Access conditions changed alongside paper identity, limiting direct comparability. The selected cs.CL sample does not support population-level conclusions. Raw captures are private, so historical reproducibility is partial.</p><a class="text-link" href="methodology.html#limitations">Read the detailed limitations</a></details></aside>
-    </section>
-    <section id="explore" class="explore-section" aria-labelledby="explore-title"><div class="wrap section">
-      <div class="explore-head"><div><div class="eyebrow">02 / INSPECT THE EVIDENCE</div><h2 id="explore-title">Follow the evidence<span class="accent">.</span></h2><p>Choose a submission-age cohort. Open a source paper to inspect each provider’s original candidate order and identity decisions.</p></div></div>
-      <div class="toolbar"><div class="tabs" role="group" aria-label="Filter by submission-age cohort">
-        <button class="active" data-cohort="all" aria-pressed="true">All papers <span>08</span></button><button data-cohort="1-7" aria-pressed="false">1–7 days</button><button data-cohort="8-14" aria-pressed="false">8–14 days</button><button data-cohort="15-30" aria-pressed="false">15–30 days</button><button data-cohort="31-60" aria-pressed="false">31–60 days</button>
-      </div></div>
-      <div class="table-head" aria-hidden="true"><span>SOURCE PAPER / COHORT</span><span>OPENALEX SEARCH</span><span>CROSSREF SEARCH</span><span></span></div>
-      <div id="papers" class="papers" aria-live="polite"><p class="loading">Loading papers…</p></div>
-      <div class="table-footer"><span id="paper-count">LOADING</span><span>Submission age relative to 9 Nov 2026 UTC</span></div>
-      <p class="caption">“Candidates returned” describes retrieval only. Candidate identities are all undetermined. The 41 entries contain 40 distinct DOI values; entries are not necessarily unique papers.</p>
-    </div></section>
-    <section id="methodology" class="section wrap methodology" aria-labelledby="method-title">
-      <div><div class="eyebrow">03 / RESEARCH APPROACH</div><h2 id="method-title">Designed to leave<br><em>room for doubt.</em></h2><p>The question is what a metadata search returns, and what identity evidence supports. This pilot is not a validated accuracy benchmark, a test of AI-generated text detection, or an evaluation of another product.</p><a class="text-link" href="methodology.html">Review methodology <span class="icon-arrow" aria-hidden="true"></span></a></div>
-      <div class="principles"><article><span aria-hidden="true">01</span><div><h3>Source records first</h3><p>Eight source-verified arXiv papers, two per fixed submission-age cohort. Source verification is a curator assertion supported by retained provenance.</p></div></article><article><span aria-hidden="true">02</span><div><h3>Search without identity hints</h3><p>Title, authors and year only. Canonical identifiers are withheld from provider queries. Up to five candidates per search; no local re-ranking.</p></div></article><article><span aria-hidden="true">03</span><div><h3>Preserve uncertainty</h3><p>Different titles or identifiers alone do not prove an incorrect match. Verified identity requires supporting evidence. All 41 entries remain undetermined.</p></div></article></div>
-    </section>
-    <section id="reproduce" class="repro" aria-labelledby="repro-title"><div class="wrap section">
-      <div class="eyebrow">04 / REPRODUCIBILITY</div><h2 id="repro-title">Inspect the data.<br><em>Recalculate the summary.</em></h2><p class="repro-intro">The public files expose the recorded results and sanitized request provenance. You can check the deterministic calculations without contacting a provider.</p>
-      <div class="repro-grid">
-        <article><h3>What is inspectable</h3><p>Eight sources, sixteen searches, 41 candidate entries, return counts, provider ranks, identity judgments and explanations, frozen identifiers and checksums.</p></article>
-        <article><h3>What can be reproduced</h3><p>Public-data parsing, inventory checks, provider-return comparisons, candidate counts and Recall@5 evidence-bound calculations.</p></article>
-        <article><h3>What cannot be replayed publicly</h3><p>Private original responses, unrecorded headers or historical code checkout, provider ranking internals, and identity verification that has not been performed.</p></article>
-      </div>
-      <div class="download-grid">
-        <a class="download-card" href="data.json" download="data.json"><strong>Download pilot data <span class="icon-arrow" aria-hidden="true"></span></strong><span>JSON · Source metadata, ranked candidates and frozen judgments</span></a>
-        <a class="download-card" href="experiment-manifest.json" download="experiment-manifest.json"><strong>Download experiment manifest <span class="icon-arrow" aria-hidden="true"></span></strong><span>JSON · Recorded parameters, capture times, access modes and provenance gaps</span></a>
-        <a class="download-card" href="verify.py" download="verify.py"><strong>Download offline verifier <span class="icon-arrow" aria-hidden="true"></span></strong><span>Python 3.12+ · Standard library only; no HTTP requests</span></a>
-      </div>
-      <details class="repro-instructions"><summary>Verify the downloaded files locally</summary><p>Save all three files in one folder, then run:</p><pre><code>python verify.py data.json experiment-manifest.json</code></pre><p>The verifier checks the data checksum, source/search inventory, rankings and judgments, then prints provider counts and evidence-bound counts. It checks consistency, not independent authenticity or identity.</p></details>
-      <p class="repro-caution">A new API request is a replication attempt under potentially changed conditions, not a replay of the frozen historical experiment. Missing provenance is explicitly marked <code>not_recorded</code>. Raw captures and credentials are excluded.</p>
-      <a class="text-link" href="methodology.html#reproducibility">Review provenance and reproducibility limits</a>
-    </div></section>
-  </main>
-  <footer class="wrap footer"><a class="brand" href="#top">citeprobe<span class="brand-dot">.</span></a><span>Evidence before confidence.</span><span>Exploratory citation-retrieval pilot · 2026</span></footer>
-  <dialog id="detail" aria-labelledby="detail-title" aria-describedby="detail-description"><div class="dialog-header"><span class="eyebrow">CANDIDATE INSPECTION</span><button id="close-detail" class="close" aria-label="Close candidate details" autofocus>×</button></div><p id="detail-description" class="visually-hidden">Inspect the source paper separately from returned records. All candidate identities are undetermined, not confirmed incorrect. Escape closes this dialog.</p><div id="detail-content"></div></dialog>
-  <script src="app.js" defer></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>CiteProbe — Exploratory citation-retrieval pilot</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+<meta name="description" content="Inspect sixteen frozen citation-retrieval searches, ranked candidates, identity evidence and reproducibility limits."><link rel="stylesheet" href="refine.css"><script src="integrated.js" defer></script><link rel="stylesheet" href="integrated.css"></head><body data-treatment="atlas">
+<a class="skip" href="#main">Skip to content</a>
+<div class="prototype-note">PUBLIC EXPLORATORY PILOT</div>
+<header class="mast"><a href="index.html" class="wordmark">CiteProbe<span>.</span></a>
+<nav aria-label="Main"><a href="#findings">Findings</a><a href="#explore">Explore</a><a href="methodology.html">Methodology</a><a href="https://github.com/nati5174/CiteTrace">GitHub / implementation</a></nav></header>
+<main id="main" tabindex="-1">
+<div id="overview" hidden>
+<section class="intro refined-intro">
+<div>
+<h1>A citation found is not a citation verified.</h1>
+<p>Choose a source paper. Inspect its recorded searches and returned candidates. Every candidate identity remains undetermined.</p>
+<p class="scope">Exploratory pilot · 8 selected papers · 16 searches<br>Frozen observations: 9 November 2026</p><a class="action" href="#explore">Inspect the evidence</a></div>
+<div class="specimen" id="specimen" aria-label="A real frozen evidence example"></div></section>
+<section id="findings">
+<div class="section-title">
+<h2>Recorded observations</h2><a href="methodology.html#bounds">How to read the evidence bounds</a></div>
+<p>Return counts describe retrieval. All 41 candidate identities remain undetermined.</p>
+<div class="matrix-scroll" role="region" aria-label="Provider observations" tabindex="0">
+<table role="table"><caption>Eight searches per provider; access conditions differ.</caption>
+<thead role="rowgroup">
+<tr role="row"><th role="columnheader" scope="col">Provider</th><th role="columnheader" scope="col">Searches returning records</th><th role="columnheader" scope="col">Candidate entries</th><th role="columnheader" scope="col">Identity evidence</th><th role="columnheader" scope="col">Recall@5 bounds</th><th role="columnheader" scope="col">Recorded access</th></tr></thead>
+<tbody id="matrix" role="rowgroup"></tbody></table></div>
+<p class="note">Small selected sample; no validated accuracy comparison. Bounds are not confidence intervals. <a href="methodology.html#limitations">Study limitations</a></p></section>
+<section id="explore" tabindex="-1">
+<div class="section-title">
+<h2>Explore the source papers</h2><span>Provider order preserved</span></div><label for="cohort">Submission age on 9 Nov 2026 UTC</label> <select id="cohort" disabled><option value="all">All papers</option><option value="1-7">1–7 days</option><option value="8-14">8–14 days</option><option value="15-30">15–30 days</option><option value="31-60">31–60 days</option></select>
+<p id="count" role="status"></p>
+<div id="paper-list"></div></section>
+<section class="reproduce" id="reproduce">
+<h2>Inspect. Recalculate. Review the implementation.</h2>
+<p>Public consistency checks reproduce recorded counts; they do not independently verify identities or authenticate private captures.</p>
+<div class="artifact-links"><a href="data.json" download>Pilot data · JSON</a><a href="experiment-manifest.json" download>Experiment manifest · JSON</a><a href="verify.py" download>Offline verifier · Python</a><a href="https://github.com/nati5174/CiteTrace">Implementation on GitHub</a></div><pre>python verify.py data.json experiment-manifest.json</pre><a href="methodology.html#reproducibility">Provenance and replay limits</a></section></div>
+<section id="inspection" hidden aria-labelledby="inspection-title"></section>
+<div id="loading" role="status">Loading frozen records…</div></main>
+<footer>Research prototype in progress · Evidence before confidence. <a href="methodology.html">Methods & limitations</a></footer></body></html>

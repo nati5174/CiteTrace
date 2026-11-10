@@ -1,0 +1,57 @@
+/* Local proposal: typography and evidence hierarchy inside Review Register. */
+.mast{padding-block:12px}.wordmark{font-size:1.5rem;letter-spacing:-.035em}
+.mast nav{font-size:.875rem}.prototype-note{letter-spacing:.01em}
+.refined-intro{display:block;padding:44px 0 40px}
+.refined-intro>div:first-child{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,.8fr);column-gap:72px;align-items:start}
+.refined-intro h1{grid-row:1/4;font-size:3.875rem;line-height:1.02;letter-spacing:-.035em;max-width:18ch;margin:0;text-wrap:balance}
+.refined-intro h1 br{display:none}.refined-intro>div>p{font-size:1.0625rem;line-height:1.6;margin:0 0 16px;max-width:42ch}
+.refined-intro .scope{font:400 .8125rem/1.65 PlexMono,monospace;margin:0 0 16px}
+.refined-intro .action{justify-self:start;font-size:.875rem}
+.refined-intro .specimen{border:0;background:transparent;padding:0;margin-top:38px}
+.evidence-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;border-top:1px solid var(--ink);padding-top:16px;margin-bottom:20px}
+.evidence-head h2{font-size:1.375rem}.evidence-head p{font-size:.8125rem;color:var(--muted);margin:0;max-width:55ch}
+.trace-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:0;border-block:1px solid var(--line)}
+.trace-source{padding:24px;background:var(--source,#283746);color:#eef2f6}
+.trace-source h3{font-size:1.375rem;line-height:1.35;margin:16px 0}.trace-source p{font-size:.875rem;line-height:1.6;color:#cbd5e0}
+.trace-source .trace-id{font:400 .8125rem/1.6 PlexMono,monospace;color:#d2e4f4}
+.trace-source a{color:#d2e4f4;display:inline-flex;align-items:center;min-height:44px;font-size:.875rem}
+.trace-source a:focus-visible{outline-color:#c7d8e9}
+.trace-returns{background:white;display:grid;grid-template-columns:150px minmax(0,1fr);align-content:start}
+.trace-provider{padding:16px;border-bottom:1px solid var(--line);font-size:.875rem;font-weight:600;background:#dfe5ec}
+.trace-provider span{display:block;font:400 .75rem/1.6 PlexMono,monospace;color:var(--muted);margin-top:6px}
+.trace-empty{padding:16px;border-bottom:1px solid var(--line);font-size:.875rem;color:var(--muted)}
+.trace-ranked{margin:0;padding:0;list-style:none}.trace-ranked li{border-bottom:1px solid var(--line)}
+.trace-ranked li:last-child{border-bottom:0}.trace-candidate{display:grid;grid-template-columns:28px minmax(0,1fr) 116px;gap:14px;align-items:start;padding:12px 16px;min-height:60px;text-decoration:none}
+.trace-candidate:hover{background:#edf0f4}.trace-candidate strong{font-size:.875rem;font-weight:600;line-height:1.4}.trace-rank{font:.8125rem/1.5 PlexMono,monospace;color:var(--muted)}
+.trace-state{font-size:.75rem;line-height:1.5;color:var(--warn)}
+.evidence-foot{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding-top:12px;font-size:.8125rem;color:var(--muted)}
+.evidence-foot a{min-height:44px;display:inline-flex;align-items:center}
+.pilot-map{display:grid;grid-template-columns:100px repeat(8,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--line);background:white}
+.map-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 8px;min-width:0}
+.map-label{font-size:.8125rem;font-weight:600;background:#dfe5ec;display:flex;align-items:center}
+.map-label small{display:block;font-weight:400;font-size:.75rem}.map-source{font:.75rem/1.5 PlexMono,monospace;color:var(--accent);min-height:70px;display:flex;align-items:center;text-decoration:none;overflow-wrap:anywhere;background:#e5ebf1}
+.map-source:hover{background:#d0dbe5}.map-result{text-decoration:none;display:block;min-height:100px;color:var(--ink)}
+.map-result:hover{background:#edf0f4}.rank-cells{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.rank-cell{width:18px;height:25px;display:flex;align-items:center;justify-content:center;border:1px solid #8a481f;color:#8a481f;font:.6875rem PlexMono,monospace;background:#faf3ee}
+.map-result .empty-mark{font-size:.8125rem;color:var(--muted)}.map-result small{font-size:.75rem;color:var(--muted)}
+.map-empty-space{background:#dfe5ec}
+.rank-jumps{padding:12px 20px;background:#e5ebf1;border-block:1px solid var(--line);display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.rank-jumps p{margin:0 auto 0 0;font-size:.8125rem;color:var(--muted)}
+.rank-jumps button{padding:7px 12px;font:.8125rem PlexMono,monospace;min-width:44px;min-height:44px;background:white}
+.rank-jumps button[aria-pressed=true]{border-color:var(--accent);background:#365d7b;color:white}
+.candidate-record h3{font-size:1.375rem;font-weight:600;line-height:1.35;max-width:58ch;text-wrap:pretty}
+.candidate-record p{line-height:1.65}.source>h3{line-height:1.5}.results-head h2{font-weight:600}
+.section-title h2{font-size:1.625rem;font-weight:600}.paper-link strong{font-size:.9375rem;line-height:1.5}
+[data-treatment=atlas] .refined-intro h1{font-size:3.5rem;max-width:20ch}
+@media(max-width:1050px){.pilot-map{grid-template-columns:85px repeat(8,minmax(0,1fr))}.map-cell{padding:10px 5px}.rank-cell{width:16px}.trace-returns{grid-template-columns:130px minmax(0,1fr)}}
+@media(max-width:800px){
+ .refined-intro{padding:28px 0}.refined-intro>div:first-child{display:block}.refined-intro h1,[data-treatment=atlas] .refined-intro h1{font-size:2.5rem;line-height:1.08;margin-bottom:24px;max-width:18ch}
+ .refined-intro>div>p{font-size:1rem;max-width:40ch}.refined-intro .specimen{margin-top:28px}
+ .evidence-head{display:block;padding-top:14px}.evidence-head h2{font-size:1.25rem;margin-bottom:10px}.evidence-head p{font-size:.875rem}
+ .trace-grid{grid-template-columns:minmax(0,1fr)}.trace-source{padding:18px}.trace-source h3{font-size:1.125rem}.trace-source p{margin:10px 0}
+ .trace-returns{display:block}.trace-provider{display:flex;align-items:baseline;gap:16px}.trace-provider,.trace-empty{padding:12px;font-size:.8125rem}.trace-candidate{grid-template-columns:24px minmax(0,1fr);padding:12px;gap:8px}.trace-state{grid-column:2}.trace-candidate strong{font-size:.875rem}
+ .evidence-foot{display:block;font-size:.8125rem}.evidence-foot p{margin:10px 0}.rank-jumps{padding:12px;gap:6px}.rank-jumps p{width:100%}.rank-jumps button{padding:7px 10px}.candidate-record h3{font-size:1.1875rem}
+ .pilot-map{grid-template-columns:75px repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+ .map-source{min-height:58px}.map-result{min-height:85px}.map-cell{padding:10px 8px}.map-label{font-size:.75rem}.rank-cell{width:16px;font-size:.6875rem}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}

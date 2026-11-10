@@ -23,10 +23,14 @@ def test_static_root_serves_public_export() -> None:
         "index.html",
         "methodology.html",
         "style.css",
+        "refine.css",
+        "integrated.css",
         "app.js",
+        "integrated.js",
         "data.json",
         "experiment-manifest.json",
         "verify.py",
+        "fonts",
     }
     tracked = subprocess.run(
         ["git", "ls-files", "--error-unmatch", "public-demo/data.json"],
@@ -112,81 +116,39 @@ def test_export_matches_evaluation_and_has_no_private_fields() -> None:
     assert all(k not in contents for k in ('"abstract"', '"email"', '"raw"'))
 
 
-def test_render_filter_detail_and_error_states() -> None:
-    data = Path("public-demo/data.json").read_text(encoding="utf-8")
+def test_frozen_validation_routes_and_provider_selection() -> None:
     app = Path("public-demo/app.js").read_text(encoding="utf-8")
+    data = Path("public-demo/data.json").read_text(encoding="utf-8")
+    manifest = Path("public-demo/experiment-manifest.json").read_text(encoding="utf-8")
     harness = r"""
-const vm = require('vm');
-class Node {
-  constructor(tag='div') {
-    this.tag=tag;this.children=[];this.dataset={};this.style={};this.attrs={};
-    this.textContent='';this.classList={toggle:()=>{}};
-  }
-  append(...nodes){this.children.push(...nodes)}
-  replaceChildren(...nodes){this.children=[...nodes]}
-  setAttribute(k,v){this.attrs[k]=v}
-  addEventListener(k,v){this[k]=v}
-  showModal(){this.open=true}
-  close(){this.open=false}
-}
-const ids = {};
-for(const id of ['papers','comparison','paper-count','detail','detail-content','close-detail'])
-  ids[id]=new Node();
-const buttons=['all','1-7','8-14','15-30','31-60'].map(v=>{
-  const x=new Node('button');x.dataset.cohort=v;return x;
-});
-global.document={getElementById:id=>ids[id],querySelectorAll:()=>buttons,
-  createElement:t=>new Node(t)};
-global.fetch=()=>Promise.resolve({ok:true,json:()=>Promise.resolve(DATA)});
+const vm = require('vm'), assert = require('node:assert/strict');
 vm.runInThisContext(APP);
-for (const button of [buttons[1], buttons[0]]) {
-  button.click();
-  if (ids.papers.children[0].textContent !== 'Loading papers…') throw Error('lost loading');
-  if (ids['paper-count'].textContent !== 'LOADING') throw Error('premature count');
+const data=DATA, manifest=MANIFEST;
+assert.equal(validate(data).length,8);
+assert.equal(validateManifest(manifest,data).length,16);
+assert.deepEqual(readRoute('#paper=2611.07721&provider=crossref'),
+  {id:'2611.07721',provider:'crossref'});
+assert.equal(readRoute('#findings').id,null);
+assert.equal(selectedProvider(data.papers[0],null),'crossref');
+assert.equal(selectedProvider(data.papers[0],'openalex'),'openalex');
+assert.equal(selectedProvider(data.papers[0],'invalid'),'crossref');
+for(const field of ['evaluation_id','dataset_sha256']){
+ assert.throws(()=>validateManifest({...manifest,[field]:'wrong'},data));
 }
-setImmediate(()=>{
-  if(ids.papers.children.length!==8 || ids.comparison.children.length!==2) throw Error('render');
-  for(const review_status of ['owner_review_pending','unknown']) {
-    let rejected=false;
-    try { validate({...DATA,review_status}); } catch { rejected=true; }
-    if(!rejected) throw Error('publication status mismatch');
-  }
-  const emptyStatuses=ids.papers.children.flatMap(row=>row.children)
-    .filter(node=>node.className==='status empty');
-  if(emptyStatuses.length!==7 || emptyStatuses.some(node=>
-    !node.children[1].textContent.includes('No candidates returned')))
-    throw Error('empty response label');
-  for (const [index,provider] of ['openalex','crossref'].entries()) {
-    const results=DATA.papers.map(p=>p.results[provider]);
-    const hits=results.filter(r=>r.recall_at_5==='HIT').length;
-    const uncertain=results.filter(r=>r.recall_at_5==='UNDETERMINED').length;
-    const bounds=ids.comparison.children[index].children.at(-1).children[1].textContent;
-    if(bounds!==`${hits}–${hits+uncertain} / 8`) throw Error('evidence bounds');
-  }
-  buttons[1].click(); if(ids.papers.children.length!==2) throw Error('filter');
-  ids.papers.children[0].click();
-  if(!ids.detail.open || ids['detail-content'].children.length<4) throw Error('detail');
-  const descendants = node=>[node,...node.children.flatMap(descendants)];
-  const allDetail=descendants(ids['detail-content']);
-  const headings=allDetail.filter(node=>node.className==='search-summary');
-  if(headings.length!==2 || !headings.some(node=>
-    node.textContent.includes('No candidates returned')) ||
-    headings.some(node=>node.textContent.includes('NOT_FOUND')))
-    throw Error('detail response label');
-  if(!allDetail.some(y=>String(y.textContent).includes('UNDETERMINED'))) throw Error('judgment');
-  if(!allDetail.some(y=>String(y.textContent).includes('does not establish absence')))
-    throw Error('absence limitation');
-  if(!allDetail.some(y=>y.className==='source-record')) throw Error('source hierarchy');
-  ids['close-detail'].click(); if(ids.detail.open) throw Error('close');
-  console.log('render, filter, candidate inspection, and close passed');
-});
+assert.throws(()=>validateManifest({...manifest,searches:manifest.searches.slice(1)},data));
+const malformed=structuredClone(manifest);malformed.searches[0].authentication_mode='unknown';
+assert.throws(()=>validateManifest(malformed,data));
+for(const review_status of ['owner_review_pending','unknown'])
+ assert.throws(()=>validate({...data,review_status}));
+console.log('validation and routing passed');
 """
-    script = harness.replace("DATA", data).replace("APP", json.dumps(app))
+    script = harness.replace("APP", json.dumps(app)).replace("DATA", data)
+    script = script.replace("MANIFEST", manifest)
     result = subprocess.run(
         ["node", "-"], input=script, text=True, encoding="utf-8", capture_output=True
     )
     assert result.returncode == 0, result.stdout + result.stderr
-    assert "candidate inspection" in result.stdout
+    assert "routing passed" in result.stdout
 
 
 def test_secret_scanner_detects_compressed_and_encoded_key(
@@ -245,28 +207,20 @@ def test_data_load_error_state(response: str) -> None:
 def assert_error_state(response: str) -> None:
     app = Path("public-demo/app.js").read_text(encoding="utf-8")
     harness = r"""
-const vm = require('vm');
-const ids = {};
-for (const id of ['papers','comparison','paper-count','detail','detail-content','close-detail'])
-  ids[id] = {children:[], addEventListener(){}, replaceChildren(...x){this.children=x},
-    append(...x){this.children.push(...x)}};
-const buttons=['1-7','all'].map(cohort=>({dataset:{cohort},classList:{toggle(){}},
-  setAttribute(){},addEventListener(event,fn){this[event]=fn}}));
-global.document={getElementById:id=>ids[id], querySelectorAll:()=>buttons,
-  createElement:()=>({className:'',textContent:''})};
+const vm=require('vm');
+const ids={};
+for(const id of ['#overview','#inspection','#loading','#cohort'])
+ ids[id]={hidden:false,children:[],addEventListener(){},setAttribute(k,v){this[k]=v},
+ replaceChildren(...items){this.children=items}};
+global.document={querySelector:id=>ids[id],createElement:tag=>({textContent:'',tag})};
+global.window={addEventListener(){}};
 global.fetch=()=>RESPONSE;
 vm.runInThisContext(APP);
 setImmediate(()=>{
-  if (!ids.papers.children[0].textContent.includes('could not be loaded')) throw Error('error');
-  for (const button of buttons) {
-    button.click();
-    if (!ids.papers.children[0].textContent.includes('could not be loaded'))
-      throw Error('lost error');
-    if (ids['paper-count'].textContent !== 'DATA UNAVAILABLE') throw Error('false count');
-    if (!ids.comparison.children[0].textContent.includes('could not be loaded'))
-      throw Error('comparison');
-  }
-  console.log('error state passed');
+ if(!ids['#overview'].hidden || !ids['#inspection'].hidden)throw Error('stale evidence');
+ if(!ids['#loading'].children[0].textContent.includes('could not be loaded'))throw Error('error');
+ if(ids['#loading'].role!=='alert' || !ids['#cohort'].disabled)throw Error('feedback');
+ console.log('error state passed');
 });
 """
     result = subprocess.run(

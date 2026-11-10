@@ -60,8 +60,9 @@ async function screenshot(name) {
   fs.writeFileSync(path.join(output, `${width}-${name}.png`),png);
 }
 async function layout() {
-  return evaluate(`({width:innerWidth, overflow:document.documentElement.scrollWidth>innerWidth,
-    bodyOverflow:document.body.scrollWidth>innerWidth,
+  return evaluate(`({width:innerWidth,
+    overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,
+    bodyOverflow:document.body.scrollWidth>document.documentElement.clientWidth,
     nav:[...document.querySelectorAll('.nav nav a')].map(a=>({href:a.hash,
       visible:a.getClientRects().length>0, label:a.textContent.trim()}))})`);
 }
@@ -84,160 +85,143 @@ async function assertContrast() {
   assert.deepEqual(failures, [], `text contrast: ${JSON.stringify(failures)}`);
 }
 (async () => {
-  await new Promise((resolve, reject) => {socket.addEventListener('open', resolve);socket.addEventListener('error', reject);});
-  await send('Page.enable');
-  await send('Runtime.enable');
-  await send('Emulation.setEmulatedMedia', {features:[{name:'prefers-reduced-motion',value:'reduce'}]});
-  await send('Emulation.setDeviceMetricsOverride', {width, height:900, deviceScaleFactor:1, mobile:false});
-  await send('Page.navigate', {url:origin});
-  await until("document.querySelectorAll('.paper-row').length===8");
-  let state = await layout();
-  assert.equal(state.width, width);
-  assert.equal(await evaluate('innerHeight'),900);
-  assert.equal(state.overflow, false, 'page horizontal overflow');
-  assert.equal(state.bodyOverflow, false, 'body horizontal overflow');
-  assert.deepEqual(state.nav.map(a=>[a.href,a.visible]), [['#findings',true],['#explore',true],['#methodology',true]]);
-  const comparisons=await evaluate(`[...document.querySelectorAll('.provider-card')].map(card=>({
-    provider:card.querySelector('h3').textContent,
-    returned:card.querySelector('.provider-stats strong').textContent,
-    bounds:card.querySelector('.bounds b').textContent}))`);
-  assert.deepEqual(comparisons,[
-    {provider:'OpenAlex',returned:'1 / 8',bounds:'0–1 / 8'},
-    {provider:'Crossref',returned:'8 / 8',bounds:'0–8 / 8'}]);
-  assert.equal(await evaluate("document.querySelectorAll('.provider-card .bar').length"),0,
-    'return counts should not use comparative progress bars');
-  assert.equal(await evaluate("document.querySelector('.nav nav').getAttribute('aria-label')"), 'Main navigation');
-  assert.equal(await evaluate(`[...document.querySelectorAll('.paper-meta,.status,.status small,.tabs button,.candidate-label')]
-    .every(e=>parseFloat(getComputedStyle(e).fontSize)>=12)`),true,'research label font size');
-  await assertContrast();
-  await screenshot('home');
-  await evaluate("document.querySelector('#findings').scrollIntoView({behavior:'instant'})");
-  await screenshot('findings');
-  // Exercise actual browser downloads, then run the downloaded verifier in isolated Python.
-  const downloadDir=path.resolve(output,`downloads-${width}`);
-  fs.mkdirSync(downloadDir,{recursive:true});
+  await new Promise((resolve, reject) => {
+    socket.addEventListener('open', resolve);socket.addEventListener('error', reject);
+  });
+  await send('Page.enable');await send('Runtime.enable');await send('Accessibility.enable');
+  await send('Emulation.setDeviceMetricsOverride', {width,height:900,deviceScaleFactor:1,mobile:false});
+  await send('Page.navigate',{url:origin});
+  await until("document.querySelectorAll('.paper-link').length===8");
+  await evaluate('document.fonts.ready');
+  assert.equal((await layout()).overflow,false);
+  assert.equal(await evaluate("document.fonts.check('16px Plex') && document.fonts.check('16px PlexMono')"),true);
+  const frozen=JSON.parse(fs.readFileSync('public-demo/data.json','utf8'));
+  const atlasPages=[];
+  for(let pair=0;pair<(width<=800?4:1);pair++){
+    atlasPages.push(await evaluate(`({sources:[...document.querySelectorAll('.map-source')].map(a=>a.dataset.sourceId),
+      searches:[...document.querySelectorAll('.map-result')].map(a=>({id:a.dataset.sourceId,provider:a.dataset.provider,
+        ranks:[...a.querySelectorAll('.rank-cell')].map(x=>Number(x.textContent)),label:a.getAttribute('aria-label'),href:a.hash}))})`));
+    if(width<=800&&pair<3){
+      await evaluate("document.querySelector('.atlas-controls button:last-child').focus()");
+      await key('Enter','Enter',13);
+    }
+  }
+  const atlasSources=atlasPages.flatMap(page=>page.sources);
+  const atlasSearches=atlasPages.flatMap(page=>page.searches);
+  assert.deepEqual(atlasSources,frozen.papers.map(p=>p.id),'Atlas reaches all frozen sources');
+  assert.equal(atlasSearches.length,16,'Atlas reaches all provider searches');
+  for(const item of atlasSearches){
+    const paper=frozen.papers.find(p=>p.id===item.id);
+    const expected=paper.results[item.provider].candidates.map(c=>c.rank);
+    assert.deepEqual(item.ranks,expected,`${item.id} ${item.provider} original ranks`);
+    assert.equal(item.href,`#paper=${item.id}&provider=${item.provider}`);
+    assert.match(item.label,/undetermined|No candidates to assess/);
+  }
+  if(width<=800) await evaluate("document.querySelector('.atlas-controls button:nth-of-type(1)').click();document.querySelector('.atlas-controls button:nth-of-type(1)').click();document.querySelector('.atlas-controls button:nth-of-type(1)').click()");
+  await evaluate("document.querySelector('.map-source').focus()");
+  await key('Enter','Enter',13);await until("document.querySelectorAll('.candidate-record').length===5");
+  assert.equal(await evaluate("location.hash"),'#paper=2611.07721');
+  await evaluate('history.back()');await until("!document.querySelector('#overview').hidden");
+  await evaluate("document.querySelector('#main').scrollIntoView()");
+  await assertContrast();await screenshot('home');
+  await key('Tab','Tab',9);
+  await evaluate("document.querySelector('.mast a').focus()");
+  assert.equal(await evaluate("document.activeElement.matches(':focus-visible')"),true);
+  assert.equal(await evaluate("getComputedStyle(document.activeElement).outlineColor"),
+    'rgb(199, 216, 233)', 'light focus indicator on graphite');
+  const rows=await evaluate("[...document.querySelectorAll('#matrix tr')].map(r=>[...r.children].map(c=>c.textContent))");
+  assert.deepEqual(rows,[
+    ['OpenAlex','1 / 8','1','All returned identities undetermined','0–1 / 8','1 anonymous; 7 API key'],
+    ['Crossref','8 / 8','40','All returned identities undetermined','0–8 / 8','8 anonymous']]);
+  const ax=await send('Accessibility.getFullAXTree');
+  const sourceLinks=ax.nodes.filter(n=>n.role?.value==='link'&&n.name?.value.startsWith('Inspect ')
+    &&n.name.value.includes('OpenAlex:')&&n.name.value.includes('Crossref:'));
+  assert.equal(sourceLinks.length,8,'provider association at every viewport');
+  assert.equal(ax.nodes.filter(n=>n.role?.value==='rowheader').length,2,'matrix row semantics');
+  await evaluate("document.querySelector('#findings').scrollIntoView()");await screenshot('findings');
+  const downloadDir=path.resolve(output,`downloads-${width}`);fs.mkdirSync(downloadDir,{recursive:true});
   await send('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:downloadDir});
   for(const filename of ['data.json','experiment-manifest.json','verify.py']){
-    await evaluate(`document.querySelector('.download-card[href="${filename}"]').click()`);
+    await evaluate(`document.querySelector('.artifact-links a[href="${filename}"]').click()`);
     const destination=path.join(downloadDir,filename);
-    for(let i=0;!fs.existsSync(destination)&&i<200;i++) await new Promise(r=>setTimeout(r,25));
-    assert.ok(fs.existsSync(destination),`download ${filename}`);
+    for(let i=0;!fs.existsSync(destination)&&i<200;i++)await new Promise(r=>setTimeout(r,25));
     assert.deepEqual(fs.readFileSync(destination),fs.readFileSync(path.join('public-demo',filename)));
   }
-  assert.ok(pythonExecutable,'Python executable is required for downloaded verifier');
-  const checked=spawnSync(pythonExecutable,['-I',path.join(downloadDir,'verify.py'),
-    path.join(downloadDir,'data.json'),path.join(downloadDir,'experiment-manifest.json')],
-    {encoding:'utf-8'});
-  assert.equal(checked.status,0,checked.stdout+checked.stderr);
-  assert.equal(JSON.parse(checked.stdout).candidate_entries,41);
-  // Actual Tab and Enter events, not click() substitutes, exercise native link behavior.
-  let previous = '.nav .brand';
-  for(const id of ['findings','explore','methodology']){
-    await evaluate(`document.querySelector(${JSON.stringify(previous)}).focus()`);
-    await key('Tab','Tab',9);
-    assert.equal(await evaluate("document.activeElement.hash"), '#'+id);
-    assert.equal(await evaluate("document.activeElement.matches(':focus-visible')"), true);
-    assert.notEqual(await evaluate("getComputedStyle(document.activeElement).outlineStyle"), 'none');
-    await key('Enter','Enter',13);
-    assert.equal(await evaluate('location.hash'), '#'+id);
-    previous = `.nav nav a[href="#${id}"]`;
+  const verified=spawnSync(pythonExecutable,['-I',path.join(downloadDir,'verify.py'),
+    path.join(downloadDir,'data.json'),path.join(downloadDir,'experiment-manifest.json')],{encoding:'utf8'});
+  assert.equal(verified.status,0,verified.stdout+verified.stderr);
+  assert.equal(JSON.parse(verified.stdout).candidate_entries,41);
+  // Cohort changes do not alter either provider's matrix denominator.
+  await evaluate("const select=document.querySelector('#cohort');select.value='1-7';select.dispatchEvent(new Event('change'))");
+  assert.equal(await evaluate("document.querySelectorAll('.paper-link').length"),2);
+  await evaluate("document.querySelector('#cohort').value='all';document.querySelector('#cohort').dispatchEvent(new Event('change'))");
+  await evaluate("document.querySelector('#explore').scrollIntoView();document.querySelector('.paper-link').focus()");
+  await screenshot('papers');await key('Enter','Enter',13);
+  await until("document.querySelectorAll('.candidate-record').length===5");
+  assert.equal(await evaluate("document.activeElement.id"),'inspection-title');
+  assert.equal(await evaluate("document.querySelector('.provider-nav [aria-pressed=true]').textContent"),'Crossref · 5 candidates');
+  assert.equal(await evaluate("document.querySelectorAll('.evidence-path .path-stages li').length"),4);
+  assert.match(await evaluate("document.querySelector('.evidence-path').textContent"),/Source paper.*Provider search.*Ranked candidates.*Identity evidence/s);
+  assert.equal(await evaluate("document.querySelectorAll('.rank-jumps button').length"),5);
+  await evaluate("document.querySelector('.rank-jumps button[aria-label=\"Jump to provider rank 5\"]').click()");
+  assert.equal(await evaluate("Number(document.activeElement.closest('.candidate-record').querySelector('.rank').textContent)"),5);
+  await assertContrast();await screenshot('inspection');
+  assert.equal(await evaluate("document.querySelector('.candidate-record h3').getBoundingClientRect().top<innerHeight"),true,'first candidate visible');
+  // Tab / Enter actuates the first provider button after the focused heading and source links.
+  await evaluate("document.querySelector('.provider-nav button').focus()");await key('Enter','Enter',13);
+  assert.equal(await evaluate("document.querySelectorAll('.candidate-record').length"),0);
+  assert.match(await evaluate("document.querySelector('.workbench').textContent"),/does not establish absence/);
+  await evaluate("document.querySelector('.provider-nav button:last-child').click()");
+  assert.equal(await evaluate("document.activeElement.getAttribute('aria-pressed')"),'true');
+  await evaluate('history.back()');await until("!document.querySelector('#overview').hidden");
+  assert.equal(await evaluate("document.activeElement.className"),'paper-link');
+  await evaluate('history.forward()');await until("document.querySelectorAll('.candidate-record').length===5");
+  // Real direct-entry links, not calls into renderer internals, exercise every recorded search.
+  const data=JSON.parse(fs.readFileSync('public-demo/data.json','utf8'));
+  let candidateCount=0;
+  for(const paper of data.papers){
+    for(const provider of ['openalex','crossref']){
+      await send('Page.navigate',{url:origin+`/#paper=${paper.id}&provider=${provider}`});
+      await until("document.querySelector('#inspection-title')");
+      const ranks=await evaluate("[...document.querySelectorAll('.rank')].map(n=>Number(n.textContent))");
+      assert.deepEqual(ranks,paper.results[provider].candidates.map(c=>c.rank));candidateCount+=ranks.length;
+      assert.equal((await layout()).overflow,false);
+    }
   }
-  await evaluate("document.querySelector('#explore').scrollIntoView({behavior:'instant'})");
-  await screenshot('papers');
-  const detailCounts = await evaluate(`(()=>{
-    const rows=[...document.querySelectorAll('.paper-row')];const counts=[];
-    for(const row of rows){row.click();const d=document.querySelector('#detail');
-      if(!d.open||d.scrollWidth>d.clientWidth)throw Error('dialog overflow or not open');
-      counts.push(document.querySelectorAll('#detail-content .candidate-label').length);
-      document.querySelector('#close-detail').click();if(d.open)throw Error('dialog did not close');
-    }return counts})()`);
-  assert.deepEqual(detailCounts,[5,5,5,5,5,5,6,5]);
-  await evaluate("document.querySelector('[data-cohort=all]').click()");
-  const candidateMetadataMatches = await evaluate(`(async()=>{
-    const data=await(await fetch('data.json')).json();
-    const rows=[...document.querySelectorAll('.paper-row')];
-    return rows.every((row,i)=>{
-      row.click();const items=[...document.querySelectorAll('#detail-content .candidate-label')];
-      const expected=['openalex','crossref'].flatMap(p=>data.papers[i].results[p].candidates);
-      const matches=expected.every((c,j)=>{
-        const text=items[j].parentElement.textContent;
-        return text.includes('RANK '+c.rank)&&text.includes(c.judgment)&&text.includes(c.reason)&&
-          text.includes(c.title||'Title unavailable');
-      });document.querySelector('#close-detail').click();return matches;
-    });})()`);
-  assert.equal(candidateMetadataMatches,true,'rankings and identity judgments');
-  await evaluate("document.querySelector('.paper-row').focus()");
-  assert.equal(await evaluate("document.activeElement.matches('.paper-row')"), true, 'paper focus');
-  await key('Enter','Enter',13);
-  await until("document.querySelector('#detail').open");
-  await assertContrast();
-  await screenshot('dialog');
-  await key('Escape','Escape',27);
-  await until("!document.querySelector('#detail').open");
-  assert.equal(await evaluate("document.activeElement.matches('.paper-row')"), true);
-  const filters = await evaluate(`(()=>{
-    const counts=[];for(const b of document.querySelectorAll('[data-cohort]')){
-      b.click();counts.push(document.querySelectorAll('.paper-row').length);
-      if(b.getAttribute('aria-pressed')!=='true')throw Error('filter state');
-      if(document.documentElement.scrollWidth>innerWidth)throw Error('filter overflow');
-    }return counts})()`);
-  assert.deepEqual(filters,[8,2,2,2,2]);
-  await send('Page.navigate',{url:origin+'/methodology.html'});
-  await until("document.querySelectorAll('.method-sections > section').length===10");
-  assert.equal((await layout()).overflow,false,'methodology overflow');
-  await assertContrast();
-  await screenshot('methodology');
-  // Simulate 200% text sizing through the rem-based scale, at the same CSS viewport width.
+  assert.equal(candidateCount,41);
+  await send('Page.navigate',{url:origin+'/#paper=2611.07721'});
+  await until("document.querySelectorAll('.candidate-record').length===5");
   await evaluate("document.documentElement.style.fontSize='200%'");
-  assert.equal((await layout()).overflow,false,'methodology text scaling overflow');
+  assert.equal((await layout()).overflow,false);await screenshot('inspection-text-200');
+  await send('Page.navigate',{url:origin+'/methodology.html'});await until("document.querySelector('.method-page')");
+  await evaluate('document.fonts.ready');await assertContrast();await screenshot('methodology');
+  await evaluate("document.documentElement.style.fontSize='200%'");assert.equal((await layout()).overflow,false,
+    JSON.stringify(await evaluate("({width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,elements:[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>document.documentElement.clientWidth).map(e=>({tag:e.tagName,class:e.className,right:e.getBoundingClientRect().right,text:e.textContent.slice(0,60)}))})")));
   await screenshot('methodology-text-200');
-  await evaluate("document.documentElement.style.fontSize=''");
-  // Delay the real HTTP request, then turn it into an HTTP error.
-  dataMode='pending';
-  await send('Fetch.enable',{patterns:[{urlPattern:'*/data.json',requestStage:'Request'}]});
-  await send('Page.navigate',{url:origin});
-  await until("document.querySelector('[data-cohort]')&&typeof drawPapers==='function'");
-  await evaluate("document.querySelector('[data-cohort=\"1-7\"]').click();document.querySelector('[data-cohort=all]').click()");
-  assert.equal(await evaluate("document.querySelector('#paper-count').textContent"),'LOADING');
-  for(let i=0;!heldRequest&&i<100;i++)await new Promise(r=>setTimeout(r,25));
-  assert.ok(heldRequest,'data request was intercepted');
-  await send('Fetch.fulfillRequest',{requestId:heldRequest,responseCode:404,body:Buffer.from('unavailable').toString('base64')});
-  await until("document.querySelector('#paper-count').textContent==='DATA UNAVAILABLE'");
-  await evaluate("document.querySelector('[data-cohort=\"1-7\"]').click();document.querySelector('[data-cohort=all]').click()");
-  assert.match(await evaluate("document.querySelector('#papers').textContent"),/could not be loaded/);
-  assert.match(await evaluate("document.querySelector('#comparison').textContent"),/could not be loaded/);
-  assert.equal(await evaluate("document.querySelector('#paper-count').textContent"),'DATA UNAVAILABLE');
-  assert.equal((await layout()).overflow,false,'error state overflow');
-  await assertContrast();
-  // Restore the successful data response and check homepage scaling and HTML semantics.
-  dataMode='normal';heldRequest=undefined;
-  await send('Fetch.disable');
-  await send('Page.navigate',{url:origin});
-  await until("document.querySelectorAll('.paper-row').length===8");
-  assert.equal(await evaluate("document.querySelectorAll('h1').length"),1);
-  assert.equal(await evaluate("document.querySelectorAll('main').length"),1);
-  assert.equal(await evaluate(`(()=>{
-    let previous=0;for(const h of document.querySelectorAll('h1,h2,h3,h4')){
-      if(!h.getClientRects().length)continue;
-      const level=Number(h.tagName[1]);if(level>previous+1)return false;previous=level;
-    }return true})()`),true,'logical headings');
-  await evaluate("document.querySelector('.skip-link').focus()");
-  await key('Enter','Enter',13);
-  assert.equal(await evaluate('document.activeElement.tagName'),'MAIN','skip link focus');
+  // Invalid direct link provides a route back to the unchanged inventory.
+  await send('Page.navigate',{url:origin+'/#paper=unknown'});await until("document.querySelector('#inspection h1')");
+  assert.match(await evaluate("document.querySelector('#inspection').textContent"),/Source paper not found/);
+  await evaluate("document.querySelector('#inspection a').click()");await until("!document.querySelector('#overview').hidden");
+  // Delay then fail data; no half-rendered evidence may remain visible.
+  await send('Fetch.enable',{patterns:[{urlPattern:'*data.json',requestStage:'Request'}]});dataMode='pending';
+  await send('Page.navigate',{url:origin});await until("document.querySelector('#loading')");
+  for(let i=0;i<200&&!heldRequest;i++)await new Promise(r=>setTimeout(r,25));
+  assert.ok(heldRequest);assert.equal(await evaluate("document.querySelector('#overview').hidden"),true);
+  await send('Fetch.fulfillRequest',{requestId:heldRequest,responseCode:404,body:''});
+  await until("document.querySelector('#loading').getAttribute('role')==='alert'");
+  assert.equal(await evaluate("document.querySelector('#overview').hidden"),true);
+  assert.match(await evaluate("document.querySelector('#loading').textContent"),/Refresh to try again/);
+  await assertContrast();await screenshot('error');await send('Fetch.disable');dataMode='normal';
+  await send('Page.navigate',{url:origin});await until("document.querySelectorAll('.paper-link').length===8");
+  await evaluate("document.querySelector('.skip').focus()");await key('Enter','Enter',13);
+  assert.equal(await evaluate('document.activeElement.tagName'),'MAIN');
   await evaluate("document.documentElement.style.fontSize='200%'");
-  assert.equal((await layout()).overflow,false,'homepage text scaling overflow');
+  assert.equal((await layout()).overflow,false,
+    JSON.stringify(await evaluate("[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth).map(e=>({tag:e.tagName,class:e.className,text:e.textContent.slice(0,60)}))")));
   await screenshot('home-text-200');
-  await evaluate("document.documentElement.style.fontSize=''");
-  await evaluate("document.querySelector('.paper-row').click()");
-  assert.equal(await evaluate("document.querySelector('#detail').getAttribute('aria-describedby')"),
-    'detail-description');
-  assert.equal(await evaluate("document.activeElement.id"),'close-detail','initial modal focus');
-  await evaluate("document.querySelector('#close-detail').click()");
-  assert.deepEqual(errors,[],'JavaScript console/runtime errors');
-  const report={width,height:900,papers:8,candidates:detailCounts.reduce((a,b)=>a+b,0),
-    downloads:['data.json','experiment-manifest.json','verify.py'],
-    offlineVerifier:'PASS',textScaling200:'PASS',keyboard:'PASS',errors};
+  assert.deepEqual(errors,[]);
+  const report={width,height:900,papers:8,candidates:candidateCount,errors,
+    offlineVerifier:'PASS',keyboard:'PASS',textScaling200:'PASS',history:'PASS',accessibleProviders:'PASS'};
   fs.writeFileSync(path.join(output,`${width}-report.json`),JSON.stringify(report,null,2));
-  console.log(JSON.stringify(report));
-  socket.close();
-})().catch(error=>{console.error(error);socket.close();process.exitCode=1;});
+  console.log(JSON.stringify(report));socket.close();
+})().catch(error=>{console.error(error);socket.close();process.exitCode=1});
