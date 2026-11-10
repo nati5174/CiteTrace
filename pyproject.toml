@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "citeprobe"
 version = "0.1.0"
-description = "Reproducible citation retrieval benchmark foundations"
+description = "Exploratory citation-retrieval pilot with inspectable identity evidence"
 requires-python = ">=3.12"
 dependencies = ["pydantic>=2.10,<3", "httpx>=0.28,<1"]
 

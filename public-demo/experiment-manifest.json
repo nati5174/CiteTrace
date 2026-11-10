@@ -1,0 +1,681 @@
+{
+  "schema_version": "1.0",
+  "study_kind": "exploratory_citation_retrieval_pilot",
+  "dataset_version": "pilot-reviewed-bcd85bd7dde3a102",
+  "evaluation_id": "c5a1b3f11d8e4a60f150bba38297f5170ee238fdb8a7323ba8e61d4f9cf6eea8",
+  "dataset_sha256": "a8ffee33582fd352fe72db5c410300ac29a92c5e0cbca94b76b1a14a5e5b156d",
+  "evaluation_sha256": "375e40982278ba2a068284b07052279b408f2dbdd20fdcab54c99a4ddcddde1c",
+  "public_data_sha256_lf": "0f085c17c6573ff208a098cb936868c71f6e0e65f550332f61eaafe2c79c526d",
+  "evaluation_code_fingerprint": "5955c916ab7afc1de72f208bb0e2ad9490bea535be1965982cec2cc2702204ea",
+  "historical_execution_revision": "not_recorded",
+  "inspected_adapter_revision": "11e6609423cb6f38ac738db43fd4493c8999f58d",
+  "inspected_adapter_sha256": "988ecfc9e4221253acf3786adf89d830aba0fa5178495a082bd29e7ff2ca5651",
+  "manifest_builder_version": "1",
+  "manifest_builder_sha256": "b0dddbb45f9b4486f9567d57d7478d340fdf15c13aa1d75b0865c3352ff80b8c",
+  "source_paper_ids": [
+    "2611.07721",
+    "2611.07797",
+    "2610.39590",
+    "2610.40655",
+    "2610.25399",
+    "2610.25215",
+    "2609.30897",
+    "2609.31169"
+  ],
+  "searches": [
+    {
+      "search_id": "64f078a626ac5c6e792d5640dd7b327ca7356840d669beaf34741ff2f70e2c9c",
+      "source_paper_id": "2611.07721",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision Jiawei Jiang Zhaoxiang Zang Zhengtao Yu 2026"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T06:39:55.953226Z",
+      "response_capture_finished_at": "2026-11-09T06:39:56.748630Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 06:39:58 GMT",
+      "http_status": 200,
+      "outcome": "NOT_FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:smoke-002:capture-01",
+          "sha256": "820f119261300d1452a64c6feec3e6a71875d244a53ac6a9ffe8d504a3f1e005"
+        },
+        {
+          "artifact_id": "urn:citeprobe:smoke-002:openalex:lookup",
+          "sha256": "d607065e59bbb410664e61176fb6fcaa66579c82e642ac80be6010495817bcb5"
+        },
+        {
+          "artifact_id": "urn:citeprobe:smoke-002:plan",
+          "sha256": "075d2c507bd2a09650d6fbe18ce47d9a691ba45700baf4efe52ef43a90d800e5"
+        }
+      ]
+    },
+    {
+      "search_id": "6d5d61c9f09ef16bcd8bc2f6bc1dcbc2dd03ca72bbf24947069c6f8a5bc1388f",
+      "source_paper_id": "2611.07721",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "Continued Training of Continuous Language Flows with Token Identity Squared Supervision Jiawei Jiang Zhaoxiang Zang Zhengtao Yu 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T06:39:56.771307Z",
+      "response_capture_finished_at": "2026-11-09T06:39:57.489888Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 06:39:59 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:smoke-002:capture-02",
+          "sha256": "6a8d82620dab9130a721822f7f4f3a7e0b21fb198e759fcab5cc57e87eaa977b"
+        },
+        {
+          "artifact_id": "urn:citeprobe:smoke-002:crossref:lookup",
+          "sha256": "ec8bd989f3b95ea52b00a75887d4573fba3cc7b2c9f1cdcc91942560a497333c"
+        },
+        {
+          "artifact_id": "urn:citeprobe:smoke-002:plan",
+          "sha256": "075d2c507bd2a09650d6fbe18ce47d9a691ba45700baf4efe52ef43a90d800e5"
+        }
+      ]
+    },
+    {
+      "search_id": "b2fb08d0939bf5675817c6f044f2692b686c0c18642c51c529b2c7e33fa9038d",
+      "source_paper_id": "2611.07797",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "Dataset Collection and Fine-Tuning of NLLB for German--English Translation SK Deeraj Yash Ingle Pruthwik Mishra 2026"
+      },
+      "authentication_mode": "api_key_query_parameter",
+      "request_started_at": "2026-11-09T07:15:18.745621Z",
+      "response_capture_finished_at": "2026-11-09T07:15:19.464104Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:21 GMT",
+      "http_status": 200,
+      "outcome": "NOT_FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-01:capture-01",
+          "sha256": "db4879f8b8ac8deac04fc2e008609c358620320525b054bbf9cd1d959df43b57"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-01:openalex:lookup",
+          "sha256": "5e8c7ba527cccd6c10a82f92d1df60057205ee5f929ae9a4926e3e9f577b9261"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "777877e6a0b72d0150980a431af72942781f244ec4430a3fb0e8eebb8e6f9a74",
+      "source_paper_id": "2611.07797",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "Dataset Collection and Fine-Tuning of NLLB for German--English Translation SK Deeraj Yash Ingle Pruthwik Mishra 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T07:15:20.497870Z",
+      "response_capture_finished_at": "2026-11-09T07:15:21.116180Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:23 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-01:capture-02",
+          "sha256": "8cff9ced64b974145100b8882e921c8c10f275353d6ceb8e321542547487dd4e"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-01:crossref:lookup",
+          "sha256": "09ccfc864545dfba357a8e6262177e43384083c6ac021d42ea62795e4e3d9355"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "5bfda069214aa9ccfe0c4f6cd90018dcbe7fe1eda1a19cde93c503caf3392ce8",
+      "source_paper_id": "2610.39590",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "Red-Teaming Large Language Models in Low-Resource African Languages: A Case Study of Yoruba and Nigerian Pidgin Paula Chikaodinaka Anyanwu Valdini Douglace Lemofouet Blessing Ngozi Uzor Ifeoluwa Dorcas Awotunde Danielle Blanche Kapsa Tassallah Abdullahi Clemencia Siro Idris Abdulmumin Seid Muhie Yimam Shamsuddeen Hassan Muhammad 2026"
+      },
+      "authentication_mode": "api_key_query_parameter",
+      "request_started_at": "2026-11-09T07:15:22.180062Z",
+      "response_capture_finished_at": "2026-11-09T07:15:23.137225Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:25 GMT",
+      "http_status": 200,
+      "outcome": "NOT_FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-02:capture-01",
+          "sha256": "9faccffd112695d1a1855f17f0e02045b3fe135f39747613c8a33ab228ddc780"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-02:openalex:lookup",
+          "sha256": "eaaf91f23c8f6b3665fcee2c79645a83fa4d5f91645cb4fe40f566976153d042"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "ce4575b8527de4892b0f6b3208a0e5730fd99be9c20acb469e82e4d5adf018c2",
+      "source_paper_id": "2610.39590",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "Red-Teaming Large Language Models in Low-Resource African Languages: A Case Study of Yoruba and Nigerian Pidgin Paula Chikaodinaka Anyanwu Valdini Douglace Lemofouet Blessing Ngozi Uzor Ifeoluwa Dorcas Awotunde Danielle Blanche Kapsa Tassallah Abdullahi Clemencia Siro Idris Abdulmumin Seid Muhie Yimam Shamsuddeen Hassan Muhammad 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T07:15:24.161035Z",
+      "response_capture_finished_at": "2026-11-09T07:15:24.984051Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:27 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-02:capture-02",
+          "sha256": "db7577f94a6629d5189e8ce45b7f9e357f5aee9d0375fbb5f7ef1052286ba8b4"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-02:crossref:lookup",
+          "sha256": "183e1735ae3de751bff16b5b6ecda8c464b244c8801a9779f65f5fcd4614880d"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "b7df441df22af212234cbfdd69a1eea88c4d8f79f72251b526e688a69f98e46b",
+      "source_paper_id": "2610.40655",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "Elucidating the Design Space of LM Data Attribution Steven Yu Sheng-Yu Wang Kimia Hamidieh Antonio Torralba David Bau 2026"
+      },
+      "authentication_mode": "api_key_query_parameter",
+      "request_started_at": "2026-11-09T07:15:26.046602Z",
+      "response_capture_finished_at": "2026-11-09T07:15:26.974090Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:29 GMT",
+      "http_status": 200,
+      "outcome": "NOT_FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-03:capture-01",
+          "sha256": "5372f3f040665ad1a18a463f09534721487eda4abf5f3f79829c5eb9462950df"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-03:openalex:lookup",
+          "sha256": "b6496752134e92bb04918842fcaab86f4a530b011c327cb1790f3b8951083096"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "811a088f09ef97c5b8d9427385e401b356b8832ea6ff6f81ccda678b14d18697",
+      "source_paper_id": "2610.40655",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "Elucidating the Design Space of LM Data Attribution Steven Yu Sheng-Yu Wang Kimia Hamidieh Antonio Torralba David Bau 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T07:15:27.999885Z",
+      "response_capture_finished_at": "2026-11-09T07:15:28.501235Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:30 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-03:capture-02",
+          "sha256": "cf4379f8a1c1e0405cff3d94088d8922db672c7c5cb78403a65bfa27e2b1b59e"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-03:crossref:lookup",
+          "sha256": "6a7db656dd4aeb3271737f2110af999234edf72491334f2e8905991cf5c208f7"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "84c472867d236e2e7837f30422194ecfec7debdc10f9cb4614b56cef2973ff0a",
+      "source_paper_id": "2610.25399",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "From Unverifiable Domain Text to Cross-Lingual RLVR via Code-Switched Task Synthesis Cheonbok Park Jihwan Kim Shinyoung Joo Joosung Lee Hwiyeol Jo Jeonghoon Kim Jaegul Choo 2026"
+      },
+      "authentication_mode": "api_key_query_parameter",
+      "request_started_at": "2026-11-09T07:15:29.595650Z",
+      "response_capture_finished_at": "2026-11-09T07:15:30.059205Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:32 GMT",
+      "http_status": 200,
+      "outcome": "NOT_FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-04:capture-01",
+          "sha256": "ee8bd9988048a0a977e18f9a1f78149dde118ba639403969183a5a614bea915b"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-04:openalex:lookup",
+          "sha256": "26540c93361e56dd6e5dca2595c758284de9638221f92c21be20dfbcaaec7033"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "fc193361520adb03b41b89989401191e943f7592fd3b4b064888e9c11b98c434",
+      "source_paper_id": "2610.25399",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "From Unverifiable Domain Text to Cross-Lingual RLVR via Code-Switched Task Synthesis Cheonbok Park Jihwan Kim Shinyoung Joo Joosung Lee Hwiyeol Jo Jeonghoon Kim Jaegul Choo 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T07:15:31.089735Z",
+      "response_capture_finished_at": "2026-11-09T07:15:31.467485Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:33 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-04:capture-02",
+          "sha256": "0a4ad2eb38011e37d694d67b1b74cdebdb323ade799fa3540b39760ffcc2b64e"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-04:crossref:lookup",
+          "sha256": "77202b72a6ba253de83eff21bf3da54bc2d395b14b2e97c37efbf83772cb7861"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "776151ed739c8a3ef0ae74e4076e58d9b9a060594c473cd5cfa4b730c3dbac93",
+      "source_paper_id": "2610.25215",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "Hidden Cartographer: Hidden State Guided Data Selection for Dual Budgeted Instruction Tuning Zixuan Qin Qi Qin Erbo Li Ting Wei Yifan Sun Zhaoxin Fan 2026"
+      },
+      "authentication_mode": "api_key_query_parameter",
+      "request_started_at": "2026-11-09T07:15:32.522019Z",
+      "response_capture_finished_at": "2026-11-09T07:15:33.144061Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:35 GMT",
+      "http_status": 200,
+      "outcome": "NOT_FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-05:capture-01",
+          "sha256": "6c0bc6086ec91e9157d688247d8865ce0e7520020ff0eada2f0587762cd176d8"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-05:openalex:lookup",
+          "sha256": "dff90bf9b35bcecbbd9f72474436b48bc25b824cbe21feed1ea1e3163d7cd8bf"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "6baedd9d8dd57d30093b86c210de451642637e650ee6cfe9ba3c017f06dfe8db",
+      "source_paper_id": "2610.25215",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "Hidden Cartographer: Hidden State Guided Data Selection for Dual Budgeted Instruction Tuning Zixuan Qin Qi Qin Erbo Li Ting Wei Yifan Sun Zhaoxin Fan 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T07:15:34.176884Z",
+      "response_capture_finished_at": "2026-11-09T07:15:34.662016Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:36 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-05:capture-02",
+          "sha256": "71cfd20243b7a52325dfc75ffb1af01810bb7db0584aaf1c460f9dea34ca7557"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-05:crossref:lookup",
+          "sha256": "18a6ca43fcd14bf75d4349ca7c53f51040620a387dd73fc6302c9fea7b06f7f7"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "dcf91e442569c6bbe4ac992c9ae2f427fd2b3db72a22b18e8d0210e7db546347",
+      "source_paper_id": "2609.30897",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "From annotation to reasoning: Culture in language models Daniel Hershcovich Alexander Conroy Jens Bjerring-Hansen 2026"
+      },
+      "authentication_mode": "api_key_query_parameter",
+      "request_started_at": "2026-11-09T07:15:35.726333Z",
+      "response_capture_finished_at": "2026-11-09T07:15:36.263931Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:38 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-06:capture-01",
+          "sha256": "9abc3896ee810f5d35454df9f19ae780c42168fb526eecc3e06c781c6d14206c"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-06:openalex:lookup",
+          "sha256": "f6d7545fc2eab4cd4b80ea08432f7f33e8f9bf45bc102e11a64c58b7d876dd11"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "6a391133286b7f2fed0599c54a936c4ab4227768ae13a00173d9b73d746a9df6",
+      "source_paper_id": "2609.30897",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "From annotation to reasoning: Culture in language models Daniel Hershcovich Alexander Conroy Jens Bjerring-Hansen 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T07:15:37.289811Z",
+      "response_capture_finished_at": "2026-11-09T07:15:38.050076Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:40 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-06:capture-02",
+          "sha256": "7c3d60410cfeec8bf9d68ab34c8b85b3afa9c2a1c2098fc9099f0495f901aa03"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-06:crossref:lookup",
+          "sha256": "ab42bd38d8ec6b6e7cd5849c6230984e059b7f01cab03442b638a64fd69b1022"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "01ab021e147f42e8cb43df892b76e4c1ba1f1844312d8f1a2ebc4db1b348f49e",
+      "source_paper_id": "2609.31169",
+      "provider": "openalex",
+      "method": "GET",
+      "endpoint": "https://api.openalex.org/works",
+      "parameters": {
+        "per_page": "5",
+        "search": "Improving Visual Sensitivity of LLMs on Multimodal Machine Translation with Metric-based Loss Weighting Paweł Mąka Piotr Andruszkiewicz Yusuf Can Semerci Jan Scholtes Gerasimos Spanakis 2026"
+      },
+      "authentication_mode": "api_key_query_parameter",
+      "request_started_at": "2026-11-09T07:15:39.130281Z",
+      "response_capture_finished_at": "2026-11-09T07:15:39.633060Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:41 GMT",
+      "http_status": 200,
+      "outcome": "NOT_FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-07:capture-01",
+          "sha256": "78dc33558d87c51426e9cf758ee5829a4c3a78e828c5738aa767432d62ae9ed6"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-07:openalex:lookup",
+          "sha256": "363df768c288c796fc75a462791adee29392ab7a9abfdca7dc4b1c29b6ee3bf0"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    },
+    {
+      "search_id": "d25b78e779205297fc60945e40411de11200543c5bdb7af3112cdf43fcf3d901",
+      "source_paper_id": "2609.31169",
+      "provider": "crossref",
+      "method": "GET",
+      "endpoint": "https://api.crossref.org/works",
+      "parameters": {
+        "query.bibliographic": "Improving Visual Sensitivity of LLMs on Multimodal Machine Translation with Metric-based Loss Weighting Paweł Mąka Piotr Andruszkiewicz Yusuf Can Semerci Jan Scholtes Gerasimos Spanakis 2026",
+        "rows": "5"
+      },
+      "authentication_mode": "anonymous",
+      "request_started_at": "2026-11-09T07:15:40.664677Z",
+      "response_capture_finished_at": "2026-11-09T07:15:41.952057Z",
+      "response_headers_received_at": "not_recorded",
+      "response_server_date_header": "Mon, 09 Nov 2026 07:15:44 GMT",
+      "http_status": 200,
+      "outcome": "FOUND",
+      "retrieval_limit": 5,
+      "candidate_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "lookup_engine_version": "1",
+      "parsing_warning_count": 0,
+      "sources": [
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-07:capture-02",
+          "sha256": "7d436182bdff9f37530fa162d02f10bd665bfba632240dc3f98176dc568a0fa9"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:paper-07:crossref:lookup",
+          "sha256": "09924c5456d27142d20294e2c3ceb90c3fd3b3da53a601134c2bf6857e9f2abe"
+        },
+        {
+          "artifact_id": "urn:citeprobe:key-continuation-001:plan",
+          "sha256": "6d7596d74b16f8d9901f66cc632e7c39344c270ccff029a227374125de745043"
+        }
+      ]
+    }
+  ],
+  "excluded_operational_attempts": 2,
+  "excluded_operational_status": 429,
+  "pagination": false,
+  "retries_per_evaluated_search": 0,
+  "provider_ranking_algorithm": "not_recorded",
+  "raw_response_availability": "not_public",
+  "request_headers": "not_recorded",
+  "extraction_rules": [
+    "Inspect the first five provider response entries; retain original one-based ranks.",
+    "No local re-ranking. Unparseable entries are skipped with a warning; these 16 lookups have no parsing warnings.",
+    "OpenAlex: results array, title, authorship display names, publication_year and identifiers.",
+    "Crossref: message.items, first title, author name or given/family; year from published, published-print, published-online, then issued."
+  ],
+  "normalization_rules": [
+    "Recorded query parameter values are copied verbatim after URL decoding, not reconstructed.",
+    "Version-1 query construction joins title, author names and year with spaces; canonical identifiers are withheld.",
+    "Inspected adapter strips DOI URL prefixes; arXiv IDs are extracted from recognized arXiv/DOI URLs; candidate text fields trim surrounding whitespace.",
+    "Timestamps are ISO 8601; capture finish is after body capture, not a precise header-arrival timestamp.",
+    "Server Date headers use a remote clock. Local/server clock differences are retained and must not be interpreted as precise event ordering.",
+    "Code and public-data checksums use LF-normalized bytes to accommodate Git line-ending conversion."
+  ],
+  "provenance_limits": [
+    "The historical Git checkout is not recorded; inspected_adapter_revision identifies code reviewed for this manifest, not the historical execution checkout.",
+    "Extraction/normalization descriptions come from the inspected version-1 adapter and saved lookup records; provider ranking internals are not recorded.",
+    "Capture metadata precedes transport credential injection. Keyed access is supported by the recorded continuation plan and transport implementation; credentials and headers are excluded.",
+    "Raw historical responses are private. Public artifacts support deterministic calculations, not independent replay of private captures.",
+    "New API calls are replication attempts under potentially changed conditions, not replay of this frozen experiment."
+  ]
+}

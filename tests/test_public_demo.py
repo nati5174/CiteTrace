@@ -25,6 +25,8 @@ def test_static_root_serves_public_export() -> None:
         "style.css",
         "app.js",
         "data.json",
+        "experiment-manifest.json",
+        "verify.py",
     }
     tracked = subprocess.run(
         ["git", "ls-files", "--error-unmatch", "public-demo/data.json"],
@@ -164,23 +166,26 @@ setImmediate(()=>{
   buttons[1].click(); if(ids.papers.children.length!==2) throw Error('filter');
   ids.papers.children[0].click();
   if(!ids.detail.open || ids['detail-content'].children.length<4) throw Error('detail');
-  const headings=ids['detail-content'].children.slice(2).map(section=>section.children[0]);
-  if(!headings.some(node=>node.textContent.includes('No candidates returned')) ||
+  const descendants = node=>[node,...node.children.flatMap(descendants)];
+  const allDetail=descendants(ids['detail-content']);
+  const headings=allDetail.filter(node=>node.className==='search-summary');
+  if(headings.length!==2 || !headings.some(node=>
+    node.textContent.includes('No candidates returned')) ||
     headings.some(node=>node.textContent.includes('NOT_FOUND')))
     throw Error('detail response label');
-  const nested=ids['detail-content'].children.flatMap(n=>n.children).flatMap(n=>n.children);
-  if(!nested.some(y=>String(y.textContent).includes('UNDETERMINED'))) throw Error('judgment');
-  const sectionContents=ids['detail-content'].children.flatMap(section=>section.children);
-  if(!sectionContents.some(y=>String(y.textContent).includes('does not establish absence')))
+  if(!allDetail.some(y=>String(y.textContent).includes('UNDETERMINED'))) throw Error('judgment');
+  if(!allDetail.some(y=>String(y.textContent).includes('does not establish absence')))
     throw Error('absence limitation');
+  if(!allDetail.some(y=>y.className==='source-record')) throw Error('source hierarchy');
   ids['close-detail'].click(); if(ids.detail.open) throw Error('close');
   console.log('render, filter, candidate inspection, and close passed');
 });
 """
     script = harness.replace("DATA", data).replace("APP", json.dumps(app))
     result = subprocess.run(
-        ["node", "-"], input=script, text=True, encoding="utf-8", capture_output=True, check=True
+        ["node", "-"], input=script, text=True, encoding="utf-8", capture_output=True
     )
+    assert result.returncode == 0, result.stdout + result.stderr
     assert "candidate inspection" in result.stdout
 
 
@@ -234,6 +239,10 @@ def test_audit_accepts_nonempty_short_key(tmp_path: Path, monkeypatch: pytest.Mo
     ],
 )
 def test_data_load_error_state(response: str) -> None:
+    assert_error_state(response)
+
+
+def assert_error_state(response: str) -> None:
     app = Path("public-demo/app.js").read_text(encoding="utf-8")
     harness = r"""
 const vm = require('vm');
@@ -271,6 +280,24 @@ setImmediate(()=>{
     assert "error state passed" in result.stdout
 
 
+@pytest.mark.parametrize("change", ["authors", "rank", "identity", "bounds", "duplicate"])
+def test_invalid_nested_records_fail_before_render(change: str) -> None:
+    data = json.loads(Path("public-demo/data.json").read_bytes())
+    result = data["papers"][0]["results"]["crossref"]
+    if change == "authors":
+        result["candidates"][0]["authors"] = "malformed author list"
+    elif change == "rank":
+        result["candidates"][0]["rank"] = 0
+    elif change == "identity":
+        result["candidates"][0]["judgment"] = "CORRECT"
+    elif change == "bounds":
+        result["recall_at_5"] = "HIT"
+    else:
+        data["papers"][1]["id"] = data["papers"][0]["id"]
+    response = "Promise.resolve({ok:true,json:()=>Promise.resolve(" + json.dumps(data) + ")})"
+    assert_error_state(response)
+
+
 def test_export_rejects_changed_frozen_input(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -290,8 +317,8 @@ def test_publication_copy_matches_export_status() -> None:
         assert "pending owner" not in html.lower()
     methods = Path("public-demo/methodology.html").read_text(encoding="utf-8")
     assert "not that a paper is missing from a database" in methods
-    assert "eight papers cannot support population-level conclusions" in methods
-    assert "Raw captures and credentials are excluded" in methods
+    assert "eight-paper sample does not support population-level conclusions" in methods
+    assert "Original raw responses and credentials are excluded" in methods
 
 
 def test_publication_copy_avoids_licensing_claims() -> None:

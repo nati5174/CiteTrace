@@ -3,6 +3,7 @@
 import json
 import os
 import subprocess
+import sys
 import time
 from collections.abc import Iterator
 from functools import partial
@@ -78,7 +79,15 @@ def browser_target(tmp_path_factory: pytest.TempPathFactory) -> Iterator[tuple[s
 def test_public_demo_in_chromium(browser_target: tuple[str, str, Path], width: int) -> None:
     target, origin, output = browser_target
     result = subprocess.run(
-        ["node", "tests/public_demo_browser.cjs", target, origin, str(width), str(output)],
+        [
+            "node",
+            "tests/public_demo_browser.cjs",
+            target,
+            origin,
+            str(width),
+            str(output),
+            sys.executable,
+        ],
         capture_output=True,
         text=True,
         encoding="utf-8",

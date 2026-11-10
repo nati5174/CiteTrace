@@ -1,12 +1,36 @@
 # CiteProbe
 
-A Python research prototype for academic citation retrieval reliability.
-Parts 1 through 4 implement dataset schemas, ground truth, deterministic mutations,
-asynchronous OpenAlex/Crossref candidate retrieval, and offline identity evaluation
-with explicit metric denominators and evidence bounds, plus offline analysis,
-figures, optional source-cluster intervals and reproducible research-format reports.
-No empirical provider-performance findings have been established from the current
-pilot or the failed live smoke tests.
+An **exploratory citation-retrieval pilot** and research prototype in progress.
+CiteProbe makes the difference between retrieving a scholarly record and verifying
+its identity inspectable. It is not yet a validated accuracy benchmark.
+
+The frozen public pilot contains eight selected arXiv source papers, sixteen
+recorded OpenAlex/Crossref searches and 41 candidate entries (40 distinct DOI
+values). All candidate identities remain UNDETERMINED: none is confirmed correct
+or incorrect. OpenAlex returned candidates in one of eight recorded searches;
+Crossref in eight of eight. These are return counts, not accuracy scores. One
+OpenAlex search was anonymous, seven used an API key; all Crossref searches were
+anonymous. The small selected sample and unequal access limit direct comparisons.
+
+The [public methodology](public-demo/methodology.html) explains identity evidence,
+Recall@5 bounds and limitations. Download `public-demo/data.json`,
+`public-demo/experiment-manifest.json` and `public-demo/verify.py`, then run:
+
+```powershell
+python verify.py data.json experiment-manifest.json
+```
+
+The standard-library verifier performs no network requests. It checks public
+artifact consistency and reproduces candidate counts, provider-return comparisons
+and evidence-bound counts. Raw captures stay private, the historical Git checkout
+is not recorded, and provider ranking internals are unknown. New API requests are
+replication attempts, not replay of frozen historical responses. See
+[reproducibility documentation](docs/public-demo.md) for provenance and checks.
+
+The underlying Python modules implement dataset schemas, deterministic mutations,
+asynchronous retrieval, conservative identity evaluation and offline reporting.
+Those capabilities are not evidence that this pilot establishes mutation
+robustness, indexing latency, provider-wide accuracy or AI-text detection performance.
 
 ## Setup and checks
 
@@ -46,6 +70,10 @@ Each mutation contains complete citation values for downstream consumers, withou
 claiming that mutated metadata is verified canonical metadata.
 
 ## Data and provenance
+
+The five-record fixture below is an earlier CLI demonstrator, separate from the
+frozen eight-paper public pilot described above. Synthetic testing and historical
+research protocols elsewhere in this README are not additional public findings.
 
 `data/pilot_dataset.json` contains five arXiv preprint citations. Titles, complete
 author lists, identifiers, and initial submission years were checked against the
