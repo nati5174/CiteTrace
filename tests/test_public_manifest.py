@@ -111,7 +111,7 @@ def test_offline_verifier_cli_is_standalone() -> None:
 
 def test_public_assets_are_sanitized_and_self_contained() -> None:
     assets = list(Path("public-demo").iterdir())
-    assert {p.name for p in assets} == {
+    expected = {
         "index.html",
         "methodology.html",
         "style.css",
@@ -124,6 +124,9 @@ def test_public_assets_are_sanitized_and_self_contained() -> None:
         "verify.py",
         "fonts",
     }
+    names = {p.name for p in assets}
+    assert expected <= names
+    assert names - expected <= {"replay"}
     patterns = (
         r"(?i)(?:api[_-]?key|authorization|access[_-]?token|bearer)\s*[:=]",
         r"[\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}",
@@ -132,6 +135,13 @@ def test_public_assets_are_sanitized_and_self_contained() -> None:
         r"(?:gh[pousr]_[a-zA-Z0-9]{20,}|sk-[a-zA-Z0-9_-]{20,}|AKIA[A-Z0-9]{16})",
     )
     for asset in assets:
+        if asset.name == "replay":
+            assert {p.name for p in asset.iterdir()} == {
+                "index.html", "camera.js", "data.json", "evidence-layout.js",
+                "evidence-map.css", "evidence-map.js", "inspector.js",
+                "investigation.css", "polish.css", "replay.css", "replay.js", "tokens.css",
+            }
+            continue
         if asset.name == "fonts":
             assert {p.name for p in asset.iterdir()} == {
                 "IBMPlexSans-Regular.woff",

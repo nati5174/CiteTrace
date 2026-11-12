@@ -19,7 +19,7 @@ ROOT = Path("artifacts/empirical-pilot-immediate-001")
 
 def test_static_root_serves_public_export() -> None:
     root = Path("public-demo")
-    assert {p.name for p in root.iterdir()} == {
+    expected = {
         "index.html",
         "methodology.html",
         "style.css",
@@ -32,6 +32,16 @@ def test_static_root_serves_public_export() -> None:
         "verify.py",
         "fonts",
     }
+    names = {p.name for p in root.iterdir()}
+    assert expected <= names
+    assert names - expected <= {"replay"}
+    replay = root / "replay"
+    if replay.exists():
+        assert {p.name for p in replay.iterdir()} == {
+            "index.html", "camera.js", "data.json", "evidence-layout.js",
+            "evidence-map.css", "evidence-map.js", "inspector.js",
+            "investigation.css", "polish.css", "replay.css", "replay.js", "tokens.css",
+        }
     tracked = subprocess.run(
         ["git", "ls-files", "--error-unmatch", "public-demo/data.json"],
         capture_output=True,
