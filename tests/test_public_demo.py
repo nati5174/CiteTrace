@@ -265,7 +265,7 @@ def test_export_rejects_changed_frozen_input(
 def test_publication_copy_matches_export_status() -> None:
     for name in ("index.html", "methodology.html"):
         html = Path("public-demo", name).read_text(encoding="utf-8")
-        assert "PUBLIC EXPLORATORY PILOT" in html
+        assert "RESEARCH PILOT" in html
         assert "PRIVATE PREVIEW" not in html
         assert "review pending" not in html.lower()
         assert "pending owner" not in html.lower()
@@ -287,5 +287,5 @@ def test_publication_copy_avoids_licensing_claims() -> None:
         copy = path.read_text(encoding="utf-8")
         assert not re.search(r"open[- ]source", copy, re.IGNORECASE), path
     homepage = paths[0].read_text(encoding="utf-8")
-    assert "Research prototype in progress" in homepage
-    assert "PUBLIC EXPLORATORY PILOT" in homepage
+    assert "Research prototype in progress" not in homepage
+    assert "RESEARCH PILOT" in homepage

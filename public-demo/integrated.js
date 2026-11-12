@@ -8,8 +8,8 @@ function renderAtlas() {
   const area = $('#specimen');
   area.replaceChildren();
   const heading = node('div', undefined, 'evidence-head');
-  heading.append(node('h2', 'Inspect the frozen pilot'),
-    node('p', 'Choose a paper or provider cell. Numbers are returned ranks, not verified matches. Return counts are not accuracy; access differs.'));
+  heading.append(node('h2', 'Retrieval results'),
+    node('p', 'Select a paper or provider to inspect its retrieval record.'));
   area.append(heading);
   const mobile = matchMedia('(max-width:800px)').matches;
   const subset = mobile ? papers.slice(atlasPair * 2, atlasPair * 2 + 2) : papers;
@@ -54,14 +54,14 @@ function renderAtlas() {
       if (candidates.length) {
         const marks = node('div', undefined, 'rank-cells');marks.setAttribute('aria-hidden', 'true');
         for (const c of candidates) marks.append(node('span', String(c.rank), 'rank-cell'));
-        a.append(marks, node('small', `${candidates.length} unresolved`));
+        a.append(marks, node('small', `${candidates.length} returned`));
       } else a.append(node('span', '0 returned', 'empty-mark'));
       map.append(a);
     }
   }
   area.append(map);
   const note = node('div', undefined, 'evidence-foot');
-  note.append(node('p', 'Return counts are not accuracy. Access conditions differ: OpenAlex used one anonymous and seven API-key searches; Crossref used eight anonymous searches.'),
+  note.append(node('p', 'Numbers show provider ranks. OpenAlex used one anonymous and seven API-key searches; Crossref used eight anonymous searches.'),
     atlasLink('Study limitations', 'methodology.html#limitations', ''));
   area.append(note);
 }
@@ -81,13 +81,13 @@ function renderPath() {
   const candidates = paper.results[active].candidates;
   const path = node('details', undefined, 'evidence-path');
   path.open = matchMedia('(min-width:801px)').matches;
-  path.append(node('summary', 'Source → provider search → ranks → identity evidence'));
+  path.append(node('summary', 'Source → search → candidates → identity'));
   const stages = node('ol', undefined, 'path-stages');
   for (const [label, value] of [
     ['Source paper', 'arXiv:' + paper.id],
     ['Provider search', `${providerNames[active]} · title, authors and year`],
     ['Ranked candidates', candidates.length ? `${candidates.length} returned · original provider order` : 'None returned'],
-    ['Identity evidence', candidates.length ? 'Undetermined · no verified identity or distinctness evidence' : 'No returned candidates to assess'],
+    ['Identity evidence', candidates.length ? 'Undetermined in the frozen pilot' : 'No returned candidates to assess'],
   ]) {
     const item = node('li');item.append(node('strong', label), node('span', value));stages.append(item);
   }

@@ -140,7 +140,7 @@ function drawFindings() {
     const access = [`${anonymous} anonymous`];
     if (requests.length > anonymous) access.push(`${requests.length - anonymous} API key`);
     const values = [providerNames[provider], `${returned} / ${results.length}`, String(entries),
-      'All returned identities undetermined', `${hits}–${hits + uncertain} / ${results.length}`,
+      'Undetermined (frozen labels)', `${hits}–${hits + uncertain} / ${results.length}`,
       access.join('; ')];
     const row = node('tr');
     row.setAttribute('role', 'row');
@@ -159,13 +159,13 @@ function drawSpecimen() {
   const paper = papers[0];
   const candidate = paper.results.crossref.candidates[0];
   const area = $('#specimen');
-  area.replaceChildren(node('h2', 'A real record from the frozen pilot'),
+  area.replaceChildren(node('h2', 'Recorded example'),
     node('p', `Source · arXiv:${paper.id}`, 'meta'), node('h3', paper.title));
   const result = node('div', undefined, 'sample-result');
   result.append(node('span', `Crossref · provider rank ${candidate.rank}`, 'meta'),
     node('h3', candidate.title),
     node('p', 'Identity undetermined · ' + candidate.reason, 'tag'),
-    link(`Inspect this source and its ${paper.results.crossref.candidates.length} candidates`,
+    link(`View ${paper.results.crossref.candidates.length} candidates`,
       '#paper=' + paper.id));
   area.append(result);
 }
@@ -183,10 +183,10 @@ function sourceContext(paper) {
     node('span', `arXiv:${paper.id}`, 'mobile-summary'), node('h3', paper.title),
     node('p', `arXiv:${paper.id} · ${paper.cohort} days`, 'meta'));
   const details = node('details');
-  details.append(node('summary', 'Full source & provenance'), node('p', paper.title),
+  details.append(node('summary', 'Source and provenance'), node('p', paper.title),
     node('p', paper.authors.join(', ')),
     link('Source record on arXiv', 'https://arxiv.org/abs/' + paper.id),
-    node('p', 'Metadata source-verified; candidate identities remain unresolved.'),
+    node('p', 'Curator-reviewed source metadata; frozen candidate labels.'),
     link('Recorded request metadata · JSON', 'experiment-manifest.json'));
   details.open = matchMedia('(min-width: 801px)').matches;
   source.append(details);
@@ -216,7 +216,7 @@ function drawInspection(paper, requested) {
   const area = $('#inspection');
   area.replaceChildren();
   const top = node('div', undefined, 'inspection-top');
-  top.append(link('All source papers', '#explore'));
+  top.append(link('All papers', '#explore'));
   const tools = node('div');
   const index = papers.indexOf(paper);
   if (index > 0) tools.append(link('Previous', '#paper=' + papers[index - 1].id));
@@ -235,7 +235,7 @@ function drawInspection(paper, requested) {
   });
   tools.append(copy, feedback);
   top.append(tools);
-  const heading = node('h1', `Inspect source ${index + 1} of ${papers.length}`);
+  const heading = node('h1', `Paper ${index + 1} of ${papers.length}`);
   heading.id = 'inspection-title';
   heading.tabIndex = -1;
   area.append(top, heading);
@@ -257,14 +257,14 @@ function drawInspection(paper, requested) {
   const result = paper.results[active];
   const request = searches.find(s => s.source_paper_id === paper.id && s.provider === active);
   const summary = node('div', undefined, 'results-head');
-  summary.append(node('h2', providerNames[active] + ' recorded search'),
+  summary.append(node('h2', providerNames[active] + ' search'),
     node('p', `${result.candidates.length} candidate entries · `
       + `${request.authentication_mode === 'anonymous' ? 'Anonymous access' : 'API key access'}`
       + ` · HTTP ${request.http_status}`, 'meta'),
     node('p', 'Provider ranking preserved. Returned does not mean verified.', 'note'));
   results.append(summary);
   if (!result.candidates.length) {
-    results.append(node('p', 'No candidates returned by this recorded search. '
+    results.append(node('p', 'No candidates returned. '
       + 'This does not establish absence from the provider database.'));
     for (const provider of providers.filter(p => paper.results[p].candidates.length)) {
       const button = node('button', `View ${providerNames[provider]} · `

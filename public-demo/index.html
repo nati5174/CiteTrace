@@ -5,7 +5,7 @@
 <script src="app.js" defer></script>
 <meta name="description" content="Inspect sixteen frozen citation-retrieval searches, ranked candidates, identity evidence and reproducibility limits."><link rel="stylesheet" href="refine.css"><script src="integrated.js" defer></script><link rel="stylesheet" href="integrated.css"></head><body data-treatment="atlas">
 <a class="skip" href="#main">Skip to content</a>
-<div class="prototype-note">PUBLIC EXPLORATORY PILOT</div>
+<div class="prototype-note">RESEARCH PILOT</div>
 <header class="mast"><a href="index.html" class="wordmark">CiteProbe<span>.</span></a>
 <nav aria-label="Main"><a href="#findings">Findings</a><a href="#explore">Explore</a><a href="methodology.html">Methodology</a><a href="https://github.com/nati5174/CiteTrace">GitHub / implementation</a></nav></header>
 <main id="main" tabindex="-1">
@@ -13,13 +13,13 @@
 <section class="intro refined-intro">
 <div>
 <h1>A citation found is not a citation verified.</h1>
-<p>Choose a source paper. Inspect its recorded searches and returned candidates. Every candidate identity remains undetermined.</p>
-<p class="scope">Exploratory pilot · 8 selected papers · 16 searches<br>Frozen observations: 9 November 2026</p><a class="action" href="#explore">Inspect the evidence</a></div>
+<p>Compare retrieved citations against their intended papers.</p>
+<p class="scope">8 papers · 16 searches · 41 candidates<br>Recorded November 9, 2026</p><a class="action" href="#explore">Explore results</a></div>
 <div class="specimen" id="specimen" aria-label="A real frozen evidence example"></div></section>
 <section id="findings">
 <div class="section-title">
 <h2>Recorded observations</h2><a href="methodology.html#bounds">How to read the evidence bounds</a></div>
-<p>Return counts describe retrieval. All 41 candidate identities remain undetermined.</p>
+<p>Counts measure retrieval, not accuracy. All 41 frozen candidate labels are undetermined.</p>
 <div class="matrix-scroll" role="region" aria-label="Provider observations" tabindex="0">
 <table role="table"><caption>Eight searches per provider; access conditions differ.</caption>
 <thead role="rowgroup">
@@ -28,13 +28,13 @@
 <p class="note">Small selected sample; no validated accuracy comparison. Bounds are not confidence intervals. <a href="methodology.html#limitations">Study limitations</a></p></section>
 <section id="explore" tabindex="-1">
 <div class="section-title">
-<h2>Explore the source papers</h2><span>Provider order preserved</span></div><label for="cohort">Submission age on 9 Nov 2026 UTC</label> <select id="cohort" disabled><option value="all">All papers</option><option value="1-7">1–7 days</option><option value="8-14">8–14 days</option><option value="15-30">15–30 days</option><option value="31-60">31–60 days</option></select>
+<h2>Source papers</h2><span>Provider order preserved</span></div><label for="cohort">Submission age on 9 Nov 2026 UTC</label> <select id="cohort" disabled><option value="all">All papers</option><option value="1-7">1–7 days</option><option value="8-14">8–14 days</option><option value="15-30">15–30 days</option><option value="31-60">31–60 days</option></select>
 <p id="count" role="status"></p>
 <div id="paper-list"></div></section>
 <section class="reproduce" id="reproduce">
-<h2>Inspect. Recalculate. Review the implementation.</h2>
-<p>Public consistency checks reproduce recorded counts; they do not independently verify identities or authenticate private captures.</p>
+<h2>Data and reproducibility</h2>
+<p>Recalculate counts from the public files. This does not verify identities or authenticate private captures.</p>
 <div class="artifact-links"><a href="data.json" download>Pilot data · JSON</a><a href="experiment-manifest.json" download>Experiment manifest · JSON</a><a href="verify.py" download>Offline verifier · Python</a><a href="https://github.com/nati5174/CiteTrace">Implementation on GitHub</a></div><pre>python verify.py data.json experiment-manifest.json</pre><a href="methodology.html#reproducibility">Provenance and replay limits</a></section></div>
 <section id="inspection" hidden aria-labelledby="inspection-title"></section>
 <div id="loading" role="status">Loading frozen records…</div></main>
-<footer>Research prototype in progress · Evidence before confidence. <a href="methodology.html">Methods & limitations</a></footer></body></html>
+<footer>Exploratory citation-retrieval pilot. <a href="methodology.html">Methods & limitations</a></footer></body></html>
