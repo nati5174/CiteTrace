@@ -1,0 +1,181 @@
+/* Shared V3 palette for the existing research pages; layout and typography stay local. */
+:root {
+  --ink: #242638;
+  --muted: #5f6478;
+  --accent: #5a45bf;
+  --line: #dce0ec;
+  --paper: #f8f9fd;
+  --wash: #f0edfc;
+  --warn: #87451f;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+::selection {
+  background: #ddd7fa;
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline-color: var(--accent);
+}
+
+.mast,
+.nav.wrap {
+  background-color: #fff;
+  color: var(--ink);
+  border-bottom-color: var(--line);
+}
+
+.mast a,
+.mast .wordmark,
+.nav.wrap a,
+.nav.wrap .brand,
+.nav.wrap .brand-dot {
+  color: var(--ink);
+}
+
+.mast nav a,
+.mast .wordmark span,
+.nav.wrap .nav-link,
+.nav.wrap .brand-dot {
+  color: var(--accent);
+}
+
+.mast nav a:hover,
+.nav.wrap .nav-link:hover {
+  color: #45329b;
+}
+
+.prototype-note,
+.review-banner {
+  background-color: var(--wash);
+  color: var(--accent);
+  border-color: var(--line);
+}
+
+.source,
+.candidate-record,
+.specimen,
+.trace-returns,
+.pilot-map,
+.map-result,
+td {
+  background-color: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.source h2,
+.source summary,
+.source .meta,
+.source .mobile-summary,
+.source p {
+  color: var(--ink);
+}
+
+.source a,
+.source .trace-id,
+.map-source {
+  color: var(--accent);
+}
+
+.source .meta,
+.source .mobile-summary {
+  color: var(--muted);
+}
+
+.source a:focus-visible,
+.mast :focus-visible,
+.nav.wrap :focus-visible {
+  outline-color: var(--accent);
+}
+
+.provider-nav,
+.trace-provider,
+.map-label,
+.map-empty-space,
+.evidence-path,
+th,
+.rank-jumps {
+  background-color: var(--wash);
+  color: var(--ink);
+}
+
+.provider-nav button[aria-pressed="true"],
+.rank-jumps button[aria-pressed="true"] {
+  background-color: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.provider-nav button:hover,
+.rank-jumps button:hover,
+.trace-candidate:hover,
+.map-result:hover,
+.pilot-map .map-source:hover {
+  background-color: #e5e0fa;
+}
+
+.pilot-map .map-source,
+.map-label.source-axis,
+.pilot-map .map-label.source-axis {
+  background-color: var(--wash);
+  color: var(--accent);
+}
+
+.pilot-map .map-source code {
+  color: var(--accent);
+}
+
+.pilot-map .map-source .source-short-title {
+  color: var(--ink);
+}
+
+.pilot-map .map-source:focus-visible {
+  outline-color: var(--accent);
+}
+
+.trace-source {
+  background-color: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.trace-source p {
+  color: var(--muted);
+}
+
+.trace-source .trace-id,
+.trace-source a {
+  color: var(--accent);
+}
+
+.trace-source a:focus-visible {
+  outline-color: var(--accent);
+}
+
+.trace-provider,
+.map-label {
+  border-color: var(--line);
+}
+
+.atlas-controls button:disabled {
+  background-color: var(--wash);
+  color: var(--muted);
+}
+
+.evidence-foot,
+.trace-empty,
+.trace-provider span,
+.rank-jumps p,
+.map-result small,
+.map-result .empty-mark,
+.meta,
+.note,
+.results-head p {
+  color: var(--muted);
+}
