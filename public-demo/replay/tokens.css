@@ -1,0 +1,20 @@
+@font-face{font-family:Plex;src:url('/fonts/IBMPlexSans-Regular.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:Plex;src:url('/fonts/IBMPlexSans-SemiBold.woff') format('woff');font-weight:600;font-display:swap}
+@font-face{font-family:Plex;src:url('/fonts/IBMPlexSans-Bold.woff') format('woff');font-weight:700;font-display:swap}
+@font-face{font-family:PlexMono;src:url('/fonts/IBMPlexMono-Regular.woff') format('woff');font-display:swap}
+:root{
+ --cp-ink:#242638;--cp-muted:#5f6478;--cp-surface:#fff;--cp-ground:#f8f9fd;
+ --cp-line:#dce0ec;--cp-accent:#5a45bf;--cp-accent-hover:#45329b;
+ --cp-violet:#7561e8;--cp-magenta:#c558c4;--cp-wash:#f0edfc;
+ --cp-copper:#87451f;--cp-uncertain-bg:#fcf3eb;--cp-focus:#5a45bf;
+ --cp-radius:16px;--cp-radius-small:10px;--cp-control-radius:10px;
+ --cp-shadow:0 16px 42px rgba(57,58,103,.12),0 2px 5px rgba(57,58,103,.05);
+ --cp-shadow-low:0 5px 16px rgba(57,58,103,.07);
+ --cp-space-1:4px;--cp-space-2:8px;--cp-space-3:12px;--cp-space-4:16px;
+ --cp-space-5:24px;--cp-space-6:32px;--cp-space-7:48px;
+ --cp-font:Plex,Arial,sans-serif;--cp-mono:PlexMono,monospace;
+ font-variant-numeric:tabular-nums;color-scheme:light;
+}
+::selection{background:#ddd7fa;color:var(--cp-ink)}
+:focus-visible{outline:3px solid var(--cp-focus);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}

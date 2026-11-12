@@ -8,7 +8,6 @@ __pycache__/
 build/
 dist/
 .env
-public-demo/replay/
 # Local-only V3 verifier input and captured evidence; do not publish in source control.
 api/_v3_cases.json
 api/_v3_artifacts.json
